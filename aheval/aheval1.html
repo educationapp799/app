@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="gu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>અહેવાલ પત્ર</title>
+    <style>
+        body {
+            font-family: 'Noto Sans Gujarati', sans-serif;
+            background: #f3f3f3;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            padding: 10px;
+        }
+        .notebook {
+            width: 90%;
+            max-width: 800px;
+            height: auto;
+            background: white;
+            padding: 20px;
+            border: 1px solid #ddd;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+            position: relative;
+            line-height: 2.2;
+            background-image: repeating-linear-gradient(white 0px, white 23px, #b3e5fc 24px);
+        }
+        .notebook::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 40px;
+            width: 2px;
+            height: 100%;
+            background: red;
+        }
+        .title {
+            text-align: center;
+            font-size: 24px;
+            font-weight: bold;
+            text-decoration: underline;
+            margin-bottom: 20px;
+        }
+        p {
+            margin: 0;
+            padding-left: 60px;
+            text-indent: -20px;
+            font-size: 18px;
+        }
+        .date {
+            text-align: right;
+            margin-bottom: 10px;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 600px) {
+            .notebook {
+                width: 100%;
+                padding: 15px;
+                font-size: 16px;
+                background-image: repeating-linear-gradient(white 0px, white 20px, #b3e5fc 21px);
+            }
+            .notebook::before {
+                left: 30px;
+            }
+            .title {
+                font-size: 20px;
+            }
+            p {
+                padding-left: 50px;
+                font-size: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="notebook">
+        <div class="title">અહેવાલ</div>
+        <p class="date"><strong>તારીખ:</strong> ૨૦ ફેબ્રુઆરી, ૨૦૨૫</p>
+        <p><strong>વિષય:</strong> શાળાના વાર્ષિકોત્સવ અંગે અહેવાલ</p>
+        <p>આ વર્ષે અમારી શાળામાં વાર્ષિકોત્સવ યોજાયો, જેમાં વિદ્યાર્થીઓએ ઉત્સાહપૂર્વક ભાગ લીધો. વિવિધ સાંસ્કૃતિક કાર્યક્રમો, રમતગમત અને સ્પર્ધાઓ યોજાઈ.</p>
+        <p>કાર્યક્રમમાં ગીત, નૃત્ય, વક્તૃત્વ અને નાટક જેવી વિવિધ પ્રવૃત્તિઓનો સમાવેશ કરવામાં આવ્યો હતો. વિદ્યાર્થીઓએ પોતાની પ્રતિભાને ઉજાગર કરી.</p>
+        <p>આ સમગ્ર કાર્યક્રમ સફળ બનાવવા માટે શિક્ષકો અને વિદ્યાર્થીઓએ મહેનત કરી. અંતે, વિજેતાઓને ઈનામો આપવામાં આવ્યા.</p>
+    </div>
+</body>
+</html>
