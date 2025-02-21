@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="hi">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>YouTube WebView</title>
+    <title>WebView - One Video at a Time</title>
     <style>
         body { font-family: Arial, sans-serif; text-align: center; background-color: #f4f4f4; padding: 20px; }
         .container { max-width: 800px; margin: auto; background: white; padding: 20px; border-radius: 10px; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
@@ -14,25 +14,35 @@
             iframe { height: 200px; }
         }
     </style>
+    <script>
+        let currentPlaying = null;
+
+        function playVideo(id) {
+            if (currentPlaying && currentPlaying !== id) {
+                document.getElementById(currentPlaying).src = document.getElementById(currentPlaying).src; 
+            }
+            currentPlaying = id;
+        }
+    </script>
 </head>
 <body>
 
 <div class="container">
-    <h2>📺 YouTube Videos in WebView</h2>
+    <h2>📺 WebView - एक समय में एक ही वीडियो चले</h2>
 
     <div class="video">
         <h3>🎬 Video 1</h3>
-        <iframe src="https://www.youtube.com/embed/oeNy_ahxhiI?si=nmlUNI8cYkVx7i4J" allowfullscreen></iframe>
+        <iframe id="video1" src="https://www.youtube.com/embed/oeNy_ahxhiI?si=nmlUNI8cYkVx7i4J" allowfullscreen onclick="playVideo('video1')"></iframe>
     </div>
 
     <div class="video">
         <h3>🎬 Video 2</h3>
-        <iframe src="https://www.youtube.com/embed/oeNy_ahxhiI?si=nmlUNI8cYkVx7i4J" allowfullscreen></iframe>
+        <iframe id="video2" src="https://www.youtube.com/embed/oeNy_ahxhiI?si=nmlUNI8cYkVx7i4J" allowfullscreen onclick="playVideo('video2')"></iframe>
     </div>
 
     <div class="video">
         <h3>🎬 Video 3</h3>
-        <iframe src="https://www.youtube.com/embed/oeNy_ahxhiI?si=nmlUNI8cYkVx7i4J" allowfullscreen></iframe>
+        <iframe id="video3" src="https://www.youtube.com/embed/oeNy_ahxhiI?si=nmlUNI8cYkVx7i4J" allowfullscreen onclick="playVideo('video3')"></iframe>
     </div>
 
 </div>
