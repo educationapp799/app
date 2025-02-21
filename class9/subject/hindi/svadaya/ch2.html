@@ -2,50 +2,57 @@
 <html lang="hi">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WebView - One Video at a Time</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>WebView - एक समय में एक वीडियो</title>
     <style>
-        body { font-family: Arial, sans-serif; text-align: center; background-color: #f4f4f4; padding: 20px; }
+        body { font-family: Arial, sans-serif; text-align: center; background-color: #f4f4f4; padding: 20px; margin: 0; }
         .container { max-width: 800px; margin: auto; background: white; padding: 20px; border-radius: 10px; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
         h2 { color: #333; }
-        .video { margin-bottom: 20px; }
-        iframe { width: 100%; height: 250px; border-radius: 10px; }
+        .video { margin-bottom: 20px; position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; }
+        .video iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border-radius: 10px; }
         @media (max-width: 600px) {
-            iframe { height: 200px; }
+            .video iframe { height: auto; }
         }
     </style>
-    <script>
-        let currentPlaying = null;
-
-        function playVideo(id) {
-            if (currentPlaying && currentPlaying !== id) {
-                document.getElementById(currentPlaying).src = document.getElementById(currentPlaying).src; 
-            }
-            currentPlaying = id;
-        }
-    </script>
 </head>
 <body>
 
 <div class="container">
-    <h2>📺 WebView - एक समय में एक ही वीडियो चले</h2>
+    <h2>📺 एक समय में केवल एक वीडियो चले</h2>
 
     <div class="video">
         <h3>🎬 Video 1</h3>
-        <iframe id="video1" src="https://www.youtube.com/embed/oeNy_ahxhiI?si=nmlUNI8cYkVx7i4J" allowfullscreen onclick="playVideo('video1')"></iframe>
+        <iframe id="video1" src="https://www.youtube.com/embed/oeNy_ahxhiI?enablejsapi=1" allowfullscreen></iframe>
     </div>
 
     <div class="video">
         <h3>🎬 Video 2</h3>
-        <iframe id="video2" src="https://www.youtube.com/embed/oeNy_ahxhiI?si=nmlUNI8cYkVx7i4J" allowfullscreen onclick="playVideo('video2')"></iframe>
+        <iframe id="video2" src="https://www.youtube.com/embed/oeNy_ahxhiI?enablejsapi=1" allowfullscreen></iframe>
     </div>
 
     <div class="video">
         <h3>🎬 Video 3</h3>
-        <iframe id="video3" src="https://www.youtube.com/embed/oeNy_ahxhiI?si=nmlUNI8cYkVx7i4J" allowfullscreen onclick="playVideo('video3')"></iframe>
+        <iframe id="video3" src="https://www.youtube.com/embed/oeNy_ahxhiI?enablejsapi=1" allowfullscreen></iframe>
     </div>
 
 </div>
+
+<script>
+    let currentPlaying = null;
+
+    function stopOtherVideos(currentId) {
+        if (currentPlaying && currentPlaying !== currentId) {
+            currentPlaying.contentWindow.postMessage('{"event":"command","func":"pauseVideo","args":""}', '*');
+        }
+        currentPlaying = document.getElementById(currentId);
+    }
+
+    document.querySelectorAll("iframe").forEach((iframe) => {
+        iframe.addEventListener("click", function () {
+            stopOtherVideos(this.id);
+        });
+    });
+</script>
 
 </body>
 </html>
