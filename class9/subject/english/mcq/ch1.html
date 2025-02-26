@@ -1,1 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MCQ Test</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .question {
+            margin-bottom: 15px;
+        }
+        .result {
+            margin-top: 20px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h2>MCQ Test</h2>
+    <form id="quizForm">
+        <div class="question">
+            <p>1. What is the capital of France?</p>
+            <input type="radio" name="q1" value="Paris"> Paris<br>
+            <input type="radio" name="q1" value="London"> London<br>
+            <input type="radio" name="q1" value="Berlin"> Berlin<br>
+        </div>
+        <div class="question">
+            <p>2. What is 5 + 3?</p>
+            <input type="radio" name="q2" value="6"> 6<br>
+            <input type="radio" name="q2" value="8"> 8<br>
+            <input type="radio" name="q2" value="10"> 10<br>
+        </div>
+        <div class="question">
+            <p>3. Which planet is known as the Red Planet?</p>
+            <input type="radio" name="q3" value="Mars"> Mars<br>
+            <input type="radio" name="q3" value="Venus"> Venus<br>
+            <input type="radio" name="q3" value="Jupiter"> Jupiter<br>
+        </div>
+        <div class="question">
+            <p>4. Who wrote 'Hamlet'?</p>
+            <input type="radio" name="q4" value="Shakespeare"> William Shakespeare<br>
+            <input type="radio" name="q4" value="Hemingway"> Ernest Hemingway<br>
+            <input type="radio" name="q4" value="Austen"> Jane Austen<br>
+        </div>
+        <div class="question">
+            <p>5. What is the chemical symbol for water?</p>
+            <input type="radio" name="q5" value="H2O"> H<sub>2</sub>O<br>
+            <input type="radio" name="q5" value="O2"> O<sub>2</sub><br>
+            <input type="radio" name="q5" value="CO2"> CO<sub>2</sub><br>
+        </div>
+        <button type="button" onclick="checkAnswers()">Submit</button>
+    </form>
+    <p class="result" id="result"></p>
+
+    <script>
+        function checkAnswers() {
+            let answers = {
+                q1: "Paris",
+                q2: "8",
+                q3: "Mars",
+                q4: "Shakespeare",
+                q5: "H2O"
+            };
+            let score = 0;
+            for (let key in answers) {
+                let selected = document.querySelector(`input[name="${key}"]:checked`);
+                if (selected && selected.value === answers[key]) {
+                    score++;
+                }
+            }
+            document.getElementById("result").innerText = `You scored ${score} out of 5.`;
+        }
+    </script>
+</body>
+</html>
 
