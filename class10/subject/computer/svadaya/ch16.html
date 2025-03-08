@@ -1,55 +1,111 @@
 <!DOCTYPE html>
-<html lang="gu">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Coming Soon</title>
+    <title>MCQ Test</title>
     <style>
         body {
-            font-family: 'Arial', sans-serif;
-            text-align: center;
-            background: linear-gradient(135deg, #ff7eb3, #ff758c, #ff7eb3, #ff758c);
-            background-size: 400% 400%;
-            animation: gradientBG 6s ease infinite;
-            height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            color: white;
-        }
-
-        @keyframes gradientBG {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
-        }
-
-        .coming-soon {
-            background: rgba(255, 255, 255, 0.2);
-            padding: 40px;
-            border-radius: 10px;
-            backdrop-filter: blur(10px);
-            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
-            display: inline-block;
-        }
-
-        h1 {
-            font-size: 36px;
+            font-family: Arial, sans-serif;
             margin: 0;
+            padding: 20px;
+            background-color: #f8f9fa;
+            text-align: center;
         }
-
-        p {
+        .quiz-container {
+            max-width: 400px;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .question {
             font-size: 18px;
-            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+        .options label {
+            display: block;
+            background: #e9ecef;
+            margin: 5px 0;
+            padding: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .options input {
+            display: none;
+        }
+        .btn {
+            margin-top: 15px;
+            padding: 10px 20px;
+            background: #28a745;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .btn:disabled {
+            background: #ccc;
+        }
+        #result {
+            margin-top: 15px;
+            font-weight: bold;
         }
     </style>
 </head>
 <body>
-
-    <div class="coming-soon">
-        <h1>📢 Coming Soon...</h1>
-        <p>નવું પેજ ટૂંક સમયમાં ઉપલબ્ધ થશે.</p>
+    <div class="quiz-container">
+        <div class="question" id="question">Loading question...</div>
+        <div class="options" id="options"></div>
+        <button class="btn" id="submit" disabled>Submit</button>
+        <div id="result"></div>
     </div>
 
+    <script>
+        const quizData = [
+            {question: "What is the capital of France?", options: ["Berlin", "Madrid", "Paris", "Rome"], answer: "Paris"},
+            {question: "Which planet is known as the Red Planet?", options: ["Earth", "Mars", "Jupiter", "Saturn"], answer: "Mars"},
+            {question: "Who wrote 'Hamlet'?", options: ["Shakespeare", "Keats", "Wordsworth", "Milton"], answer: "Shakespeare"}
+        ];
+        let currentQuestionIndex = 0;
+        let score = 0;
+
+        function loadQuestion() {
+            const quiz = quizData[currentQuestionIndex];
+            document.getElementById("question").innerText = quiz.question;
+            const optionsContainer = document.getElementById("options");
+            optionsContainer.innerHTML = "";
+            quiz.options.forEach(option => {
+                const label = document.createElement("label");
+                label.innerHTML = `<input type='radio' name='option' value='${option}'> ${option}`;
+                optionsContainer.appendChild(label);
+            });
+        }
+
+        document.getElementById("options").addEventListener("change", function() {
+            document.getElementById("submit").disabled = false;
+        });
+
+        document.getElementById("submit").addEventListener("click", function() {
+            const selectedOption = document.querySelector("input[name='option']:checked");
+            if (selectedOption) {
+                if (selectedOption.value === quizData[currentQuestionIndex].answer) {
+                    score++;
+                }
+                currentQuestionIndex++;
+                if (currentQuestionIndex < quizData.length) {
+                    loadQuestion();
+                    document.getElementById("submit").disabled = true;
+                } else {
+                    document.getElementById("question").innerText = "Quiz Completed!";
+                    document.getElementById("options").innerHTML = "";
+                    document.getElementById("submit").style.display = "none";
+                    document.getElementById("result").innerText = `Your Score: ${score}/${quizData.length}`;
+                }
+            }
+        });
+
+        loadQuestion();
+    </script>
 </body>
 </html>
