@@ -1,1 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YouTube Video View</title>
+    <style>
+        /* Basic reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
+        body, html {
+            height: 100%;
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0;
+        }
+
+        .video-container {
+            width: 100%;
+            height: 100%;
+            max-width: 375px; /* Mobile screen width */
+            max-height: 667px; /* Mobile screen height */
+            position: relative;
+            overflow: hidden;
+            background-color: black;
+            border-radius: 10px;
+        }
+
+        iframe {
+            width: 100%;
+            height: 100%;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="video-container">
+        <iframe id="video" width="100%" height="100%" 
+                src="https://www.youtube.com/embed/YOUR_VIDEO_ID" 
+                frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+        </iframe>
+    </div>
+
+    <script>
+        // Example: Add functionality if needed later
+        document.addEventListener("DOMContentLoaded", function() {
+            // You can interact with the iframe if required
+            console.log("Video page loaded.");
+        });
+    </script>
+</body>
+</html>
