@@ -1,1 +1,149 @@
+<!DOCTYPE html>
+<html lang="gu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>અધ્યાય 1: વૈશ્વિક સંખ્યાઓ (વાસ્તવિક સંખ્યાઓ) - ઉકેલ</title>
+    <style>
+        /* Basic reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body, html {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .question-answer-container {
+            margin: 20px auto;
+            width: 80%;
+            max-width: 900px;
+            background-color: #fff;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .question {
+            font-weight: bold;
+            font-size: 18px;
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        .answer {
+            padding-left: 20px;
+            margin-bottom: 20px;
+            font-size: 16px;
+            color: #555;
+        }
+
+        .answer span {
+            color: #007BFF;
+        }
+
+        .button-container {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .show-hide-btn {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .show-hide-btn:hover {
+            background-color: #0056b3;
+        }
+
+        /* Responsive design */
+        @media (max-width: 768px) {
+            body {
+                padding: 10px;
+            }
+
+            .question-answer-container {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <h1>અધ્યાય 1: વૈશ્વિક સંખ્યાઓ (વાસ્તવિક સંખ્યાઓ) - ઉકેલ</h1>
+
+    <!-- Question and Answer container -->
+    <div class="question-answer-container" id="qaContainer">
+        <div class="question" id="q1">
+            1. વાસ્તવિક સંખ્યાઓ શું છે? રેશનલ અને ઇરેશનલ સંખ્યાઓમાં શું તફાવત છે?
+        </div>
+        <div class="answer" id="a1">
+            વાસ્તવિક સંખ્યાઓ એ તમામ સંખ્યાઓ છે જે સંખ્યા રેખા પર જોવા મળે છે. તેમાં રેશનલ અને ઇરેશનલ બંને પ્રકારની સંખ્યાઓ આવે છે.
+            <br><br>
+            <strong>રેશનલ સંખ્યાઓ:</strong> આ એવી સંખ્યાઓ છે જે ફ્રેક્શન તરીકે વ્યક્ત કરી શકાય છે <span>a/b</span>, જ્યાં <span>a</span> અને <span>b</span> પૂર્ણાંક છે અને <span>b ≠ 0</span>. ઉદાહરણ: 1/2, 3, -5, 0.5, વગેરે.
+            <br>
+            <strong>ઇરેશનલ સંખ્યાઓ:</strong> આ એવી સંખ્યાઓ છે જે ફ્રેક્શન તરીકે વ્યક્ત કરી શકાતી નથી. તેમના ડિસિમલ વિસ્તરણમાં અણટક અને અનન્ય આંકડાં હોય છે. 
+            ઉદાહરણ: √2, π, વગેરે.
+        </div>
+
+        <div class="question" id="q2">
+            2. યુક્લિડના વિભાગ પ્રસ્તાવના (Division Lemma) શું છે? ઉદાહરણ સાથે સમજાવો.
+        </div>
+        <div class="answer" id="a2">
+            યુક્લિડનો વિભાગ પ્રસ્તાવ કહે છે કે બે સકારાત્મક પૂર્ણાંકો <span>a</span> અને <span>b</span> માટે, એવી અનુક્રમણિકાઓ <span>q</span> અને <span>r</span> મળે છે, જ્યાં:
+            <br>
+            <span>a = b × q + r</span>, જ્યાં <span>0 ≤ r < b</span>.
+            <br><br>
+            ઉદાહરણ: માનતા જોઈએ કે <span>a = 17</span> અને <span>b = 5</span>. તેમ છતાં, અમે શોધીશું:
+            <br>
+            <span>17 = 5 × 3 + 2</span>. એટલે કે, <span>q = 3</span> અને <span>r = 2</span>.
+        </div>
+
+        <!-- More questions and answers can go here -->
+
+    </div>
+
+    <div class="button-container">
+        <button class="show-hide-btn" id="showHideBtn" onclick="toggleAnswers()">જવાબ બતાવો/છુપાવો</button>
+    </div>
+
+    <script>
+        // Function to toggle showing/hiding answers
+        function toggleAnswers() {
+            const answers = document.querySelectorAll('.answer');
+            const btn = document.getElementById('showHideBtn');
+            const isVisible = answers[0].style.display === 'block';
+
+            answers.forEach((answer) => {
+                answer.style.display = isVisible ? 'none' : 'block';
+            });
+
+            btn.textContent = isVisible ? 'જવાબ બતાવો' : 'જવાબ છુપાવો';
+        }
+
+        // Initially hide all answers
+        document.querySelectorAll('.answer').forEach((answer) => {
+            answer.style.display = 'none';
+        });
+    </script>
+
+</body>
+</html>
 
