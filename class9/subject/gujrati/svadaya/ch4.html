@@ -3,53 +3,106 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Coming Soon</title>
+    <title>સ્વાધ્યાય પ્રશ્ન-ઉત્તર</title>
     <style>
         body {
-            font-family: 'Arial', sans-serif;
-            text-align: center;
-            background: linear-gradient(135deg, #ff7eb3, #ff758c, #ff7eb3, #ff758c);
-            background-size: 400% 400%;
-            animation: gradientBG 6s ease infinite;
-            height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            color: white;
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            padding: 20px;
         }
-
-        @keyframes gradientBG {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
-        }
-
-        .coming-soon {
-            background: rgba(255, 255, 255, 0.2);
-            padding: 40px;
+        .container {
+            background: white;
+            padding: 20px;
             border-radius: 10px;
-            backdrop-filter: blur(10px);
-            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
-            display: inline-block;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 600px;
+            margin: auto;
+            margin-bottom: 20px;
         }
-
-        h1 {
-            font-size: 36px;
-            margin: 0;
+        h2 {
+            color: #333;
         }
-
-        p {
-            font-size: 18px;
+        .question {
+            font-weight: bold;
+            margin-top: 15px;
+        }
+        .solution {
+            display: none;
             margin-top: 10px;
+            padding: 10px;
+            background: #d4edda;
+            color: #155724;
+            border-left: 5px solid #28a745;
+        }
+        button {
+            margin-top: 10px;
+            background: #007bff;
+            color: white;
+            border: none;
+            padding: 8px 12px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background: #0056b3;
         }
     </style>
 </head>
 <body>
+    <div class="container">
+        <h2 style="text-align: center;">સ્વાધ્યાય પ્રશ્ન-ઉત્તર</h2>
+        <h5 style="text-align: center;">1. પ્રશ્નની નીચે આપેલા વિકલ્પોમાંથી સાચો વિકલ્પ પસંદ કરી ખરાની () નિશાની કરો :</h5>
 
-    <div class="coming-soon">
-        <h1>📢 Coming Soon...</h1>
-        <p>નવું પેજ ટૂંક સમયમાં ઉપલબ્ધ થશે.</p>
+        <div class="question">1. ગોવાળમાં ગિરધર કેવા શોભી રહ્યા છે ?</div>
+        <button onclick="showSolution('a1')">જવાબ જુઓ</button>
+        <div class="solution" id="solutiona1">સોનામાં જડેલા હીરા અને તારામંડળમાં ચંદ્ર બંને (D)</div>
+
+        <div class="question">2. ‘હરિ હળધરનો વીરો' એટલે ?</div>
+        <button onclick="showSolution('a2')">જવાબ જુઓ</button>
+        <div class="solution" id="solutiona2">હળ ધારણ કરનારા હીરો (B)</div>
+
+        <div class="question">3. ભગવાન શ્રીકૃષ્ણે...</div>
+        <button onclick="showSolution('a3')">જવાબ જુઓ</button>
+        <div class="solution" id="solutiona3">પીળા રંગના વસ્ત્રો પહેરે છે (B)</div>
+
+        <div class="question">4. શ્રીકૃષ્ણની શોભા જોઈને નરસિંહ મહેતા...</div>
+        <button onclick="showSolution('a4')">જવાબ જુઓ</button>
+        <div class="solution" id="solutiona4">કલ્વાંત કરે છે (B)</div>
     </div>
 
+    <div class="container">
+        <h5 style="text-align: center;">2. નીચેના પ્રશ્નોના બે-ત્રણ વાક્યોમાં ઉત્તર લખો:</h5>
+
+        <div class="question">1. નરસિંહ મહેતા હરખી રહ્યા છે. શા માટે ?</div>
+        <button onclick="showSolution('b1')">જવાબ જુઓ</button>
+        <div class="solution" id="solutionb1">શ્રીકૃષ્ણના રૂપને જોઇને હરખી રહ્યા છે.</div>
+
+        <div class="question">2. કાવ્યના આધારે સાંજના સમયનું દૃશ્ય આલેખો.</div>
+        <button onclick="showSolution('b2')">જવાબ જુઓ</button>
+        <div class="solution" id="solutionb2">સાંજના સમયે ગોવાળ મંડળમાં ગોપ-ગોપીઓ સાથે કૃષ્ણ હર્ષભેર ભજનમાં તરબોળ છે.</div>
+    </div>
+
+    <div class="container">
+        <h5 style="text-align: center;">3. નીચેના પ્રશ્નોના સાત-આઠ વાક્યોમાં ઉત્તર લખો:</h5>
+
+        <div class="question">1. કૃષ્ણરૂપ મહાશુભકારી છે એમ કવિ શા માટે કહે છે ?</div>
+        <button onclick="showSolution('c1')">જવાબ જુઓ</button>
+        <div class="solution" id="solutionc1">શ્રીકૃષ્ણનું રૂપ ખૂબ જ શુભકારક છે કારણ કે તેઓ સમગ્ર જગત માટે આશાની કિરણ છે.</div>
+
+        <div class="question">2. કવિના મનમાં કોણ મોહ ઉપજાવે છે ?</div>
+        <button onclick="showSolution('c2')">જવાબ જુઓ</button>
+        <div class="solution" id="solutionc2">શ્રીકૃષ્ણનું દિવ્ય રૂપ મનમાં મોહ ઉપજાવે છે.</div>
+    </div>
+
+    <script>
+        function showSolution(id) {
+            var solution = document.getElementById("solution" + id);
+            if (solution.style.display === "none" || solution.style.display === "") {
+                solution.style.display = "block";
+            } else {
+                solution.style.display = "none";
+            }
+        }
+    </script>
 </body>
 </html>
