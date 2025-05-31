@@ -1,1 +1,150 @@
+<!DOCTYPE html>
+<html lang="gu">
+<head>
+  <meta charset="UTF-8">
+  <title>ગુજરાતી MCQ ક્વિઝ</title>
+  <style>
+    body {
+      font-family: "Noto Sans Gujarati", sans-serif;
+      background-color: #f2f2f2;
+      padding: 20px;
+    }
+    h1 {
+      color: #2c3e50;
+    }
+    .question {
+      background-color: #fff;
+      padding: 15px;
+      margin-bottom: 15px;
+      border-radius: 10px;
+      box-shadow: 0 0 5px rgba(0,0,0,0.1);
+    }
+    .question h3 {
+      margin-bottom: 10px;
+    }
+    .question label {
+      display: block;
+      margin-bottom: 5px;
+    }
+    #result {
+      font-size: 20px;
+      font-weight: bold;
+      color: green;
+      margin-top: 20px;
+    }
+    button {
+      padding: 10px 20px;
+      font-size: 18px;
+      background-color: #3498db;
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
 
+  <h1>ગુજરાતી MCQ ક્વિઝ (20 પ્રશ્નો)</h1>
+
+  <form id="quizForm">
+    <!-- Q1 to Q20 -->
+    <div class="question">
+      <h3>1. ભારતની રાજધાની કઈ છે?</h3>
+      <label><input type="radio" name="q1" value="a"> મુંબઈ</label>
+      <label><input type="radio" name="q1" value="b"> અમદાવાદ</label>
+      <label><input type="radio" name="q1" value="c"> નવી દિલ્હી</label>
+      <label><input type="radio" name="q1" value="d"> કોલકાતા</label>
+    </div>
+
+    <div class="question">
+      <h3>2. સૌરમંડળમાં સૌથી મોટું ગ્રહ કયું છે?</h3>
+      <label><input type="radio" name="q2" value="a"> પૃથ્વી</label>
+      <label><input type="radio" name="q2" value="b"> મંગળ</label>
+      <label><input type="radio" name="q2" value="c"> ગુરુ</label>
+      <label><input type="radio" name="q2" value="d"> શુક્ર</label>
+    </div>
+
+    <!-- Add more 18 questions in similar format -->
+    <!-- Only showing 2 for brevity; you can copy and change -->
+
+    <!-- Q3 to Q20 placeholder questions -->
+    <!-- Repeat and replace text accordingly -->
+    <script>
+      const questions = [
+        {q: "3. ભારતના રાષ્ટ્રપતિ કોણ છે?", options: ["નરેન્દ્ર મોદી", "દ્રૌપદી મુર્મૂ", "મનમોહન સિંહ", "રાહુલ ગાંધી"], ans: "b"},
+        {q: "4. ત્રિકોણના કેટલા ભાગ હોય છે?", options: ["2", "3", "4", "5"], ans: "b"},
+        {q: "5. ગુજરાતની રાજ્યભાષા કઈ છે?", options: ["હિન્દી", "મરાઠી", "ગુજરાતી", "ઉર્દૂ"], ans: "c"},
+        {q: "6. ભારતના પંથપ્રધાન કોણ છે?", options: ["મોદી", "મુકેશ અંબાણી", "દ્રૌપદી", "શાહરૂખ ખાન"], ans: "a"},
+        {q: "7. 5 + 3 = ?", options: ["6", "8", "7", "10"], ans: "b"},
+        {q: "8. પાણીનો રસ કયો છે?", options: ["મીઠો", "ઉજળો", "નમકીન", "નહિં હોય"], ans: "d"},
+        {q: "9. ડોગ નામનું પશુ શું છે?", options: ["પક્ષી", "પ્રાણી", "ફળ", "મશીન"], ans: "b"},
+        {q: "10. ભારતનો ધ્વજ કેટલા રંગનો બનેલો છે?", options: ["2", "3", "4", "1"], ans: "b"},
+        {q: "11. સાપ શું છે?", options: ["ખાવાની વસ્તુ", "ઝાડ", "રેંગતો પ્રાણી", "ફૂલ"], ans: "c"},
+        {q: "12. ગુજરાતી ક્યાં બોલાય છે?", options: ["ગુજરાત", "પંજાબ", "તામિલનાડુ", "કેરળ"], ans: "a"},
+        {q: "13. સૂર્ય ક્યાં ઉગે છે?", options: ["પશ્ચિમ", "ઉત્તર", "દક્ષિણ", "પૂર્વ"], ans: "d"},
+        {q: "14. 10 - 4 = ?", options: ["6", "5", "4", "3"], ans: "a"},
+        {q: "15. આપણું દેશ કયો છે?", options: ["ચીન", "ભારત", "નેપાળ", "અમેરિકા"], ans: "b"},
+        {q: "16. સાગરનું પાણી શું છે?", options: ["મીઠું", "મીઠું નથી", "ખટ્ટું", "મીઠાઈ"], ans: "a"},
+        {q: "17. 2 x 5 = ?", options: ["7", "10", "12", "8"], ans: "b"},
+        {q: "18. શિયાળે ઠંડી પડે છે?", options: ["હા", "ના", "માર્ચ", "ઓક્ટોબર"], ans: "a"},
+        {q: "19. પેનથી શું લખાય છે?", options: ["ચિત્ર", "સંગીત", "લેખન", "નાચ"], ans: "c"},
+        {q: "20. ભારતની મુદ્રા કઈ છે?", options: ["ડોલર", "યેન", "યુરો", "રૂપી"], ans: "d"}
+      ];
+
+      window.addEventListener("DOMContentLoaded", () => {
+        const form = document.getElementById("quizForm");
+        questions.forEach((q, i) => {
+          const div = document.createElement("div");
+          div.className = "question";
+          div.innerHTML = `<h3>${q.q}</h3>` + q.options.map((opt, idx) => {
+            const optVal = String.fromCharCode(97 + idx); // a, b, c, d
+            return `<label><input type="radio" name="q${i + 3}" value="${optVal}"> ${opt}</label>`;
+          }).join("");
+          form.appendChild(div);
+        });
+      });
+    </script>
+
+    <button type="button" onclick="checkAnswers()">સબમિટ કરો</button>
+  </form>
+
+  <div id="result"></div>
+
+  <script>
+    function checkAnswers() {
+      let score = 0;
+      const correctAnswers = {
+        q1: "c",
+        q2: "c",
+        q3: "b",
+        q4: "b",
+        q5: "c",
+        q6: "a",
+        q7: "b",
+        q8: "d",
+        q9: "b",
+        q10: "b",
+        q11: "c",
+        q12: "a",
+        q13: "d",
+        q14: "a",
+        q15: "b",
+        q16: "a",
+        q17: "b",
+        q18: "a",
+        q19: "c",
+        q20: "d"
+      };
+      for (let i = 1; i <= 20; i++) {
+        const q = document.querySelector(`input[name="q${i}"]:checked`);
+        if (q && q.value === correctAnswers[`q${i}`]) {
+          score++;
+        }
+      }
+      document.getElementById("result").innerText = `તમારું સ્કોર: ${score} / 20`;
+    }
+  </script>
+
+</body>
+</html>
