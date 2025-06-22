@@ -1,0 +1,64 @@
+<!-- index.html - hosted on GitHub Pages -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Notice Manager</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 40px;
+      background-color: #f9f9f9;
+    }
+    textarea {
+      width: 100%;
+      height: 400px;
+      font-size: 14px;
+      padding: 12px;
+      margin-top: 10px;
+    }
+    button {
+      padding: 12px 20px;
+      margin-top: 10px;
+      font-size: 16px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #45a049;
+    }
+  </style>
+</head>
+<body>
+  <h2>📝 JSON Notice Editor</h2>
+  <p>Copy the below JSON to GitHub as <code>notices.json</code></p>
+  <textarea id="editor">[
+  {
+    "title": "📢 Exam Notice",
+    "message": "Class 10 science test on Monday",
+    "image": "https://your.github.io/images/test.jpg",
+    "pdf": "https://your.github.io/files/exam_schedule.pdf",
+    "video": "https://youtu.be/xyz123"
+  }
+]</textarea>
+  <button onclick="downloadJSON()">Download notices.json</button>
+
+  <script>
+    function downloadJSON() {
+      const content = document.getElementById('editor').value;
+      const blob = new Blob([content], { type: 'application/json' });
+      const url = URL.createObjectURL(blob);
+      const link = document.createElement('a');
+      link.href = url;
+      link.download = 'notices.json';
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+    }
+  </script>
+</body>
+</html>
