@@ -1,64 +1,100 @@
-<!-- index.html - hosted on GitHub Pages -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Notice Manager</title>
+  <title>Education News & Updates</title>
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+  />
   <style>
     body {
-      font-family: Arial, sans-serif;
-      margin: 40px;
-      background-color: #f9f9f9;
+      background: linear-gradient(120deg, #fdfbfb, #ebedee);
     }
-    textarea {
+
+    .news-card {
+      margin-bottom: 20px;
+      border-radius: 15px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      padding: 16px;
+      background: white;
+    }
+
+    .news-title {
+      font-weight: bold;
+      font-size: 1.2rem;
+    }
+
+    .news-image {
       width: 100%;
-      height: 400px;
-      font-size: 14px;
-      padding: 12px;
-      margin-top: 10px;
+      max-height: 250px;
+      object-fit: cover;
+      border-radius: 10px;
+      margin-top: 12px;
     }
-    button {
-      padding: 12px 20px;
-      margin-top: 10px;
-      font-size: 16px;
-      background-color: #4CAF50;
+
+    .btn-custom {
+      background-color: #673ab7;
       color: white;
-      border: none;
-      border-radius: 4px;
-      cursor: pointer;
+      border-radius: 30px;
     }
-    button:hover {
-      background-color: #45a049;
+
+    @media (min-width: 768px) {
+      .news-title {
+        font-size: 1.4rem;
+      }
     }
   </style>
 </head>
 <body>
-  <h2>📝 JSON Notice Editor</h2>
-  <p>Copy the below JSON to GitHub as <code>notices.json</code></p>
-  <textarea id="editor">[
-  {
-    "title": "📢 Exam Notice",
-    "message": "Class 10 science test on Monday",
-    "image": "https://your.github.io/images/test.jpg",
-    "pdf": "https://your.github.io/files/exam_schedule.pdf",
-    "video": "https://youtu.be/xyz123"
-  }
-]</textarea>
-  <button onclick="downloadJSON()">Download notices.json</button>
+  <div class="container py-4">
+    <h2 class="text-center mb-4 text-primary">📚 Education News & Updates</h2>
 
-  <script>
-    function downloadJSON() {
-      const content = document.getElementById('editor').value;
-      const blob = new Blob([content], { type: 'application/json' });
-      const url = URL.createObjectURL(blob);
-      const link = document.createElement('a');
-      link.href = url;
-      link.download = 'notices.json';
-      document.body.appendChild(link);
-      link.click();
-      document.body.removeChild(link);
-    }
-  </script>
+    <!-- News Block 1 -->
+    <div class="news-card">
+      <div class="news-title">🔔 GSEB 10th Result Declared</div>
+      <p>Gujarat Board SSC results are out. Check your marks here.</p>
+      <a href="https://www.gseb.org" target="_blank" class="btn btn-custom">Check Result</a>
+    </div>
+
+    <!-- News Block 2 with image -->
+    <div class="news-card">
+      <div class="news-title">📘 New NCERT Book Launched</div>
+      <p>New edition of Class 10 Science Book is available for 2024-25.</p>
+      <img
+        src="https://images2.imgbox.com/1e/9b/B7rjVXwt_o.jpg"
+        alt="Science Book"
+        class="news-image"
+      />
+      <a
+        href="https://ncert.nic.in/textbook.php"
+        target="_blank"
+        class="btn btn-custom mt-3"
+      >View Book</a>
+    </div>
+
+    <!-- News Block 3 with video -->
+    <div class="news-card">
+      <div class="news-title">🎥 Live Webinar on Board Preparation</div>
+      <p>Watch this important video for board exam tips from toppers.</p>
+      <a
+        href="https://www.youtube.com/watch?v=abcdefgh"
+        target="_blank"
+        class="btn btn-danger mt-2"
+      >Watch Video</a>
+    </div>
+
+    <!-- News Block 4 with PDF -->
+    <div class="news-card">
+      <div class="news-title">📝 Sample Paper for Class 12</div>
+      <p>Download PDF of class 12 practice paper with answer key.</p>
+      <a
+        href="https://example.com/sample-paper.pdf"
+        target="_blank"
+        class="btn btn-success"
+      >Download PDF</a>
+    </div>
+  </div>
 </body>
 </html>
