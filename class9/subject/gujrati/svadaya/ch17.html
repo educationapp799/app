@@ -1,55 +1,194 @@
 <!DOCTYPE html>
 <html lang="gu">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Coming Soon</title>
+    <title>કાવ્ય 17 - મારા સપનામાં આવ્યા હરિ</title>
+    <script src="https://cdn.tailwindcss.com"></script>
     <style>
         body {
-            font-family: 'Arial', sans-serif;
-            text-align: center;
-            background: linear-gradient(135deg, #ff7eb3, #ff758c, #ff7eb3, #ff758c);
-            background-size: 400% 400%;
-            animation: gradientBG 6s ease infinite;
-            height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            color: white;
+            font-family: 'Noto Sans Gujarati', sans-serif;
         }
-
-        @keyframes gradientBG {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
+        
+        .card {
+            background: #fff;
+            border-radius: 12px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            margin-bottom: 20px;
         }
-
-        .coming-soon {
-            background: rgba(255, 255, 255, 0.2);
-            padding: 40px;
-            border-radius: 10px;
-            backdrop-filter: blur(10px);
-            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
-            display: inline-block;
+        
+        .answer-hidden {
+            display: none;
         }
-
-        h1 {
-            font-size: 36px;
-            margin: 0;
+        
+        .answer-visible {
+            display: block;
+            animation: fadeIn 0.5s;
         }
-
-        p {
-            font-size: 18px;
-            margin-top: 10px;
+        
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
         }
     </style>
 </head>
-<body>
 
-    <div class="coming-soon">
-        <h1>📢 Coming Soon...</h1>
-        <p>નવું પેજ ટૂંક સમયમાં ઉપલબ્ધ થશે.</p>
+<body class="bg-slate-100 text-gray-800">
+
+    <div class="max-w-5xl mx-auto p-6">
+
+        <h1 class="text-3xl font-bold text-center mb-8 text-green-700">🌸 કાવ્ય 17 - મારા સપનામાં આવ્યા હરિ</h1>
+
+        <!-- Q1 MCQ -->
+        <div class="card">
+            <h2 class="text-xl font-semibold mb-4">[Q-1] સાચો વિકલ્પ પસંદ કરો :</h2>
+            <div id="mcq-container" class="space-y-6"></div>
+        </div>
+
+        <!-- Q2 Short -->
+        <div class="card">
+            <h2 class="text-xl font-semibold mb-4">[Q-2] બે-ત્રણ વાક્યોમાં ઉત્તર આપો :</h2>
+            <div id="short-container" class="space-y-6"></div>
+        </div>
+
+        <!-- Q3 Long -->
+        <div class="card">
+            <h2 class="text-xl font-semibold mb-4">[Q-3] સાત-આઠ લીટીમાં ઉત્તર આપો :</h2>
+            <div id="long-container" class="space-y-6"></div>
+        </div>
+
+        <!-- Q4 Explain -->
+        <div class="card">
+            <h2 class="text-xl font-semibold mb-4">[Q-4] કાવ્યપંક્તિ સમજાવો :</h2>
+            <div id="explain-container" class="space-y-6"></div>
+        </div>
+
     </div>
 
+    <script>
+        // પાઠ 17 ના બધા પ્રશ્નો / જવાબો
+        const data = {
+            mcq: [{
+                q: "નીચેનામાંથી કયું વાક્ય કાવ્યનાયિકાને લાગુ પડતું નથી ?",
+                options: [
+                    "ભગવાન હસતા-હસતા સામે ઊભા રહ્યા",
+                    "ભગવાને આસું લૂછી આપ્યા",
+                    "હરિ સપનામાં આવ્યા હતા",
+                    "હરિએ અબોલા લીધા હતા"
+                ],
+                correct: 0
+            }, {
+                q: "‘મારા મનની દુવારિકાના સૂબા’ એટલે....",
+                options: [
+                    "કાવ્યનાયિકાની મનઃસ્થિતિનું આલેખન",
+                    "દ્વારિકાનગરીના રાજા શ્રીકૃષ્ણના મનની વત",
+                    "બીજાના મનમાં ઊભાં થતા તરંગો",
+                    "દરિયામાં ડૂબી ગયેલ સોનાની દ્વારિકા"
+                ],
+                correct: 1
+            }, {
+                q: "‘મનની દુવારિકાના સૂબા’ - વાક્યમાં કાવ્યનાયિકાનો ભાવ",
+                options: [
+                    "તિરસ્કાર",
+                    "સમર્પણ ભાવ",
+                    "ક્રોધ",
+                    "ગુલામી"
+                ],
+                correct: 1
+            }, {
+                q: "કાવ્યનાયિકા શા માટે બ્હાવરી બની ?",
+                options: [
+                    "શ્રીકૃષ્ણને પામવા માટે",
+                    "સંસાર ભોગવવા માટે",
+                    "કંસાર બનાવવા માટે",
+                    "આંધણ મેલવા"
+                ],
+                correct: 0
+            }],
+            short: [{
+                q: "ભગવાને કાવ્યનાયિકાના આસું કેવી રીતે લૂછ્યા ?",
+                a: "શ્રીકૃષ્ણના મિલન માટે ઝૂરતી ગોપી સ્વપ્નામાં તેમને જોઈને ભાવવિભોર થઈ ગઈ. વિરહના આંસુ વહેવા માંડ્યા ત્યારે શ્રીકૃષ્ણે પ્રેમથી એના આંસુ લૂછ્યા."
+            }, {
+                q: "ભગવાને સ્વપ્નમાં આવીને શું કર્યું ?",
+                a: "શ્રીકૃષ્ણ સ્વપ્નામાં આવ્યા, ગોપીને પ્રેમથી બોલાવ્યું, ઝુલાવ્યું અને વહાલ કર્યું. પછી સામે ઊભા રહી મરક મરક હસ્યા અને ગોપીના આંસુ લૂછ્યા."
+            }],
+            long: [{
+                q: "હરિમિલનને તમારા શબ્દોમાં આલેખો.",
+                a: "સ્વપ્નામાં અચાનક હરિ આવ્યા. તેમને જોઈને ગોપી પ્રેમમાં બ્હાવરી થઈ ગઈ. શ્રીકૃષ્ણે પ્રેમથી બોલાવ્યા, ઝુલાવ્યા અને વહાલ કર્યું. ગોપી પ્રેમમાં તરબોળ થઈ ગઈ. હરિ ગોપીની સામે ઊભા રહીને મરક મરક હસવા લાગ્યા. વિરહના આંસુ લૂછ્યા. ગોપી માટે આ પ્રસંગ આનંદનો ઉત્સવ બની ગયો. હરિના પ્રેમમાં ગોપીએ પોતાનો સંસાર આંધણમાં ઓરી દીધો. આ જોઈને હરિ બોલ્યા – ‘અરે બ્હાવરી...’"
+            }],
+            explain: [{
+                q: "‘આંધણ મેલ્યા’તાં કરવા કંસાર, એમાં ઓરી લીધો મેં સંસાર, હરિ બોલ્યા : ‘અરે, બ્હાવરી...’",
+                a: "હરિમિલનના મંગલ અવસરે ગોપી કંસાર રાંધવા મૂકે છે. સ્વપ્નમાં હરિના આગમનથી એ ક્ષણ મંગલમય બની જાય છે. હરિના પ્રેમમાં ભાવવિભોર ગોપી પોતાના સંસારને આંધણમાં ઓરી દે છે. આ જોઈ હરિ ઉદ્દગાર કરે છે – ‘અરે બ્હાવરી...’"
+            }]
+        };
+
+        // Render MCQ
+        const mcqDiv = document.getElementById("mcq-container");
+        data.mcq.forEach((item, i) => {
+            const div = document.createElement("div");
+            div.className = "p-4 border rounded-lg";
+            let optionsHtml = "";
+            item.options.forEach((opt, j) => {
+                optionsHtml += `
+          <label class="block cursor-pointer">
+            <input type="radio" name="mcq-${i}" value="${j}" class="mr-2"> ${opt}
+          </label>`;
+            });
+            div.innerHTML = `
+        <p class="font-semibold mb-2">${i+1}. ${item.q}</p>
+        ${optionsHtml}
+        <button class="check-btn mt-2 px-4 py-2 bg-green-600 text-white rounded">જવાબ તપાસો</button>
+      `;
+            const btn = div.querySelector(".check-btn");
+            btn.addEventListener("click", () => {
+                const selected = div.querySelector(`input[name="mcq-${i}"]:checked`);
+                if (!selected) return;
+                const val = parseInt(selected.value);
+                const labels = div.querySelectorAll("label");
+                labels.forEach((l, idx) => {
+                    l.classList.remove("bg-green-100", "bg-red-100");
+                    if (idx === item.correct) {
+                        l.classList.add("bg-green-100");
+                    }
+                    if (val === idx && val !== item.correct) {
+                        l.classList.add("bg-red-100");
+                    }
+                });
+            });
+            mcqDiv.appendChild(div);
+        });
+
+        // Render Short, Long, Explain
+        function renderFlash(containerId, arr) {
+            const container = document.getElementById(containerId);
+            arr.forEach((item, i) => {
+                const div = document.createElement("div");
+                div.className = "p-4 border rounded-lg";
+                div.innerHTML = `
+          <p class="font-semibold mb-2">${i+1}. ${item.q}</p>
+          <button class="toggle-btn px-4 py-2 bg-blue-600 text-white rounded">જવાબ જુઓ</button>
+          <div class="answer mt-2 p-2 bg-slate-50 rounded answer-hidden"><p>${item.a}</p></div>
+        `;
+                const btn = div.querySelector(".toggle-btn");
+                const ans = div.querySelector(".answer");
+                btn.addEventListener("click", () => {
+                    ans.classList.toggle("answer-hidden");
+                    ans.classList.toggle("answer-visible");
+                    btn.textContent = ans.classList.contains("answer-visible") ? "જવાબ છુપાવો" : "જવાબ જુઓ";
+                });
+                container.appendChild(div);
+            });
+        }
+        renderFlash("short-container", data.short);
+        renderFlash("long-container", data.long);
+        renderFlash("explain-container", data.explain);
+    </script>
 </body>
+
 </html>
