@@ -3,53 +3,250 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Coming Soon</title>
+    <title>માર્કંડી - ઇન્ટરેક્ટિવ અભ્યાસ</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+Bhai+2:wght@400;500;600;700&display=swap" rel="stylesheet">
+
     <style>
         body {
-            font-family: 'Arial', sans-serif;
-            text-align: center;
-            background: linear-gradient(135deg, #ff7eb3, #ff758c, #ff7eb3, #ff758c);
-            background-size: 400% 400%;
-            animation: gradientBG 6s ease infinite;
-            height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            color: white;
+            font-family: 'Baloo Bhai 2', cursive;
+            background-color: #f8fafc; /* slate-50 */
+            color: #1e293b; /* slate-800 */
         }
-
-        @keyframes gradientBG {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
+        .card {
+            background-color: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
-
-        .coming-soon {
-            background: rgba(255, 255, 255, 0.2);
-            padding: 40px;
-            border-radius: 10px;
-            backdrop-filter: blur(10px);
-            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
-            display: inline-block;
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
         }
-
-        h1 {
-            font-size: 36px;
-            margin: 0;
+        .btn {
+            transition: background-color 0.3s ease, transform 0.3s ease;
         }
-
-        p {
-            font-size: 18px;
-            margin-top: 10px;
+        .btn:hover {
+            transform: scale(1.05);
+        }
+        .answer-hidden {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease-out;
+        }
+        .answer-visible {
+            max-height: 500px;
+            transition: max-height 0.5s ease-in;
         }
     </style>
 </head>
-<body>
+<body class="text-gray-800">
 
-    <div class="coming-soon">
-        <h1>📢 Coming Soon...</h1>
-        <p>નવું પેજ ટૂંક સમયમાં ઉપલબ્ધ થશે.</p>
+    <div class="container mx-auto p-4 sm:p-8 max-w-4xl">
+        
+        <!-- Header -->
+        <header class="text-center mb-12">
+            <h1 class="text-4xl md:text-5xl font-bold text-gray-900">માર્કંડી</h1>
+            <p class="text-lg text-gray-600 mt-2">એક નદી અને જીવનની સફરનો ઇન્ટરેક્ટિવ અભ્યાસ</p>
+        </header>
+
+        <!-- Interactive Q&A Section -->
+        <section id="qna" class="mb-12">
+            <h2 class="text-3xl font-bold text-center text-gray-900 mb-8">ચાલો, જ્ઞાન ચકાસીએ!</h2>
+            
+            <!-- MCQ Section -->
+            <h3 class="text-xl font-bold text-gray-700 mb-4">૧. પ્રશ્નની નીચે આપેલા વિકલ્પોમાંથી સાચો વિકલ્પ પસંદ કરી ખરાની (/) નિશાની કરો :</h3>
+            <div id="mcq-container" class="space-y-8"></div>
+
+            <!-- Short Answer Section -->
+            <h3 class="text-xl font-bold text-gray-700 mt-12 mb-4">૨. નીચેના પ્રશ્નોના બે-ત્રણ વાક્યોમાં ઉત્તર લખો :</h3>
+            <div id="short-answer-container" class="space-y-8"></div>
+            
+            <!-- Long Answer Section -->
+            <h3 class="text-xl font-bold text-gray-700 mt-12 mb-4">૩. નીચેના પ્રશ્નોના સાત-આઠ વાક્યોમાં ઉત્તર લખો :</h3>
+            <div id="long-answer-container" class="space-y-8"></div>
+        </section>
+
+        <!-- Story Analysis Section -->
+        <section id="analysis" class="card p-6 mb-12 bg-white">
+            <h2 class="text-2xl font-bold text-green-700 mb-4 border-b-2 border-green-200 pb-2">✒️ માર્કંડી અને જીવનનું વિશ્લેષણ</h2>
+            <p class="text-base leading-relaxed">
+                'માર્કંડી' પાઠ એક નદી અને લેખકના અનોખા સંબંધની વાત કરે છે. લેખક માટે માર્કંડી માત્ર એક નદી નથી, પરંતુ એક જીવંત સખી છે. આ સંબંધમાં માનવીય લાગણીઓ અને પ્રકૃતિ સાથેનું જોડાણ જોવા મળે છે...
+            </p>
+        </section>
+
+        <!-- Story Summary Section -->
+        <section id="summary" class="card p-6 bg-white">
+            <h2 class="text-2xl font-bold text-green-700 mb-4 border-b-2 border-green-200 pb-2">🌿 પાઠનો સારાંશ</h2>
+            <p class="text-base leading-relaxed">
+                'માર્કંડી' એ કથાકાર અને માર્કંડી નદી વચ્ચેના અનમોલ સંબંધની એક સુંદર વાર્તા છે...
+            </p>
+        </section>
+
     </div>
 
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // બધા પ્રશ્નો
+            const qnaData = [
+                {
+                    type: 'mcq',
+                    question: 'લેખક નકશામાં માર્કંડીની લીટી શોધતા નથી કારણ કે...',
+                    options: ['લેખકને નકશા-વાચન આવડતું નથી.', 'માર્કંડી ખૂબ જ મોટી નદી છે.', 'એ સખી મટી નદી થઈ જાય તેવો ભય છે.', 'એ નદી નકશામાં દેખાતી નથી.'],
+                    correctAnswer: 2
+                },
+                {
+                    type: 'mcq',
+                    question: 'મહાદેવે મૃકંડુ ઋષિને વરદાનમાં કેવું બાળક આપવા કહ્યું ?',
+                    options: ['તરત મૃત્યુ પામનાર બાળક', 'સોળ વર્ષ જીવનાર સદ્ગુણી બાળક', 'સો વર્ષ જીવનાર મૂઢ બાળક'],
+                    correctAnswer: 1
+                },
+                {
+                    type: 'mcq',
+                    question: 'માર્કંડીના પાણીનો રંગ કેવો છે?',
+                    options: ['કાદવવાળો', 'વાદળી', 'લીલોતરીવાળો', 'ભૂરો'],
+                    correctAnswer: 2
+                },
+                {
+                    type: 'mcq',
+                    question: 'માર્કંડીનો અવાજ કેવો છે?',
+                    options: ['સંગીતમય', 'ખોખરો', 'ધીમો', 'ઝડપી'],
+                    correctAnswer: 0
+                },
+                {
+                    type: 'flashcard',
+                    category: 'short',
+                    question: 'માર્કંડીના કાંઠે અસાધારણ અદ્ભુત એવું કશું નથી. તેમ છતાં લેખકને શા માટે ગમે છે ?',
+                    answer: 'માર્કંડીના કાંઠે અસાધારણ અદ્ભુત એવું કશું ન હોવા છતાં લેખકને તે ખૂબ ગમે છે, કારણ કે માર્કંડી એક નદી કરતાં એક સખી તરીકે તેમની સાથે છે. તે લેખકના મનમાં ઉદાસીનતા અને ગરીબીની છાપ છોડતી નથી.'
+                },
+                {
+                    type: 'flashcard',
+                    category: 'short',
+                    question: 'માર્કેડી નદી અને લેખક વચ્ચેનો સંબંધ કેવો છે?',
+                    answer: 'માર્કંડી નદી અને લેખક વચ્ચેનો સંબંધ એક પૌરાણિક મિત્રતા જેવો છે. માર્કંડી માત્ર એક નદી નથી, પરંતુ એક જીવંત સખી છે જે લેખક સાથે વાત કરે છે અને તેમની લાગણીઓને સમજે છે.'
+                },
+                {
+                    type: 'flashcard',
+                    category: 'short',
+                    question: 'માર્કંડીનો પ્રવાહ કેવો છે?',
+                    answer: 'માર્કંડીનો પ્રવાહ ધીમો અને નરમ છે. તે ધીરે ધીરે વહે છે, જાણે કે કોઈ મિત્ર શાંતિથી ચાલી રહ્યો હોય.'
+                },
+                {
+                    type: 'flashcard',
+                    category: 'long',
+                    question: 'માર્કંડેય ઋષિની કથા તમારા શબ્દોમાં આલેખો.',
+                    answer: 'મૃકંડુ ઋષિ અને તેમની પત્નીને સંતાન નહોતું, તેથી તેમણે મહાદેવની તપસ્યા કરી. મહાદેવે પ્રસન્ન થઈને તેમને બે વિકલ્પ આપ્યા: એક એવું બાળક જે સો વર્ષ જીવે પણ મૂઢ હોય, અથવા એક એવું બાળક જે માત્ર સોળ વર્ષ જીવે પણ ખૂબ સદ્ગુણી હોય. ઋષિએ બીજો વિકલ્પ પસંદ કર્યો અને તેમને માર્કંડેયનો જન્મ થયો. જ્યારે માર્કંડેય સોળ વર્ષના થયા, ત્યારે યમરાજ તેમને લેવા આવ્યા. માર્કંડેયે મહાદેવની પૂજા કરી અને શિવલિંગને ભેટી પડ્યા. યમરાજે પોતાનો પાશ ફેંક્યો, જે શિવલિંગને પણ વીંટળાઈ ગયો. આ જોઈને મહાદેવ પ્રગટ થયા અને યમરાજને ડરાવીને માર્કંડેયને અમરત્વનું વરદાન આપ્યું. આ રીતે, માર્કંડી નદી માર્કંડેયના જીવન સાથે જોડાયેલી છે.'
+                },
+                {
+                    type: 'flashcard',
+                    category: 'long',
+                    question: 'લેખક અને માર્કંડી નદી વચ્ચેનો અનોખો સંબંધ સમજાવો.',
+                    answer: 'લેખક માટે માર્કંડી નદી માત્ર એક જળધારા નથી, પરંતુ તેમની બાળપણની એક જીવંત સખી છે. તે માર્કંડીને નકશામાં શોધતા નથી કારણ કે તેમને ડર છે કે જો તે નકશામાં મળી જાય તો તે સખી મટીને એક સામાન્ય નદી બની જશે. લેખક તેના કિનારે બેસીને તેના સુકાઈ ગયેલા રેતીના પટને અને તેના ધીમા પ્રવાહને જુએ છે. તેમને માર્કંડી સાથે એટલી આત્મીયતા છે કે તે તેની સાથે વાત કરે છે, જાણે કે તે તેમની નાની બહેન હોય. આ સંબંધમાં એક નિષ્પાપતા, સરળતા અને પ્રકૃતિ સાથેનું ઊંડું જોડાણ જોવા મળે છે, જે તેને એક જીવંત અને ગતિશીલ પાત્ર બનાવે છે.'
+                }
+            ];
+
+            const mcqContainer = document.getElementById('mcq-container');
+            const shortAnswerContainer = document.getElementById('short-answer-container');
+            const longAnswerContainer = document.getElementById('long-answer-container');
+
+            let mcqCounter = 1, shortAnswerCounter = 1, longAnswerCounter = 1;
+
+            qnaData.forEach((item) => {
+                const card = document.createElement('div');
+                card.className = 'card p-6';
+
+                if (item.type === 'mcq') {
+                    const currentIndex = mcqCounter;
+                    let optionsHtml = '';
+                    item.options.forEach((option, optionIndex) => {
+                        optionsHtml += `
+                            <label class="block p-3 my-2 border rounded-lg hover:bg-slate-100 cursor-pointer flex items-center">
+                                <input type="radio" name="mcq-${currentIndex}" value="${optionIndex}" class="mr-2">
+                                <span>${option}</span>
+                            </label>`;
+                    });
+
+                    card.innerHTML = `
+                        <h3 class="text-lg font-semibold mb-4">${mcqCounter}. ${item.question}</h3>
+                        <div class="options-container">${optionsHtml}</div>
+                        <button class="check-mcq-btn btn mt-4 bg-slate-600 text-white font-bold py-2 px-4 rounded-lg w-full sm:w-auto">જવાબ તપાસો</button>
+                    `;
+                    mcqCounter++;
+
+                    const checkBtn = card.querySelector('.check-mcq-btn');
+                    checkBtn.addEventListener('click', () => {
+                        const selectedOption = card.querySelector(`input[name="mcq-${currentIndex}"]:checked`);
+                        const labels = card.querySelectorAll('label');
+                        const resultDiv = document.createElement('div');
+                        resultDiv.className = 'mt-2 text-sm font-semibold';
+
+                        labels.forEach(label => {
+                            label.classList.remove('bg-green-100', 'border-green-400', 'bg-red-100', 'border-red-400');
+                            const icon = label.querySelector('.feedback-icon'); if (icon) icon.remove();
+                        });
+
+                        const existingResult = card.querySelector('.result-message');
+                        if(existingResult) existingResult.remove();
+
+                        if (!selectedOption) {
+                            resultDiv.textContent = 'કૃપા કરીને એક વિકલ્પ પસંદ કરો.';
+                            resultDiv.classList.add('text-red-500');
+                            card.appendChild(resultDiv);
+                            return;
+                        }
+
+                        const selectedValue = parseInt(selectedOption.value);
+                        const selectedLabel = selectedOption.parentElement;
+                        const iconSpan = document.createElement('span');
+                        iconSpan.classList.add('feedback-icon', 'font-bold', 'ml-2', 'text-lg');
+
+                        if (selectedValue === item.correctAnswer) {
+                            selectedLabel.classList.add('bg-green-100', 'border-green-400');
+                            iconSpan.textContent = '✅';
+                            selectedLabel.appendChild(iconSpan);
+                            resultDiv.textContent = 'શાબાશ! તમારો જવાબ સાચો છે.';
+                            resultDiv.classList.add('text-green-500');
+                        } else {
+                            selectedLabel.classList.add('bg-red-100', 'border-red-400');
+                            const correctLabel = labels[item.correctAnswer];
+                            correctLabel.classList.add('bg-green-100', 'border-green-400');
+                            const correctIcon = document.createElement('span');
+                            correctIcon.classList.add('feedback-icon', 'font-bold', 'ml-2', 'text-lg');
+                            correctIcon.textContent = '✅';
+                            correctLabel.appendChild(correctIcon);
+                            iconSpan.textContent = '❌';
+                            selectedLabel.appendChild(iconSpan);
+                            resultDiv.textContent = 'અરે! તમારો જવાબ ખોટો છે. સાચો જવાબ લીલા રંગમાં છે.';
+                            resultDiv.classList.add('text-red-500');
+                        }
+                        resultDiv.classList.add('result-message');
+                        card.appendChild(resultDiv);
+                    });
+
+                    mcqContainer.appendChild(card);
+
+                } else if (item.type === 'flashcard') {
+                    const counter = item.category === 'short' ? shortAnswerCounter++ : longAnswerCounter++;
+                    card.innerHTML = `
+                        <h3 class="text-lg font-semibold mb-4">${counter}. ${item.question}</h3>
+                        <button class="toggle-answer-btn btn bg-green-600 text-white font-bold py-2 px-4 rounded-lg w-full sm:w-auto">જવાબ જુઓ</button>
+                        <div class="answer-container answer-hidden mt-4 p-4 bg-slate-50 rounded-lg border">
+                            <p>${item.answer}</p>
+                        </div>
+                    `;
+                    const toggleBtn = card.querySelector('.toggle-answer-btn');
+                    const answerContainer = card.querySelector('.answer-container');
+                    toggleBtn.addEventListener('click', () => {
+                        answerContainer.classList.toggle('answer-hidden');
+                        answerContainer.classList.toggle('answer-visible');
+                        toggleBtn.textContent = answerContainer.classList.contains('answer-visible') ? 'જવાબ છુપાવો' : 'જવાબ જુઓ';
+                    });
+                    (item.category === 'short' ? shortAnswerContainer : longAnswerContainer).appendChild(card);
+                }
+            });
+        });
+    </script>
 </body>
 </html>
