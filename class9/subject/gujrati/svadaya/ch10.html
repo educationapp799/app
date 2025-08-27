@@ -1,170 +1,171 @@
 <!DOCTYPE html>
 <html lang="gu">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>પાઠ - 10 ભારતીય સંસ્કૃતિની સિદ્ધિ - સ્વાધ્યાય</title>
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Gujarati:wght@400;700&display=swap');
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>પાઠ 10 – ભારતીય સંસ્કૃતિની સિદ્ધિ | સ્વાધ્યાય</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Gujarati:wght@400;500;700&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#f8fafc;
+      --card:#ffffff;
+      --ink:#0f172a;
+      --muted:#475569;
+      --brand:#2563eb;
+      --ok:#16a34a;
+      --ring:#c7d2fe;
+      --border:#e5e7eb;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family:"Noto Sans Gujarati", system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Noto Sans", "Apple Color Emoji","Segoe UI Emoji";
+      background:linear-gradient(180deg, #f0f4ff 0%, var(--bg) 40%);
+      color:var(--ink);
+    }
+    .container{max-width:1000px;margin-inline:auto;padding:24px}
+    header{margin-bottom:20px}
+    .title{
+      font-size:clamp(20px, 3.4vw, 34px);
+      font-weight:700;
+      letter-spacing:.2px
+    }
+    .badge{font-size:12px;border:1px solid var(--border);padding:6px 10px;border-radius:999px;background:#fff;color:#111}
+    .card{background:var(--card);border:1px solid var(--border);border-radius:16px;box-shadow:0 10px 25px rgba(2,6,23,.05);padding:20px;margin-bottom:18px}
+    h2{font-size:clamp(18px,2.2vw,24px);margin:0 0 10px 0}
+    h3{font-size:clamp(16px,1.9vw,20px);margin:18px 0 8px 0}
+    p{line-height:1.7}
+    .muted{color:var(--muted)}
 
-        body {
-            font-family: 'Noto Sans Gujarati', sans-serif;
-            background-color: #f4f7f6;
-            color: #333;
-            line-height: 1.8;
-            margin: 0;
-            padding: 20px;
-        }
+    /* MCQ */
+    .mcq{display:grid;gap:12px}
+    .option{display:flex;gap:10px;align-items:flex-start;border:1px solid var(--border);background:#fff;border-radius:12px;padding:12px;transition:all .2s}
+    .option:hover{box-shadow:0 6px 18px rgba(2,6,23,.06);transform:translateY(-1px)}
+    .tick{width:22px;height:22px;border-radius:6px;border:2px solid var(--border);display:grid;place-items:center;flex:0 0 22px}
+    .option.correct{border-color:#bbf7d0;background:#f0fdf4}
+    .option.correct .tick{border-color:var(--ok);background:#dcfce7}
+    .check{display:inline-block;width:12px;height:12px;border-right:2px solid var(--ok);border-bottom:2px solid var(--ok);transform:rotate(45deg);margin-top:-2px}
+    .label{flex:1}
 
-        .container {
-            max-width: 850px;
-            margin: 20px auto;
-            background-color: #ffffff;
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-        }
+    /* QA blocks */
+    details{border:1px dashed var(--border);border-radius:12px;padding:12px;background:#fff}
+    summary{cursor:pointer;font-weight:600}
+    details[open]{border-style:solid}
 
-        h1, h2, h3 {
-            color: #0056b3;
-            border-bottom: 2px solid #007bff;
-            padding-bottom: 10px;
-            margin-top: 0;
-        }
-
-        h1 {
-            text-align: center;
-            font-size: 2em;
-        }
-
-        h2 {
-            font-size: 1.5em;
-            margin-top: 30px;
-        }
-
-        .question-section {
-            margin-bottom: 35px;
-        }
-
-        .question {
-            font-weight: bold;
-            color: #d63384;
-            margin-bottom: 10px;
-        }
-
-        .options {
-            list-style-type: none;
-            padding-left: 15px;
-        }
-
-        .options li {
-            margin-bottom: 8px;
-        }
-
-        .correct-choice {
-            font-weight: bold;
-            color: #198754;
-        }
-
-        .answer {
-            background-color: #e9f5e9;
-            border-left: 5px solid #28a745;
-            padding: 12px 15px;
-            margin-top: 15px;
-            border-radius: 5px;
-        }
-
-        .parishad-section {
-            background-color: #fffbe6;
-            border: 1px solid #ffe58f;
-            padding: 20px;
-            border-radius: 8px;
-            margin-top: 20px;
-        }
-
-        .parishad-section blockquote {
-            margin: 0 0 20px 0;
-            padding: 15px;
-            border-left: 4px solid #fd7e14;
-            background-color: #ffffff;
-            font-style: italic;
-        }
-
-    </style>
+    /* Utility */
+    .pill{display:inline-flex;align-items:center;gap:8px;border-radius:999px;background:#eef2ff;color:#3730a3;padding:6px 10px;font-weight:600}
+    .kicker{font-weight:700;color:#1e293b;text-transform:uppercase;font-size:12px;letter-spacing:.14em}
+    .hr{height:1px;background:var(--border);margin:14px 0}
+  </style>
 </head>
 <body>
+  <div class="container">
+    <header>
+      <div>
+        <div class="kicker">Std 9 • Gujarati</div>
+        <div class="title">પાઠ – 10: ભારતીય સંસ્કૃતિની સિદ્ધિ <span class="badge">સ્વાધ્યાય</span></div>
+      </div>
+    </header>
 
-    <div class="container">
-        <h1>પાઠ - 10 ભારતીય સંસ્કૃતિની સિદ્ધિ</h1>
-        <h2>સ્વાધ્યાય</h2>
+    <!-- Q1: MCQs -->
+    <section class="card">
+      <h2>[Q – 1] નીચેના વિકલ્પોમાંથી સાચો વિકલ્પ પસંદ કરો</h2>
 
-        <div class="question-section" id="q1">
-            <h3>[Q - 1]. નીચેના વિકલ્પોમાંથી સાચો વિકલ્પ પસંદ કરી ખરાની નિશાની કરો :</h3>
-            
-            <p class="question">(1) નીચેનામાંથી કયું વાક્ય બંધબેસતું નથી ?</p>
-            <ul class="options">
-                <li class="correct-choice">(A) [✓] વિકૃતિ એટલે સહજ સ્વભાવ</li>
-                <li>(B) પ્રકૃતિ એટલે સહજ સ્વભાવ</li>
-                <li>(C) સંસ્કૃતિ એટલે સહજ સ્વભાવથી ઉપર ઊઠવું</li>
-                <li>(D) વિકૃતિ એટલે સહજ સ્વભાવથી નીચે પડવું</li>
-            </ul>
-
-            <p class="question">(2) વિકૃતિઓ ક્યારે ક્ષીણ થતી જશે ?</p>
-            <ul class="options">
-                <li>(A) માણસમાં વૈજ્ઞાનિક વૃત્તિ જેમ જેમ ઘટતી જશે ત્યારે</li>
-                <li>(B) માણસમાં પશુવૃત્તિ આવતી જશે ત્યારે</li>
-                <li>(C) દુનિયાભરની સંસ્કૃતિનો અભ્યાસ કરવાથી</li>
-                <li class="correct-choice">(D) [✓] માણસમાં વૈજ્ઞાનિક વૃત્તિ જેમ જેમ વધતી જશે ત્યારે</li>
-            </ul>
-
-            <p class="question">(3) ‘ભારતીય સંસ્કૃતિની સિદ્ધિ’ પાઠના આધારે ભારત પાસે અદ્વિતીય એવું શું છે ?</p>
-            <ul class="options">
-                <li>(A) માનવ સંપદા</li>
-                <li class="correct-choice">(B) [✓] વિચાર સંપદા</li>
-                <li>(C) પ્રાણી સંપદા</li>
-                <li>(D) વૈભવી રહેણીકરણી</li>
-            </ul>
+      <h3>(1) નીચેનામાંથી કયું વાક્ય બંધબેસતું નથી?</h3>
+      <div class="mcq">
+        <div class="option correct" role="group" aria-label="વિકલ્પ A (સાચો)">
+          <div class="tick"><i class="check" aria-hidden="true"></i></div>
+          <div class="label">(A) વિકૃતિ એટલે સહજ સ્વભાવ</div>
         </div>
+        <div class="option"><div class="tick"></div><div class="label">(B) પ્રકૃતિ એટલે સહજ સ્વભાવ</div></div>
+        <div class="option"><div class="tick"></div><div class="label">(C) સંસ્કૃતિ એટલે સહજ સ્વભાવથી ઉપર ઊઠવું</div></div>
+        <div class="option"><div class="tick"></div><div class="label">(D) વિકૃતિ એટલે સહજ સ્વભાવથી નીચે પડવું</div></div>
+      </div>
 
-        <div class="question-section" id="q2">
-            <h3>[Q - 2]. નીચેના પ્રશ્નોના બે-ત્રણ વાક્યમાં ઉત્તર લખો :</h3>
-            <p class="question">(1) પ્રાચીન સમયના કોઈ ઋષિ આજે આવે તો તે શું કહેશે ?</p>
-            <div class="answer">
-                <b>જવાબ :</b> પ્રાચીન સમયના કોઈ ઋષિ આજે આવે તો તેમને આપણો બાહ્ય વેશ ભલે જુદો દેખાય, પણ તેમને આપણામાં એવું કંઈક જરૂર દેખાશે, જેથી એ કહેશે કે આ મારા જ બાળકો છે.
-            </div>
+      <h3>(2) વિકૃતિઓ ક્યારે ક્ષીણ થતી જશે?</h3>
+      <div class="mcq">
+        <div class="option"><div class="tick"></div><div class="label">(A) માણસમાં વૈજ્ઞાનિક વૃત્તિ જેમ જેમ ઘટતી જશે ત્યારે</div></div>
+        <div class="option"><div class="tick"></div><div class="label">(B) માણસમાં પશુવૃત્તિ આવતી જશે ત્યારે</div></div>
+        <div class="option"><div class="tick"></div><div class="label">(C) દુનિયાભરની સંસ્કૃતિનો અભ્યાસ કરવાથી</div></div>
+        <div class="option correct" role="group" aria-label="વિકલ્પ D (સાચો)">
+          <div class="tick"><i class="check"></i></div>
+          <div class="label">(D) માણસમાં વૈજ્ઞાનિક વૃત્તિ જેમ તેમ વધતી જશે ત્યારે</div>
         </div>
+      </div>
 
-        <div class="question-section parishad-section" id="q3">
-            <h3>[Q - 3]. નીચેનો પરિચ્છેદ વાંચી તેના પ્રશ્નોના ઉત્તર આપો :</h3>
-            <blockquote>
-                ઉપવાસ કરવો એ સંસ્કૃતિ છે. જે આપણે મહેનત કરીને ખાઈએ છીએ, તે આપણી પ્રકૃતિ છે. આપણે જાતે મહેનત કરવાનું ટાળીશું, બીજાની મહેનત લૂંટીને ભોગ ભોગવતા રહીશું, તે આપણી વિકૃતિ છે.
-            </blockquote>
-            <p class="question">(1) બીજાની મહેનત લૂંટીને ભોગ ભોગવવાની વૃત્તિ ને શું કહેવાય ?</p>
-            <p><b>→ જવાબ
-:</b> વિકૃતિ</p>
-            
-            <p class="question">(2) ઉપવાસને લેખક શું કહે છે ?</p>
-            <p><b>→ જવાબ
-:</b> ઉપવાસને લેખક સંસ્કૃતિ કહે છે.</p>
-            
-            <p class="question">(3) ‘પ્રકૃતિ’ ને સમજાવવા લેખકે શું કહ્યું છે ?</p>
-            <p><b>→ જવાબ
-:</b> આપણે મહેનત કરીને ખાઈએ છીએ તે આપણી પ્રકૃતિ છે.</p>
-
-            <p class="question">(4) આ પરિચ્છેદને યોગ્ય શીર્ષક આપો :</p>
-            <p><b>→ જવાબ
-:</b> સંસ્કૃતિ, પ્રકૃતિ અને વિકૃતિ.</p>
+      <h3>(3) ‘ભારતીય સંસ્કૃતિની સિદ્ધિ’ પાઠના આધારે ભારત પાસે અદ્વિતીય એવું શું છે?</h3>
+      <div class="mcq">
+        <div class="option"><div class="tick"></div><div class="label">(A) માનવ સંપદા</div></div>
+        <div class="option correct" role="group" aria-label="વિકલ્પ B (સાચો)">
+          <div class="tick"><i class="check"></i></div>
+          <div class="label">(B) વિચાર સંપદા</div>
         </div>
+        <div class="option"><div class="tick"></div><div class="label">(C) પ્રાણી સંપદા</div></div>
+        <div class="option"><div class="tick"></div><div class="label">(D) વૈભવી રહેણીકરણી</div></div>
+      </div>
+    </section>
 
-        <div class="question-section" id="q4">
-            <h3>[Q - 4]. નીચેના પ્રશ્નોના સાત - આઠ વાક્યોમાં ઉત્તર લખો :</h3>
-            <p class="question">(1) ‘ભારતીય સંસ્કૃતિની સિધ્ધિ’ પાઠમાંથી ભારતીય સંસ્કૃતિની વિશેષતાઓ લખો :</p>
-            <div class="answer">
-                <b>જવાબ :</b> ભારતીય સંસ્કૃતિની વિશેષતા એ છે કે એ મનુષ્યને એની પશુતામાંથી માનવતા તરફ આગળ લઈ જાય છે, કારણ કે એ સંસ્કૃતિ વર્ધન છે. તેની પાસે સુંદર, વિચાર, વૈભવ અને આધ્યાત્મિક વિચાર સંપદા છે. ભારતીય સંસ્કૃતિ એ અખંડ પરંપરા જાળવી રાખી છે. ભાષાઓ બદલાય છે, પણ આપણી જ્ઞાન-પરંપરા ખંડિત થઈ નથી. ભારતીય સંસ્કૃતિ એ સ્થળ-કાળના ભેદો છતાં એકતાનું દર્શન કરાવ્યું છે. ભારતદેશમાં તુલસીદાસ, નરસિંહ મહેતા, શંકરદેવ અને માધવદેવ જેવા અનેક અનેક ભક્તજનોએ આપણી ભારતીય સંસ્કૃતિને જાળવી છે. જે સંસ્કૃતિ વિભિન્ન પાસાઓ અને અપારા વિવિધતાવાળા આ ભારતદેશને એક માને છે. એ જ આપણી ભારતીય સંસ્કૃતિની સિદ્ધિ અને વિશેષતા છે.
-            </div>
-        </div>
+    <!-- Q2: Short answers -->
+    <section class="card">
+      <h2>[Q – 2] બે–ત્રણ વાક્યમાં ઉત્તર લખો</h2>
+      <details open>
+        <summary>(1) પ્રાચીન સમયના કોઈ ઋષિ આજે આવે તો તે શું કહેશે?</summary>
+        <div class="hr"></div>
+        <p class="answer">પ્રાચીન સમયના કોઈ ઋષિ આજે આવે તો તેમને આપણો બાહ્ય વેશ ભલે જુદો દેખાય, પણ તેમને આપણામાં એવું કંઈક જરૂર દેખાશે, જેથી એ કહેશે કે “આ મારા જ બાળકો છે”.</p>
+      </details>
+    </section>
 
-    </div>
+    <!-- Q3: Paragraph based -->
+    <section class="card">
+      <h2>[Q – 3] પરિચ્છેદ વાંચી ઉત્તર આપો</h2>
+      <blockquote class="muted" style="margin:0 0 12px 0;padding:12px 14px;border-left:4px solid var(--brand);background:#eef2ff;border-radius:8px">
+        ઉપવાસ કરવો એ સંસ્કૃતિ છે. જે આપણે મહેનત કરીને ખાઈએ છીએ, તે આપણી પ્રકૃતિ છે. આપણે જાતે મહેનત કરવાનું ટાળીશું, બીજાની મહેનત લૂંટીને ભોગ ભોગવતા રહીશું, તે આપણી વિકૃતિ છે.
+      </blockquote>
 
+      <details open>
+        <summary>(1) બીજાની મહેનત લૂંટીને ભોગ ભોગવવાની વૃત્તિને શું કહેવાય?</summary>
+        <div class="hr"></div>
+        <p>વૃત્તિ: <span class="pill">વિકૃતિ</span></p>
+      </details>
+
+      <details>
+        <summary>(2) ઉપવાસને લેખક શું કહે છે?</summary>
+        <div class="hr"></div>
+        <p>ઉપવાસને લેખક <strong>સંસ્કૃતિ</strong> કહે છે.</p>
+      </details>
+
+      <details>
+        <summary>(3) ‘પ્રકૃતિ’ને સમજાવવા લેખકે શું કહ્યું છે?</summary>
+        <div class="hr"></div>
+        <p>“અમે મહેનત કરીને ખાઈએ છીએ તે આપણી પ્રકૃતિ છે.”</p>
+      </details>
+
+      <details>
+        <summary>(4) આ પરિચ્છેદને યોગ્ય શીર્ષક આપો</summary>
+        <div class="hr"></div>
+        <p><em>સંસ્કૃતિ, પ્રકૃતિ અને વિકૃતિ</em></p>
+      </details>
+    </section>
+
+    <!-- Q4: Long answer -->
+    <section class="card">
+      <h2>[Q – 4] સાત–આઠ વાક્યોમાં ઉત્તર લખો</h2>
+      <h3>(1) ‘ભારતીય સંસ્કૃતિની સિદ્ધિ’ પાઠમાંથી ભારતીય સંસ્કૃતિની વિશેષતાઓ લખો</h3>
+      <details open>
+        <summary>ઉત્તર (વિગતે જોવા માટે ક્લિક કરો)</summary>
+        <div class="hr"></div>
+        <p>
+          ભારતીય સંસ્કૃતિની વિશેષતા એ છે કે એ મનુષ્યને એની પશુતામાંથી માનવતા તરફ આગળ લઈ જાય છે — એ સંસ્કૃતિ વર્ધન છે. ભારતમાં સુંદર વિચાર અને આધ્યાત્મિક <strong>વિચાર-સંપદા</strong> છે. ભારતીય સંસ્કૃતિ એ અખંડ જ્ઞાન-પરંપરા જાળવી રાખી છે; ભાષાઓ બદલાય છે છતાં પરંપરા ખંડિત થઈ નથી. સ્થળ-કાળના ભેદો હોવા છતાં એ <strong>એકતાનું દર્શન</strong> કરાવે છે. તુલસીદાસ, નરસિંહ મહેતા, શંકરદેવ, માધવદેવ જેવા અનેક ભક્તજનો દ્વારા આ સંસ્કૃતિ પોષાયેલી છે. વિવિધ પાસાઓ અને અપાર વિવિધતા ધરાવતા ભારતને એક માનતી આ સંસ્કૃતિ જ અમારી <strong>સિદ્ધિ અને વિશેષતા</strong> છે.
+        </p>
+      </details>
+    </section>
+
+    <footer class="muted" style="text-align:center;margin-top:24px">
+      બનાવનાર: <strong>Manish</strong> • તૈયાર: પાઠ 10 સ્વાધ્યાય • © 2025
+    </footer>
+  </div>
 </body>
 </html>
