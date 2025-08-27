@@ -9,12 +9,11 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Baloo+Bhai+2:wght@400;500;600;700&display=swap" rel="stylesheet">
     <!-- Chosen Palette: Oceanic Calm -->
-    <!-- Application Structure Plan: The SPA uses a thematic, single-page layout to guide students through the poem "મરજીવિયા". It starts with a summary for context, followed by an interactive Q&A section with MCQs (radio buttons with feedback) and flashcards (click-to-reveal answers) to encourage active learning. It concludes with a detailed analysis of a key verse. This structure is more engaging and effective for studying than a static text document. -->
+    <!-- Application Structure Plan: The SPA is now structured like a textbook chapter. It begins with interactive questions (MCQs and flashcards) to test knowledge, followed by a detailed analysis of a key verse. The poem summary is intentionally placed at the very end to act as a review or final reference. This flow encourages a proactive, test-based learning approach. -->
     <!-- Visualization & Content Choices: 
-    - Poem Summary: Inform -> Styled Text Block -> Static -> Clear context.
-    - MCQs: Organize/Inform -> Interactive Cards with Radio Buttons -> User clicks to check answer, gets immediate visual feedback (green/red) -> Justification: Active recall is better than passive reading. -> Vanilla JS.
-    - Short/Long Answers: Organize/Inform -> Interactive Flashcards -> User clicks to reveal/hide answer -> Justification: Encourages self-testing. -> Vanilla JS.
-    - Verse Analysis: Inform -> Blockquote + Text -> Static -> Clear presentation of detailed explanation.
+    - MCQs & Flashcards: Organize/Inform -> Interactive Cards with Buttons -> User interaction provides immediate feedback, which is key for a test-like format. -> Justification: Encourages active recall and self-assessment. -> Vanilla JS.
+    - Verse Analysis: Inform -> Blockquote + Text -> Static -> Provides in-depth content for deeper understanding, following the Q&A.
+    - Poem Summary: Inform -> Styled Text Block -> Static -> Serves as a concluding review, reinforcing all concepts at the end of the page.
     - CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
     <style>
         body {
@@ -43,7 +42,7 @@
             transition: max-height 0.5s ease-out;
         }
         .answer-visible {
-            max-height: 500px; /* Adjust as needed */
+            max-height: 500px;
             transition: max-height 0.5s ease-in;
         }
     </style>
@@ -58,25 +57,31 @@
             <p class="text-lg text-gray-600 mt-2">એક સાહસ અને સંઘર્ષની ગાથાનો ઇન્ટરેક્ટિવ અભ્યાસ</p>
         </header>
 
-        <!-- Poem Summary Section -->
-        <section id="summary" class="mb-12 card p-6">
-            <h2 class="text-2xl font-bold text-teal-700 mb-4 border-b-2 border-teal-200 pb-2">🌊 કાવ્યનો સારાંશ</h2>
-            <p class="text-base leading-relaxed">
-                'મરજીવિયા' કાવ્ય એ હિંમત, સાહસ અને દ્રઢ નિશ્ચયની ગાથા છે. તે એવા સાહસિકોની વાત કરે છે જેઓ સમુદ્રના ઊંડાણમાં રહેલા અમૂલ્ય મોતી મેળવવા માટે પોતાના જીવને જોખમમાં મૂકે છે. પ્રિયજનોના વિરોધ અને સમુદ્રના વિકરાળ સ્વરૂપ છતાં, તેઓ અડગ રહીને પોતાના લક્ષ્ય તરફ આગળ વધે છે અને અંતે સફળતા મેળવીને પાછા ફરે છે. આ કાવ્ય જીવનના પડકારોનો સામનો કરવાની પ્રેરણા આપે છે.
-            </p>
-        </section>
-
         <!-- Interactive Q&A Section -->
         <section id="qna" class="mb-12">
             <h2 class="text-3xl font-bold text-center text-blue-800 mb-8">ચાલો, જ્ઞાન ચકાસીએ!</h2>
             
-            <div id="qna-container" class="space-y-8">
-                <!-- Questions will be dynamically inserted here by JavaScript -->
+            <!-- MCQ Section -->
+            <h3 class="text-xl font-bold text-blue-700 mb-4">૧. પ્રશ્નની નીચે આપેલા વિકલ્પોમાંથી સાચો વિકલ્પ પસંદ કરી ખરાની (/) નિશાની કરો :</h3>
+            <div id="mcq-container" class="space-y-8">
+                <!-- MCQs will be inserted here by JavaScript -->
+            </div>
+
+            <!-- Short Answer Section -->
+            <h3 class="text-xl font-bold text-blue-700 mt-12 mb-4">૨. નીચેના પ્રશ્નોના બે-ત્રણ વાક્યોમાં ઉત્તર લખો :</h3>
+            <div id="short-answer-container" class="space-y-8">
+                <!-- Short Answer Flashcards will be inserted here by JavaScript -->
+            </div>
+            
+            <!-- Long Answer Section -->
+            <h3 class="text-xl font-bold text-blue-700 mt-12 mb-4">૩. નીચેના પ્રશ્નોના સાત-આઠ વાક્યમાં ઉત્તર લખો :</h3>
+            <div id="long-answer-container" class="space-y-8">
+                <!-- Long Answer Flashcards will be inserted here by JavaScript -->
             </div>
         </section>
 
         <!-- Poem Excerpt Analysis Section -->
-        <section id="analysis" class="card p-6">
+        <section id="analysis" class="card p-6 mb-12">
             <h2 class="text-2xl font-bold text-teal-700 mb-4 border-b-2 border-teal-200 pb-2">✒️ કાવ્યપંક્તિ વિશ્લેષણ</h2>
             <blockquote class="border-l-4 border-teal-500 pl-4 py-2 my-4 bg-teal-50 rounded-r-lg">
                 <p class="text-lg italic font-semibold">'ખૂંઘાં મરણનાં તમોમય તળો અને પામિયા</p>
@@ -85,6 +90,14 @@
             <h3 class="text-xl font-semibold mt-6 mb-2">સમજૂતી:</h3>
             <p class="text-base leading-relaxed">
                 આ પંક્તિમાં કવિ કહે છે કે મરજીવિયાએ મૃત્યુના ભયાનક અને અંધકારમય તળિયાને પાર કર્યું. "મરણનાં તમોમય તળો" નો અર્થ છે કે તેઓએ એવા ભયાનક અને જોખમી સ્થળોમાં પ્રવેશ કર્યો જ્યાં મૃત્યુનો ભય હતો. છતાં તેઓએ હિંમત ન હારી. આ મુશ્કેલીભર્યા પ્રવાસ પછી, તેઓને અખૂટ મણિ-મોતીનો ખજાનો મળ્યો, જે ક્યારેય ખાલી ન થાય તેવો હતો. તેઓ તે ખજાનો લઈને સુરક્ષિત રીતે બહાર આવ્યા, જે તેમની મહેનત અને સાહસની સફળતા દર્શાવે છે. આ પંક્તિ જીવનમાં પડકારોનો સામનો કરવાથી જ સફળતા મળે છે તે દર્શાવે છે.
+            </p>
+        </section>
+
+        <!-- Poem Summary Section -->
+        <section id="summary" class="card p-6">
+            <h2 class="text-2xl font-bold text-teal-700 mb-4 border-b-2 border-teal-200 pb-2">🌊 કાવ્યનો સારાંશ</h2>
+            <p class="text-base leading-relaxed">
+                'મરજીવિયા' કાવ્ય એ હિંમત, સાહસ અને દ્રઢ નિશ્ચયની ગાથા છે. તે એવા સાહસિકોની વાત કરે છે જેઓ સમુદ્રના ઊંડાણમાં રહેલા અમૂલ્ય મોતી મેળવવા માટે પોતાના જીવને જોખમમાં મૂકે છે. પ્રિયજનોના વિરોધ અને સમુદ્રના વિકરાળ સ્વરૂપ છતાં, તેઓ અડગ રહીને પોતાના લક્ષ્ય તરફ આગળ વધે છે અને અંતે સફળતા મેળવીને પાછા ફરે છે. આ કાવ્ય જીવનના પડકારોનો સામનો કરવાની પ્રેરણા આપે છે.
             </p>
         </section>
 
@@ -139,29 +152,39 @@
                 },
                 {
                     type: 'flashcard',
+                    category: 'short',
                     question: 'મરજીવિયાને પ્રિયજનોએ કઈ શિખામણ દીધી ?',
                     answer: 'મરજીવિયાના પ્રિયજનોએ તેમને કહ્યું કે આ કામ છોડી દો અને જીવન ન વેડફો. તેમણે મરજીવિયાને રડીને અને દલીલો કરીને રોકવાનો પ્રયાસ કર્યો અને કહ્યું કે આવા ભયાનક કામ માટે ક્યાંથી પ્રેરણા મળી?'
                 },
                 {
                     type: 'flashcard',
+                    category: 'short',
                     question: 'સમુદ્ર ભણી જતી વખતનો મરજીવિયાનો ઉત્સાહ તમારા શબ્દોમાં વર્ણવો.',
                     answer: 'મરજીવિયા સમુદ્ર ભણી જતી વખતે ખૂબ જ ઉત્સાહી હતા. તેમના હૃદયમાં અદમ્ય ઉત્સાહ અને અપેક્ષા હતી. તેઓ હસતાં હસતાં અને આશાથી ભરેલાં પગલાં ભરી રહ્યા હતા, જાણે કે કોઈ મોટો ખજાનો તેમની રાહ જોઈ રહ્યો હોય.'
                 },
                 {
                     type: 'flashcard',
+                    category: 'long',
                     question: 'મરજીવિયા કાવ્યમાં વ્યક્ત થતો જીવન માટેનો દૃષ્ટિકોણ તમારા શબ્દોમાં વર્ણવો.',
                     answer: "'મરજીવિયા' કાવ્યમાં જીવન માટેનો દૃષ્ટિકોણ સાહસ અને હિંમતથી ભરેલો છે. કવિ દર્શાવે છે કે જે લોકો જીવનના પડકારોથી ડરતા નથી અને તેનો સામનો કરવા તૈયાર છે, તેઓ જ સાચા અર્થમાં સફળતા અને ખુશી મેળવે છે. આ કાવ્ય આપણને શીખવે છે કે જો આપણે મુશ્કેલીઓરૂપી સમુદ્રમાં ડૂબવાની હિંમત કરીએ તો જ આપણે સફળતાના મોતી પ્રાપ્ત કરી શકીએ છીએ. જીવનમાં નિરાશા અને ભયનો ત્યાગ કરીને ઉત્સાહથી આગળ વધવું એ જ સાચો માર્ગ છે."
                 },
                 {
                     type: 'flashcard',
+                    category: 'long',
                     question: 'મરજીવિયાની સફળતા પાછળનું રહસ્ય તમારા શબ્દોમાં જણાવો.',
                     answer: "મરજીવિયાની સફળતા પાછળનું રહસ્ય તેમની અડગ હિંમત, અદમ્ય ઉત્સાહ અને આશાવાદ છે. જ્યારે તેમના પ્રિયજનોએ તેમને રોકવાનો પ્રયાસ કર્યો અને સમુદ્ર વિકરાળ સ્વરૂપમાં હતો, ત્યારે પણ તેઓ ડગ્યા નહીં. તેમણે ડર્યા વગર સમુદ્રના ઊંડાણમાં પ્રવેશ કર્યો અને મૃત્યુના ભયને પણ પાર કર્યો. તેમની આ સાહસિક વૃત્તિ અને આત્મવિશ્વાસ જ તેમને અખૂટ મણિ-મોતીનો ખજાનો શોધવામાં સફળ બનાવ્યો."
                 }
             ];
 
-            const container = document.getElementById('qna-container');
+            const mcqContainer = document.getElementById('mcq-container');
+            const shortAnswerContainer = document.getElementById('short-answer-container');
+            const longAnswerContainer = document.getElementById('long-answer-container');
 
-            qnaData.forEach((item, index) => {
+            let mcqCounter = 1;
+            let shortAnswerCounter = 1;
+            let longAnswerCounter = 1;
+
+            qnaData.forEach((item) => {
                 const card = document.createElement('div');
                 card.className = 'card p-6';
 
@@ -169,52 +192,62 @@
                     let optionsHtml = '';
                     item.options.forEach((option, optionIndex) => {
                         optionsHtml += `
-                            <label class="block p-3 my-2 border rounded-lg hover:bg-blue-50 cursor-pointer">
-                                <input type="radio" name="mcq-${index}" value="${optionIndex}" class="mr-2">
-                                ${option}
+                            <label class="block p-3 my-2 border rounded-lg hover:bg-blue-50 cursor-pointer flex items-center">
+                                <input type="radio" name="mcq-${mcqCounter}" value="${optionIndex}" class="mr-2">
+                                <span>${option}</span>
                             </label>
                         `;
                     });
 
                     card.innerHTML = `
-                        <h3 class="text-lg font-semibold mb-4">${index + 1}. ${item.question}</h3>
+                        <h3 class="text-lg font-semibold mb-4">${mcqCounter++}. ${item.question}</h3>
                         <div class="options-container">${optionsHtml}</div>
                         <button class="check-mcq-btn btn mt-4 bg-blue-600 text-white font-bold py-2 px-4 rounded-lg w-full sm:w-auto">જવાબ તપાસો</button>
-                        <p class="feedback mt-3 text-sm font-semibold"></p>
                     `;
 
                     const checkBtn = card.querySelector('.check-mcq-btn');
                     checkBtn.addEventListener('click', () => {
-                        const selectedOption = card.querySelector(`input[name="mcq-${index}"]:checked`);
-                        const feedback = card.querySelector('.feedback');
+                        const selectedOption = card.querySelector(`input[name="mcq-${mcqCounter - 1}"]:checked`);
                         const labels = card.querySelectorAll('label');
+                        
+                        labels.forEach(label => {
+                            label.classList.remove('bg-green-100', 'border-green-400', 'bg-red-100', 'border-red-400');
+                            const icon = label.querySelector('.feedback-icon');
+                            if (icon) {
+                                icon.remove();
+                            }
+                        });
 
                         if (!selectedOption) {
-                            feedback.textContent = 'કૃપા કરીને એક વિકલ્પ પસંદ કરો.';
-                            feedback.className = 'feedback mt-3 text-sm font-semibold text-yellow-600';
                             return;
                         }
 
-                        labels.forEach(label => {
-                            label.classList.remove('bg-green-100', 'border-green-400', 'bg-red-100', 'border-red-400');
-                        });
-
                         const selectedValue = parseInt(selectedOption.value);
+                        const selectedLabel = selectedOption.parentElement;
+                        const iconSpan = document.createElement('span');
+                        iconSpan.classList.add('feedback-icon', 'font-bold', 'ml-2', 'text-lg');
+
                         if (selectedValue === item.correctAnswer) {
-                            feedback.textContent = 'સાચો જવાબ! 👍';
-                            feedback.className = 'feedback mt-3 text-sm font-semibold text-green-600';
-                            selectedOption.parentElement.classList.add('bg-green-100', 'border-green-400');
+                            selectedLabel.classList.add('bg-green-100', 'border-green-400');
+                            iconSpan.textContent = '✅';
+                            selectedLabel.appendChild(iconSpan);
                         } else {
-                            feedback.textContent = 'ખોટો જવાબ. ફરી પ્રયાસ કરો.';
-                            feedback.className = 'feedback mt-3 text-sm font-semibold text-red-600';
-                            selectedOption.parentElement.classList.add('bg-red-100', 'border-red-400');
-                            labels[item.correctAnswer].classList.add('bg-green-100', 'border-green-400');
+                            selectedLabel.classList.add('bg-red-100', 'border-red-400');
+                            const correctLabel = labels[item.correctAnswer];
+                            correctLabel.classList.add('bg-green-100', 'border-green-400');
+                            const correctIcon = document.createElement('span');
+                            correctIcon.classList.add('feedback-icon', 'font-bold', 'ml-2', 'text-lg');
+                            correctIcon.textContent = '✅';
+                            correctLabel.appendChild(correctIcon);
+                            iconSpan.textContent = '❌';
+                            selectedLabel.appendChild(iconSpan);
                         }
                     });
-
+                    mcqContainer.appendChild(card);
                 } else if (item.type === 'flashcard') {
+                    const counter = item.category === 'short' ? shortAnswerCounter++ : longAnswerCounter++;
                     card.innerHTML = `
-                        <h3 class="text-lg font-semibold mb-4">${index + 1}. ${item.question}</h3>
+                        <h3 class="text-lg font-semibold mb-4">${counter}. ${item.question}</h3>
                         <button class="toggle-answer-btn btn bg-teal-600 text-white font-bold py-2 px-4 rounded-lg w-full sm:w-auto">જવાબ જુઓ</button>
                         <div class="answer-container answer-hidden mt-4 p-4 bg-gray-50 rounded-lg border">
                             <p>${item.answer}</p>
@@ -232,8 +265,13 @@
                             toggleBtn.textContent = 'જવાબ જુઓ';
                         }
                     });
+                    
+                    if (item.category === 'short') {
+                        shortAnswerContainer.appendChild(card);
+                    } else {
+                        longAnswerContainer.appendChild(card);
+                    }
                 }
-                container.appendChild(card);
             });
         });
     </script>
