@@ -1,87 +1,309 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="gu">
+
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>સ્વાધ્યાય 1.1 </title>
-  <style>
-    body{font-family: 'Noto Sans Gujarati', sans-serif; padding:20px; line-height:1.6; max-width:900px; margin:auto}
-    h1{font-size:1.6rem}
-    ol.questions{counter-reset: q; padding-left:0}
-    ol.questions > li{list-style:none; margin:18px 0; padding:14px; border-radius:8px; background:#fbfbff}
-    ol.questions > li::before{counter-increment: q; content: "પ્રશ્ન " counter(q) "."; font-weight:700; display:block; margin-bottom:8px}
-    .question-text{font-weight:600}
-    .answer{background:#f5f7fb; padding:12px; border-radius:6px; margin-top:10px}
-    .ans-title{font-weight:700}
-    code{background:#eef;padding:2px 6px;border-radius:4px}
-    .note{font-size:0.95rem; color:#333; margin-top:18px}
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ધોરણ 9 ગણિત - સંખ્યા પદ્ધતિ</title>
+    <style>
+        <style>body {
+            font-family: "Roboto Mono", "Courier New", monospace;
+            margin: 0;
+            padding: 15px;
+            background: #f0f4f8;
+            color: #1a1a1a;
+        }
+        
+        h1 {
+            text-align: center;
+            color: #0d3b66;
+            margin-bottom: 25px;
+            font-size: 28px;
+            font-weight: 700;
+            text-shadow: 1px 1px 2px #ccc;
+        }
+        
+        .section {
+            background: #ffffff;
+            border-left: 5px solid #0d3b66;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            overflow: hidden;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s;
+        }
+        
+        .section:hover {
+            transform: translateY(-2px);
+        }
+        
+        .section-title {
+            background: #0d3b66;
+            color: #ffffff;
+            padding: 14px 20px;
+            font-size: 20px;
+            font-weight: 600;
+            cursor: pointer;
+            border-bottom: 1px solid #ccc;
+        }
+        
+        .qa {
+            border-top: 1px solid #e0e0e0;
+        }
+        
+        .question {
+            padding: 14px 20px;
+            background: #eef5fb;
+            font-weight: 600;
+            cursor: pointer;
+            font-size: 16px;
+            border-left: 4px solid #3498db;
+            transition: background 0.2s;
+        }
+        
+        .question:hover {
+            background: #d0e7ff;
+        }
+        
+        .answer {
+            padding: 14px 24px;
+            display: none;
+            background: #fdfdfd;
+            font-size: 15px;
+            line-height: 1.7;
+            border-left: 4px solid #2a9df4;
+            color: #0d1b2a;
+        }
+        /* For fractions & powers styling (math style) */
+        
+        .answer sup {
+            font-size: 0.8em;
+            vertical-align: super;
+        }
+        
+        .answer sub {
+            font-size: 0.8em;
+            vertical-align: sub;
+        }
+        
+        .answer .frac {
+            display: inline-block;
+            vertical-align: middle;
+            text-align: center;
+        }
+        
+        .answer .frac span {
+            display: block;
+            padding: 0 2px;
+        }
+        
+        .answer .frac .top {
+            border-bottom: 1px solid #000;
+        }
+        
+        @media screen and (max-width:600px) {
+            h1 {
+                font-size: 22px;
+            }
+            .section-title {
+                font-size: 18px;
+            }
+            .question {
+                font-size: 15px;
+            }
+            .answer {
+                font-size: 14px;
+                padding-left: 20px;
+            }
+        }
+    </style>
+
 </head>
+
 <body>
-  <h1>સ્વાધ્યાય 1.1 </h1>
 
-  <ol class="questions">
-    <li>
-      <div class="question-text">શૂન્ય એ એક સંમેય સંખ્યા છે ? શું તમે તેને <em>p</em> પૂર્ણાંક તેમજ <em>q</em> શૂન્યેતર પૂર્ણાંક હોય તેવા સ્વરૂપમાં લખી શકો ?</div>
-      <div class="answer">
-        <div class="ans-title">ઉત્તર :</div>
-        હા, શૂન્ય (0) એક સંમેય સંખ્યા છે. સંમેય સંખ્યા આ રીતે લખી શકાય: <code>p/q</code> જ્યાં <code>p</code> અને <code>q</code> પૂર્ણાંક છે અને <code>q ≠ 0</code>. ઉદાહરણ તરીકે: <code>0 = 0/1</code> (અહીં <code>p = 0</code>, <code>q = 1</code>) અથવા <code>0 = 0/5</code>.
-      </div>
-    </li>
+    <h1>ધોરણ 9 ગણિત - સંખ્યા પદ્ધતિ</h1>
 
-    <li>
-      <div class="question-text">3 અને 4 વચ્ચેની છ સંમેય સંખ્યાઓ શોધો.</div>
-      <div class="answer">
-        <div class="ans-title">ઉત્તર :</div>
-        એક સરળ વિકલ્પ છે દશાંસ ઉપયોગ કરીને—નમૂનાઓ нижેથી:
-        <ul>
-          <li><code>31/10 = 3.1</code></li>
-          <li><code>32/10 = 3.2</code></li>
-          <li><code>33/10 = 3.3</code></li>
-          <li><code>34/10 = 3.4</code></li>
-          <li><code>35/10 = 3.5</code></li>
-          <li><code>36/10 = 3.6</code></li>
-        </ul>
-        આ બધી સંખ્યાઓ 3 અને 4 વચ્ચે છે અને દરેકને <code>p/q</code> સ્વરૂપમાં લખી શકાય છે.
-      </div>
-    </li>
+    <!-- સ્વાધ્યાય 1.1 -->
+    <div class="section">
+        <div class="section-title" onclick="toggleSection(this)">સ્વાધ્યાય 1.1</div>
 
-    <li>
-      <div class="question-text">3/5 અને 3/4 વચ્ચેની પાંચ સંમેય સંખ્યાઓ શોધો.</div>
-      <div class="answer">
-        <div class="ans-title">ઉત્તર :</div>
-        નોંધ: પ્રશ્નમાં થોડું ભાગ ટાઇપોએ રાખ્યું હોઈ શકે છે; અમે અહીં 3/5 (0.6) અને 3/4 (0.75) વચ્ચેની સંખ્યા ગણાવી છે.
-        ઉદાહરણરૂપ પગલાં અને પાંચ સંમેય સંખ્યાઓ:
-        <ul>
-          <li><code>61/100 = 0.61</code></li>
-          <li><code>63/100 = 0.63</code></li>
-          <li><code>66/100 = 0.66</code></li>
-          <li><code>69/100 = 0.69</code></li>
-          <li><code>72/100 = 0.72</code></li>
-        </ul>
-        આ બધાં 0.6થી 0.75 વચ્ચે છે અને પ્રત્યેકને <code>p/q</code> સ્વરૂપમાં લખી શકાય છે.
-      </div>
-    </li>
+        <div class="qa">
+            <div class="question" onclick="toggleAnswer(this)">પ્રશ્ન 1: શું શૂન્ય એક સંમેય સંખ્યા છે?</div>
+            <div class="answer">ઉકેલ: હા, શૂન્ય એક સંમેય સંખ્યા છે. તે p/q સ્વરૂપે લખી શકાય છે, જ્યાં p અને q પૂર્ણાંક છે અને q≠0 છે. ઉદાહરણ: 0/1=0/2=0/3=0</div>
+        </div>
 
-    <li>
-      <div class="question-text">નીચેનાં વિધાન સત્ય છે કે અસત્ય ? કારણ સહિત ઉપસ્થિત કરો:
-        <ol type="i">
-          <li>દરેક પ્રાકૃતિક સંખ્યા એ પૂર્ણ સંખ્યા છે.</li>
-          <li>દરેક પૂર્ણાંક એ પૂર્ણ સંખ્યા છે.</li>
-          <li>દરેક સંમેય સંખ્યા એ પૂર્ણ સંખ્યા છે.</li>
-        </ol>
-      </div>
-      <div class="answer">
-        <div class="ans-title">ઉત્તર :</div>
-        <p><strong>(i) સત્ય.</strong> કારણ: પ્રાકૃતિક સંખ્યાઓ (1,2,3,...) સંપૂર્ણપણે પૂર્ણાંક શ્રેણીના ભાગ છે. એટલે દરેક પ્રાકૃતિક સંખ્યા પૂર્ણાંક (integer) પણ ગણાય છે.</p>
+        <div class="qa">
+            <div class="question" onclick="toggleAnswer(this)">પ્રશ્ન 2: 3 અને 4 વચ્ચેની છ સંમેય સંખ્યાઓ શોધો.</div>
+            <div class="answer">
+                પદ્ધતિ 1 (સરેરાશ પદ્ધતિ): (3+4)/2 = 7/2. <br> પદ્ધતિ 2 (સંમૂલ્ય અપૂર્ણાંક પદ્ધતિ): n=6, n+1=7<br> 3=21/7, 4=28/7<br> વચ્ચેની સંખ્યાઓ: 22/7, 23/7, 24/7, 25/7, 26/7, 27/7
+            </div>
+        </div>
 
-        <p><strong>(ii) અસત્ય.</strong> કારણ: પૂર્ણાંક (integer)માં નકારાત્મક અસંખ્યાઓ પણ હોય છે (-3,-2,-1...). જ્યારે સામાન્ય રીતે 'પૂર્ણ સંખ્યા' (whole number) નો અર્થ 0,1,2,3,... થાય છે (નકારાત્મકને છોડીએ). ઉદાહરણ: <code>-1</code> એક પૂર્ણાંક છે પણ પૂર્ણ સંખ્યા નથી. તેથી વિધાન ખોટું છે.</p>
+        <div class="qa">
+            <div class="question" onclick="toggleAnswer(this)">પ્રશ્ન 3: 3/5 અને 4/5 વચ્ચે પાંચ સંમેય સંખ્યાઓ શોધો.</div>
+            <div class="answer">
+                n=5 → n+1=6<br> 3/5 × 6/6 = 18/30, 4/5 × 6/6 = 24/30<br> વચ્ચેની સંખ્યાઓ: 19/30, 20/30, 21/30, 22/30, 23/30
+            </div>
+        </div>
 
-        <p><strong>(iii) અસત્ય.</strong> કારણ: સંમેય સંખ્યાઓ એ એવી સંખ્યાઓ છે જેનું સ્વરૂપ <code>p/q</code> હોય (p અને q પૂર્ણાંક અને q ≠ 0). ઘણાં સંમેય સંખ્યાઓ પૂર્ણ સંખ્યાઓ નથી. ઉદાહરણ: <code>1/2</code> અથવા <code>3/2</code> પૂર્ણ સંખ્યા નથી. એટલે વિધાન ખોટું છે.</p>
-      </div>
-    </li>
-  </ol>
+        <div class="qa">
+            <div class="question" onclick="toggleAnswer(this)">પ્રશ્ન 4: સાચા/ખોટા વિધાનો</div>
+            <div class="answer">
+                - દરેક પ્રાકૃતિક સંખ્યા એ પૂર્ણ સંખ્યા છે: સાચું<br> - દરેક પૂર્ણાંક સંખ્યા એ પૂર્ણ સંખ્યા છે: ખોટું<br> - દરેક સંમેય સંખ્યા એ પૂર્ણ સંખ્યા છે: ખોટું
+            </div>
+        </div>
+    </div>
 
-  <p class="note"><em>ટિપ:</em> વચ્ચેની સંખ્યાઓ માટે (a+b)/2, અથવા સરલ દશાંસ/સ્ફટિક રૂપો લઇને ઘણા ઉદાહરણ બનાવશો. જો તમે ચાહો તો હું આ ફાઈલને PDF માં ફેરવી આપી દઈશ અથવા વધુ પ્રશ્ન-ઉતરી ઉમેરું.</p>
+    <!-- સ્વાધ્યાય 1.2 -->
+    <div class="section">
+        <div class="section-title" onclick="toggleSection(this)">સ્વાધ્યાય 1.2</div>
+
+        <div class="qa">
+            <div class="question" onclick="toggleAnswer(this)">પ્રશ્ન 1: સાચા/ખોટા વિધાનો</div>
+            <div class="answer">
+                - દરેક અસંમેય સંખ્યા એ વાસ્તવિક સંખ્યા છે: સાચું<br> - સંખ્યા રેખા પર દરેક બિંદુ કોઈ પ્રાકૃતિક સંખ્યાને દર્શાવે છે: ખોટું<br> - દરેક વાસ્તવિક સંખ્યા એ અસંમેય સંખ્યા છે: ખોટું
+            </div>
+        </div>
+
+        <div class="qa">
+            <div class="question" onclick="toggleAnswer(this)">પ્રશ્ન 2: શું દરેક ધન પૂર્ણાંકનું વર્ગમૂળ અસંમેય હોય છે?</div>
+            <div class="answer">ઉકેલ: ના. ઉદાહરણ: √4=2, √9=3 (સંમેય)</div>
+        </div>
+
+        <div class="qa">
+            <div class="question" onclick="toggleAnswer(this)">પ્રશ્ન 3: સંખ્યા રેખા પર 5 કેવી રીતે દર્શાવી શકાય?</div>
+            <div class="answer">
+                પાયથાગોરસ પ્રમેયનો ઉપયોગ કરીને લંબ રેખાખંડો ખેચી સંખ્યા 5 દર્શાવી શકાય છે.
+            </div>
+        </div>
+
+    </div>
+
+    <!-- સ્વાધ્યાય 1.3 -->
+    <div class="section">
+        <div class="section-title" onclick="toggleSection(this)">સ્વાધ્યાય 1.3</div>
+
+        <div class="qa">
+            <div class="question" onclick="toggleAnswer(this)">પ્રશ્ન 1: દશાંશ સ્વરૂપ અને દશાંશ વિસ્તરણનો પ્રકાર</div>
+            <div class="answer">
+                100/36=0.36 (Terminating)<br> 11/1=0.09 (Non-terminating repeating)<br> 48/1=4.125 (Terminating)<br> 13/3=0.230769 (Non-terminating repeating)<br> 11/2=0.18 (Non-terminating repeating)<br> 400/329=0.8225 (Terminating)
+            </div>
+        </div>
+
+        <div class="qa">
+            <div class="question" onclick="toggleAnswer(this)">પ્રશ્ન 4: 0.99999... ને p/q સ્વરૂપમાં દર્શાવો</div>
+            <div class="answer">
+                x=0.99999... → 10x−x=9x=9 → x=1
+            </div>
+        </div>
+
+        <div class="qa">
+            <div class="question" onclick="toggleAnswer(this)">પ્રશ્ન 7: ત્રણ અનંત અનાવર્ત સંખ્યાઓ</div>
+            <div class="answer">
+                0.010010001..., 0.21021002100021..., 0.32032003200032...
+            </div>
+        </div>
+
+    </div>
+    <!-- સ્વાધ્યાય 1.4 -->
+    <div class="section">
+        <div class="section-title" onclick="toggleSection(this)">સ્વાધ્યાય 1.4</div>
+
+        <div class="qa">
+            <div class="question" onclick="toggleAnswer(this)">પ્રશ્ન 1: સંખ્યા રેખા પર 3.765 નું નિરૂપણ</div>
+            <div class="answer">
+                પગલું 1: 3.765 એ 3 અને 4 ની વચ્ચે છે → 3.7 અને 3.8 વચ્ચે શોધો.<br> પગલું 2: 3.7 અને 3.8 વચ્ચેના ભાગને 10 ભાગોમાં વહેંચો → 3.76 અને 3.77 વચ્ચે શોધો.<br> પગલું 3: 3.76 અને 3.77 વચ્ચેના ભાગને 10 ભાગોમાં વહેંચો → ચોક્કસ બિંદુ 3.765
+            </div>
+        </div>
+
+        <div class="qa">
+            <div class="question" onclick="toggleAnswer(this)">પ્રશ્ન 2: સંખ્યા રેખા પર 4.2626 નું નિરૂપણ (4 દશાંશ સ્થાન સુધી)</div>
+            <div class="answer">
+                પગલું 1: 4.2626 એ 4 અને 5 ની વચ્ચે → 4.2 અને 4.3 વચ્ચે શોધો.<br> પગલું 2: 4.2 અને 4.3 વચ્ચેના ભાગને 10 ભાગોમાં વહેંચો → 4.26 અને 4.27 વચ્ચે શોધો.<br> પગલું 3: 4.26 અને 4.27 વચ્ચેના ભાગને 10 ભાગોમાં વહેંચો → 4.262 અને 4.263 વચ્ચે શોધો.<br>                પગલું 4: 4.262 અને 4.263 વચ્ચેના ભાગને 10 ભાગોમાં વહેંચો → ચોક્કસ બિંદુ 4.2626
+            </div>
+        </div>
+
+    </div>
+    <!-- સ્વાધ્યાય 1.5 -->
+    <div class="section">
+        <div class="section-title" onclick="toggleSection(this)">સ્વાધ્યાય 1.5</div>
+
+        <div class="qa">
+            <div class="question" onclick="toggleAnswer(this)">પ્રશ્ન 1: સંમેય કે અસંમેય સંખ્યાઓનું વર્ગીકરણ</div>
+            <div class="answer">
+                (i) 2 − √5 = અસંમેય સંખ્યા<br> (ii) (3 + √23) − √23 = 3 → સંમેય સંખ્યા<br> (iii) 7/√2 → p/q સ્વરૂપમાં → સંમેય સંખ્યા<br> (iv) 2/√1 → અસંમેય સંખ્યા<br> (v) 2π → અસંમેય સંખ્યા
+            </div>
+        </div>
+
+        <div class="qa">
+            <div class="question" onclick="toggleAnswer(this)">પ્રશ્ન 2: નીચેના દરેક પદાવલીનું સાદું રૂપ આપો</div>
+            <div class="answer">
+                (i) (3+√3)(2+√2) = 6 + 3√2 + 2√3 + 6<br> (ii) (3+√3)(3−√3) = 9 − 3 = 6<br> (iii) (5+√2)² = 5² + 2×5×√2 + (√2)² = 25 + 10√2 + 2 = 27 + 10√2<br> (iv) (5−√2)(5+√2) = 5² − (√2)² = 25 − 2 = 23
+            </div>
+        </div>
+
+        <div class="qa">
+            <div class="question" onclick="toggleAnswer(this)">પ્રશ્ન 3: π અને વર્તુળના પરિઘ અને વ્યાસનું વિરોધાભાસ</div>
+            <div class="answer">
+                કોઈ વિરોધાભાસ નથી. માપપટ્ટી કે અન્ય સાધન વડે c અને d માપવામાં માત્ર અંદાજિત મૂલ્ય મળે છે. c અથવા d (અથવા બંને) અસંમેય હોઈ શકે અને π = d/c નો ગુણોત્તર અસંમેય જ રહેશે.
+            </div>
+        </div>
+
+        <div class="qa">
+            <div class="question" onclick="toggleAnswer(this)">પ્રશ્ન 4: સંખ્યા રેખા પર 9.3 નું નિરૂપણ</div>
+            <div class="answer">
+                A થી શરૂ → AB = 9.3<br> B થી 1 એકમ → C<br> AC નો લંબ દ્વિભાજક → O<br> O કેન્દ્ર, OC ત્રિજ્યા → અર્ધવર્તુળ<br> B કેન્દ્ર, BD ત્રિજ્યા → P → 9.3 દર્શાવે છે
+            </div>
+        </div>
+
+        <div class="qa">
+            <div class="question" onclick="toggleAnswer(this)">પ્રશ્ન 5: નીચેના છેદનું સંમેયીકરણ</div>
+            <div class="answer">
+                (i) 7/17 × 7/7 = 7²/7<br> (ii) (7−6/1) × (7+6)/(7+6) = 7−6/7+6 = 7 + 6<br> (iii) (5 + 2/1) × (5−2)/(5−2) = 5−2/5−2 = 3/5 − 2<br> (iv) (7−2/1) × (7+2)/(7+2) = 7²−4/7+2 = 3/7 + 2
+            </div>
+        </div>
+    </div>
+    <!-- સ્વાધ્યાય 1.6 -->
+    <div class="section">
+        <div class="section-title" onclick="toggleSection(this)">સ્વાધ્યાય 1.6</div>
+
+        <div class="qa">
+            <div class="question" onclick="toggleAnswer(this)">પ્રશ્ન 1: સાધો</div>
+            <div class="answer">
+                (i) 64^(1/2) = (8²)^(1/2) = 8²×1/2 = 8¹ = 8<br> (ii) 32^(1/5) = (2^5)^(1/5) = 2^5×1/5 = 2¹ = 2<br> (iii) 125^(1/3) = (5³)^(1/3) = 5³×1/3 = 5¹ = 5
+            </div>
+        </div>
+
+        <div class="qa">
+            <div class="question" onclick="toggleAnswer(this)">પ્રશ્ન 2: સાધો</div>
+            <div class="answer">
+                (i) 9^(3/2) = (3²)^(3/2) = 3²×3/2 = 3³ = 27<br> (ii) 32^(2/5) = (2^5)^(2/5) = 2^5×2/5 = 2² = 4<br> (iii) 16^(3/4) = (2⁴)^(3/4) = 2⁴×3/4 = 2³ = 8<br> (iv) 125^(-1/3) = (5³)^(-1/3) = 5³×-1/3 = 5^-1 = 1/5
+            </div>
+        </div>
+
+        <div class="qa">
+            <div class="question" onclick="toggleAnswer(this)">પ્રશ્ન 3: સાધો</div>
+            <div class="answer">
+                (i) 2²³ ⋅ 2¹⁵ = 2²³+¹⁵ = 2³⁸<br> (ii) (13³)⁷ = 13³×7 = 13²¹<br> (iii) 11¹² ÷ 11¹⁴ = 11¹²−¹⁴ = 11⁻² = 1/11² = 1/121<br> (iv) 7¹² ⋅ 8¹² = (7×8)¹² = 56¹²
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+        function toggleAnswer(el) {
+            const ans = el.nextElementSibling;
+            ans.style.display = ans.style.display === "block" ? "none" : "block";
+        }
+
+        function toggleSection(el) {
+            const sec = el.parentElement;
+            const answers = sec.querySelectorAll(".answer");
+            answers.forEach(a => a.style.display = "none");
+        }
+    </script>
+
 </body>
+
 </html>
