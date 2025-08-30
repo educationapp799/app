@@ -1,55 +1,392 @@
 <!DOCTYPE html>
 <html lang="gu">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Coming Soon</title>
+    <title>ધોરણ 9 ગણિત - બહુપદ (Polynomials)</title>
     <style>
         body {
-            font-family: 'Arial', sans-serif;
-            text-align: center;
-            background: linear-gradient(135deg, #ff7eb3, #ff758c, #ff7eb3, #ff758c);
-            background-size: 400% 400%;
-            animation: gradientBG 6s ease infinite;
-            height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            color: white;
-        }
-
-        @keyframes gradientBG {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
-        }
-
-        .coming-soon {
-            background: rgba(255, 255, 255, 0.2);
-            padding: 40px;
-            border-radius: 10px;
-            backdrop-filter: blur(10px);
-            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
-            display: inline-block;
-        }
-
-        h1 {
-            font-size: 36px;
+            font-family: "Roboto Mono", "Courier New", monospace;
             margin: 0;
+            padding: 15px;
+            background: #f0f4f8;
+            color: #1a1a1a;
         }
-
-        p {
-            font-size: 18px;
-            margin-top: 10px;
+        
+        h1 {
+            text-align: center;
+            color: #0d3b66;
+            margin-bottom: 25px;
+            font-size: 28px;
+            font-weight: 700;
+            text-shadow: 1px 1px 2px #ccc;
+        }
+        
+        .section {
+            background: #ffffff;
+            border-left: 5px solid #0d3b66;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            overflow: hidden;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s;
+        }
+        
+        .section:hover {
+            transform: translateY(-2px);
+        }
+        
+        .section-title {
+            background: #0d3b66;
+            color: #ffffff;
+            padding: 14px 20px;
+            font-size: 20px;
+            font-weight: 600;
+            cursor: pointer;
+            border-bottom: 1px solid #ccc;
+        }
+        
+        .qa {
+            border-top: 1px solid #e0e0e0;
+        }
+        
+        .question {
+            padding: 14px 20px;
+            background: #eef5fb;
+            font-weight: 600;
+            cursor: pointer;
+            font-size: 16px;
+            border-left: 4px solid #3498db;
+            transition: background 0.2s;
+        }
+        
+        .question:hover {
+            background: #d0e7ff;
+        }
+        
+        .answer {
+            padding: 14px 24px;
+            display: none;
+            background: #fdfdfd;
+            font-size: 15px;
+            line-height: 1.7;
+            border-left: 4px solid #2a9df4;
+            color: #0d1b2a;
+        }
+        
+        sup {
+            font-size: 0.8em;
+            vertical-align: super;
+        }
+        
+        sub {
+            font-size: 0.8em;
+            vertical-align: sub;
+        }
+        
+        @media screen and (max-width:600px) {
+            h1 {
+                font-size: 22px;
+            }
+            .section-title {
+                font-size: 18px;
+            }
+            .question {
+                font-size: 15px;
+            }
+            .answer {
+                font-size: 14px;
+                padding-left: 20px;
+            }
         }
     </style>
 </head>
+
 <body>
 
-    <div class="coming-soon">
-        <h1>📢 Coming Soon...</h1>
-        <p>નવું પેજ ટૂંક સમયમાં ઉપલબ્ધ થશે.</p>
+    <h1>ધોરણ 9 ગણિત - બહુપદ (Polynomials)</h1>
+
+    <!-- એક્સરસાઇઝ 2.1 -->
+    <div class="section">
+        <div class="section-title" onclick="toggleSection(this)">એક્સરસાઇઝ 2.1</div>
+
+        <div class="qa">
+            <div class="question" onclick="toggleAnswer(this)">પ્રશ્ન 1: કયા એક ચલમાં બહુપદ છે અને કયા નથી? કારણ આપો.</div>
+            <div class="answer">
+                (i) 4x²−3x+7 → હા, એક ચલ x માં બહુપદ, બધા ઘાત non-negative integers<br> (ii) y²+2 → હા, y માં બહુપદ<br> (iii) 3t+t³ → ના, t ના ઘાત non-integer<br> (iv) y−2+2y → ના, y−2 માં negative exponent<br> (v) x¹⁰+y³+t⁵⁰ → હા, બધા ઘાત non-negative
+                integer
+            </div>
+        </div>
+
+        <div class="qa">
+            <div class="question" onclick="toggleAnswer(this)">પ્રશ્ન 2: દરેકમાં x² નો ગુણાંક લખો</div>
+            <div class="answer">
+                (i) 2+x²+x → x² નો ગુણાંક 1<br> (ii) 2−x²+x³ → x² નો ગુણાંક −1<br> (iii) πx²+x → x² નો ગુણાંક π<br> (iv) 2x−1 → x² પદ નથી → ગુણાંક 0
+            </div>
+        </div>
+
+        <div class="qa">
+            <div class="question" onclick="toggleAnswer(this)">પ્રશ્ન 3: ડિગ્રી 35 ધરાવતું binomial અને ડિગ્રી 100 ધરાવતું monomial આપો</div>
+            <div class="answer">
+                Binomial (ડિગ્રી 35): 5x³⁵ + 9<br> Monomial (ડિગ્રી 100): 7x¹⁰⁰
+            </div>
+        </div>
+
+        <div class="qa">
+            <div class="question" onclick="toggleAnswer(this)">પ્રશ્ન 4: નીચેના બહુપદોની ડિગ્રી લખો</div>
+            <div class="answer">
+                (i) 5x³ + 4x² +7 → 3<br> (ii) 4−y² → 2<br> (iii) 5t−7 → 1<br> (iv) 3 → 0
+            </div>
+        </div>
+
+        <div class="qa">
+            <div class="question" onclick="toggleAnswer(this)">પ્રશ્ન 5: linear / quadratic / cubic પ્રમાણે વર્ગીકૃત કરો</div>
+            <div class="answer">
+                (i) x²+x → Quadratic<br> (ii) x−x³ → Cubic<br> (iii) y+y²+4 → Quadratic<br> (iv) 1+x → Linear<br> (v) 3t → Linear<br> (vi) r² → Quadratic<br> (vii) 7x³ → Cubic
+            </div>
+        </div>
+
     </div>
 
+
+    <div class="section">
+        <div class="section-title" onclick="toggleSection(this)">એક્સરસાઇઝ 2.2</div>
+
+        <div class="qa">
+            <div class="question" onclick="toggleAnswer(this)">પ્રશ્ન 1: p(x)=5x–4x²+3, (i) x=0, (ii) x=−1, (iii) x=2 પર કિંમત શોધો</div>
+            <div class="answer">
+                (i) p(0) = 5(0) − 4(0)² + 3 = 3<br> (ii) p(−1) = 5(−1) − 4(1) + 3 = −6<br> (iii) p(2) = 5(2) − 4(4) + 3 = −3
+            </div>
+        </div>
+
+        <div class="qa">
+            <div class="question" onclick="toggleAnswer(this)">પ્રશ્ન 2: p(0), p(1), p(2) શોધો</div>
+            <div class="answer">
+                (i) p(y) = y² − y + 1 → p(0)=1, p(1)=1, p(2)=3<br> (ii) p(t) = 2 + t + 2t² − t³ → p(0)=2, p(1)=4, p(2)=4<br> (iii) p(x) = x³ → p(0)=0, p(1)=1, p(2)=8<br> (iv) p(x) = (x−1)(x+1) → p(0)=−1, p(1)=0, p(2)=3
+            </div>
+        </div>
+
+        <div class="qa">
+            <div class="question" onclick="toggleAnswer(this)">પ્રશ્ન 3: શૂન્ય પદો ચકાસો</div>
+            <div class="answer">
+                (i) p(x)=3x+1, x=−1/3 → p(−1/3)=0 ✔<br> (ii) p(x)=5x−π, x=π/5 → p(π/5)=0 ✔<br> (iii) p(x)=x²−1, x=±1 → p(1)=0, p(−1)=0 ✔<br> (iv) p(x)=(x+1)(x−2), x=−1,2 → p(−1)=0, p(2)=0 ✔<br> (v) p(x)=x², x=0 → p(0)=0 ✔<br> (vi) p(x)=lx+m, x=−m/l →
+                p(−m/l)=0 ✔<br> (vii) p(x)=3x²−1, x=±1/3 → p(1/3)=0, p(−1/3)=0 ✔<br> (viii) p(x)=2x+1, x=1/2 → p(1/2)=2 ≠0 ✘
+            </div>
+        </div>
+
+        <div class="qa">
+            <div class="question" onclick="toggleAnswer(this)">પ્રશ્ન 4: દરેક કિસ્સામાં બહુપદના શૂન્ય શોધો</div>
+            <div class="answer">
+                (i) p(x)=x+5 ⇒ x=−5<br> (ii) p(x)=x−5 ⇒ x=5<br> (iii) p(x)=2x+5 ⇒ x=−5/2<br> (iv) p(x)=3x−2 ⇒ x=2/3<br> (v) p(x)=3x ⇒ x=0<br> (vi) p(x)=ax, a≠0 ⇒ x=0<br> (vii) p(x)=cx+d, c≠0 ⇒ x=−d/c
+            </div>
+        </div>
+
+    </div>
+    <div class="section">
+        <div class="section-title" onclick="toggleSection(this)">એક્સરસાઇઝ 2.3</div>
+
+        <div class="qa">
+            <div class="question" onclick="toggleAnswer(this)">પ્રશ્ન 1: p(x)=x³+3x²+3x+1, Avashesh(x+1, x−12, x, x+π, 5+2x)</div>
+            <div class="answer">
+                x+1 → x=−1 → p(−1)=0 ∴ અવશેષ = 0<br> x−12 → x=12 → p(12)=12³+3·12²+3·12+1=1728+432+36+1=2197 ∴ અવશેષ = 2197<br> x → x=0 → p(0)=1 ∴ અવશેષ = 1<br> x+π → x=−π → p(−π)=−π³+3π²−3π+1 ∴ અવશેષ = −π³+3π²−3π+1<br> 5+2x → x=−5/2 → p(−5/2) = (−125/8)+75/4−15/2+1
+                = −27/8 ∴ અવશેષ = −27/8
+            </div>
+        </div>
+
+        <div class="qa">
+            <div class="question" onclick="toggleAnswer(this)">પ્રશ્ન 2: p(x)=x³−ax²+6x−a, Avashesh(x−a)</div>
+            <div class="answer">
+                x−a → x=a → p(a)=a³−a·a²+6a−a=a³−a³+6a−a=5a ∴ અવશેષ = 5a
+            </div>
+        </div>
+
+        <div class="qa">
+            <div class="question" onclick="toggleAnswer(this)">પ્રશ્ન 3: 7+3x, 3x³+7x ગુણાકારક છે કે નહીં?</div>
+            <div class="answer">
+                7+3x → x=−7/3<br> p(x)=3x³+7x → p(−7/3)=3(−343/27)+7(−7/3)=−1029/27−441/27=−1470/27 ≠0<br> ∴ 7+3x ગુણાકારક નથી
+            </div>
+        </div>
+
+    </div>
+    <div class="section">
+        <div class="section-title" onclick="toggleSection(this)">એક્સરસાઇઝ 2.4</div>
+
+        <div class="qa">
+            <div class="question" onclick="toggleAnswer(this)">પ્રશ્ન 1: કયામાં x + 1 ગુણાકાર છે?</div>
+            <div class="answer">
+                1) x³+x²+x+1 → p(−1)=−1+1−1+1=0 ✔ x+1 factor છે<br> 2) x⁴+x³+x²+x+1 → p(−1)=1−1+1−1+1=1 ✘ x+1 factor નથી<br> 3) x⁴+3x³+3x²+x+1 → p(−1)=1−3+3−1+1=1 ✘ x+1 factor નથી<br> 4) x³−x²−(2+2)x+2 → p(−1)=−1−1+4+2=4 ✘ x+1 factor નથી
+            </div>
+        </div>
+
+        <div class="qa">
+            <div class="question" onclick="toggleAnswer(this)">પ્રશ્ન 2: Factor theorem થી તપાસો કે g(x) p(x) નો factor છે કે નહીં</div>
+            <div class="answer">
+                1) p(x)=2x³+x²−2x−1, g(x)=x+1 → p(−1)=−2+1+2−1=0 ✔ x+1 factor છે<br> 2) p(x)=x³+3x²+3x+1, g(x)=x+2 → p(−2)=−8+12−6+1=−1 ✘ x+2 factor નથી<br> 3) p(x)=x³−4x²+x+6, g(x)=x−3 → p(3)=27−36+3+6=0 ✔ x−3 factor છે
+            </div>
+        </div>
+
+        <div class="qa">
+            <div class="question" onclick="toggleAnswer(this)">પ્રશ્ન 3: x−1 જો factor હોય તો k ની કિંમત શોધો</div>
+            <div class="answer">
+                1) p(x)=x²+x+k → p(1)=1+1+k=0 ⇒ k=−2<br> 2) p(x)=2x²+kx+2 → p(1)=2+k+2=0 ⇒ k=−4<br> 3) p(x)=kx²−2x+1 → p(1)=k−2+1=0 ⇒ k=1<br> 4) p(x)=kx²−3x+k → p(1)=k−3+k=0 ⇒ 2k−3=0 ⇒ k=3/2
+            </div>
+        </div>
+
+        <div class="qa">
+            <div class="question" onclick="toggleAnswer(this)">પ્રશ્ન 4: Factorise</div>
+            <div class="answer">
+                12x²−7x+1=(3x−1)(4x−1)<br> 2x²+7x+3=(2x+1)(x+3)
+                <br> 6x²+5x−6=(3x−2)(2x+3)
+                <br> 3x²−x−4=(3x−4)(x+1)
+            </div>
+        </div>
+
+        <div class="qa">
+            <div class="question" onclick="toggleAnswer(this)">પ્રશ્ન 5: Factorise cubic polynomials</div>
+            <div class="answer">
+                x³−2x²−x+2=(x−1)(x−2)(x+1)<br> x³−3x²−9x−5=(x+1)²(x−5)
+                <br> x³+13x²+32x+20=(x+1)(x+2)(x+10)
+                <br> 2y³+y²−2y−1=(y−1)(y+1)(2y+1)
+            </div>
+        </div>
+
+    </div>
+    <div class="section">
+        <div class="section-title" onclick="toggleSection(this)">એક્સરસાઇઝ 2.5</div>
+
+        <div class="qa">
+            <div class="question" onclick="toggleAnswer(this)">પ્રશ્ન 1: સૂચિત identity નો ઉપયોગ કરીને product કાઢો</div>
+            <div class="answer">
+                (i) (x+4)(x+10)=x²+14x+40<br> (ii) (x+8)(x−10)=x²−2x−80<br> (iii) (3x+4)(3x−5)=9x²−3x−20<br> (iv) (y²+2√3)(y²−2√3)=y⁴−4/9<br> (v) (3−2x)(3+2x)=9−4x²
+            </div>
+        </div>
+
+        <div class="qa">
+            <div class="question" onclick="toggleAnswer(this)">પ્રશ્ન 2: બિન-ગુણાકાર products ની value શોધો</div>
+            <div class="answer">
+                103×107=11021<br> 95×96=9120
+                <br> 104×96=9984
+            </div>
+        </div>
+
+        <div class="qa">
+            <div class="question" onclick="toggleAnswer(this)">પ્રશ્ન 3: Factorise</div>
+            <div class="answer">
+                (i) 9x²+6xy+y²=(3x+y)²<br> (ii) 4y²−4y+1=(2y−1)²<br> (iii) x²−100y²=(x−10y)(x+10y)
+            </div>
+        </div>
+
+        <div class="qa">
+            <div class="question" onclick="toggleAnswer(this)">પ્રશ્ન 4: Expand</div>
+            <div class="answer">
+                (x+2y+4z)²=x²+4y²+16z²+4xy+16yz+8zx<br> (2x−y+z)²=4x²+y²+z²−4xy−2yz+4zx
+                <br> (−2x+3y+2z)²=4x²+9y²+4z²−12xy+12yz−8zx
+                <br> (3a−7b−c)²=9a²+49b²+c²−42ab+14bc−6ca
+                <br> (−2x+5y−3z)²=4x²+25y²+9z²−20xy−30yz+12zx
+                <br> (14a−12b+1)²=196a²+144b²+1−336ab−24b+28a
+            </div>
+        </div>
+
+        <div class="qa">
+            <div class="question" onclick="toggleAnswer(this)">પ્રશ્ન 5: Factorise</div>
+            <div class="answer">
+                (i) 4x²+9y²+16z²+12xy−24yz−16xz=(2x+3y−4z)²<br> (ii) 2x²+y²+8z²−2√2 xy+4√2 yz−8xz=(−2x+y+2√2 z)²
+            </div>
+        </div>
+
+        <div class="qa">
+            <div class="question" onclick="toggleAnswer(this)">પ્રશ્ન 6: Expand Cube</div>
+            <div class="answer">
+                (i) (2x+1)³=8x³+12x²+6x+1<br> (ii) (2a−3b)³=8a³−27b³−36a²b+54ab²<br> (iii) (2/3 x+1)³=27/8 x³+27/4 x²+9/2 x+1<br> (iv) (x−2/3 y)³=x³−2x²y+4/3 xy²−8/27 y³
+            </div>
+        </div>
+
+        <div class="qa">
+            <div class="question" onclick="toggleAnswer(this)">પ્રશ્ન 7: Cube Evaluation</div>
+            <div class="answer">
+                (i) 99³=970299<br> (ii) 102³=1061208<br> (iii) 998³=994011992
+            </div>
+        </div>
+
+        <div class="qa">
+            <div class="question" onclick="toggleAnswer(this)">પ્રશ્ન 8: Factorise</div>
+            <div class="answer">
+                (i) 8a³+b³+12a²b+6ab²=(2a+b)³<br> (ii) 8a³−b³−12a²b+6ab²=(2a−b)³<br> (iii) 27−125a³−135a+225a²=(3−5a)³<br> (iv) 64a³−27b³−144a²b+108ab²=(4a−3b)³<br> (v) 27p³−1216−92p²+14p=(3p−16)³
+            </div>
+        </div>
+
+        <div class="qa">
+            <div class="question" onclick="toggleAnswer(this)">પ્રશ્ન 9: Verify</div>
+            <div class="answer">
+                (i) x³+y³=(x+y)(x²−xy+y²) ✅<br> (ii) x³−y³=(x−y)(x²+xy+y²) ✅
+            </div>
+        </div>
+
+        <div class="qa">
+            <div class="question" onclick="toggleAnswer(this)">પ્રશ્ન 10: Factorise</div>
+            <div class="answer">
+                (i) 27y³+125z³=(3y+5z)(9y²−15yz+25z²)<br> (ii) 64m³−343n³=(4m−7n)(16m²+28mn+49n²)
+            </div>
+        </div>
+
+        <div class="qa">
+            <div class="question" onclick="toggleAnswer(this)">પ્રશ્ન 11: Factorise</div>
+            <div class="answer">
+                27x³+y³+z³−9xyz=(3x+y+z)(9x²+y²+z²−3xy−yz−3zx)
+            </div>
+        </div>
+
+        <div class="qa">
+            <div class="question" onclick="toggleAnswer(this)">પ્રશ્ન 12: Verify</div>
+            <div class="answer">
+                x³+y³+z³−3xyz=(x+y+z)((x−y)²+(y−z)²+(z−x)²) ✅
+            </div>
+        </div>
+
+        <div class="qa">
+            <div class="question" onclick="toggleAnswer(this)">પ્રશ્ન 13: જો x+y+z=0, સાબિત કરો</div>
+            <div class="answer">
+                x³+y³+z³=3xyz ✅
+            </div>
+        </div>
+
+        <div class="qa">
+            <div class="question" onclick="toggleAnswer(this)">પ્રશ્ન 14: Cube numbers</div>
+            <div class="answer">
+                (i) (−12)³+7³+5³=−1260<br> (ii) 28³+(−15)³+(−13)³=16380
+            </div>
+        </div>
+
+        <div class="qa">
+            <div class="question" onclick="toggleAnswer(this)">પ્રશ્ન 15: Rectangle dimensions</div>
+            <div class="answer">
+                (i) 25a²−35a+12=(5a−3)(5a−4) 👉 Length=5a−3, Breadth=5a−4<br> (ii) 35y²+13y−12=(7y−3)(5y+4) 👉 Length=7y−3, Breadth=5y+4
+            </div>
+        </div>
+
+        <div class="qa">
+            <div class="question" onclick="toggleAnswer(this)">પ્રશ્ન 16: Cuboid dimensions</div>
+            <div class="answer">
+                (i) 3x²−12x=3x(x−4) 👉 Dimensions: 3, x, x−4<br> (ii) 12ky²+8ky−20k=4k(3y+5)(y−1) 👉 Dimensions: 4k, (3y+5), (y−1)
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+        function toggleAnswer(el) {
+            const ans = el.nextElementSibling;
+            ans.style.display = ans.style.display === "block" ? "none" : "block";
+        }
+
+        function toggleSection(el) {
+            const sec = el.parentElement;
+            const answers = sec.querySelectorAll(".answer");
+            answers.forEach(a => a.style.display = "none");
+        }
+    </script>
+
 </body>
+
 </html>
