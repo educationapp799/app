@@ -3,53 +3,197 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Coming Soon</title>
+    <title>લઘુકાવ્યો - MCQ Test</title>
     <style>
-        body {
-            font-family: 'Arial', sans-serif;
-            text-align: center;
-            background: linear-gradient(135deg, #ff7eb3, #ff758c, #ff7eb3, #ff758c);
-            background-size: 400% 400%;
-            animation: gradientBG 6s ease infinite;
-            height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            color: white;
-        }
+        body { font-family: 'Nirmala UI', 'Arial', sans-serif; line-height: 1.6; padding: 20px; background-color: #fafafa; color: #333; }
+        .container { max-width: 900px; margin: auto; background: white; padding: 30px; border-radius: 15px; box-shadow: 0 10px 25px rgba(0,0,0,0.1); }
+        h2 { text-align: center; color: #673ab7; /* Deep Purple */ border-bottom: 3px solid #673ab7; padding-bottom: 15px; margin-bottom: 30px; font-size: 2.2em; }
+        
+        .question { margin-bottom: 25px; padding: 20px; border: 1px solid #b39ddb; border-radius: 10px; background-color: #f7f3ff; box-shadow: 0 2px 5px rgba(0,0,0,0.05); }
+        .question p { font-weight: bold; color: #4527a0; /* Darker Purple */ margin-top: 0; font-size: 1.1em; }
+        .options label { display: flex; align-items: center; margin: 12px 0; cursor: pointer; font-size: 16px; padding: 10px; border-radius: 5px; transition: background-color 0.2s; }
+        .options label:hover { background-color: #ede7f6; } 
+        .options input[type="radio"] { margin-right: 15px; transform: scale(1.2); }
+        
+        .feedback { margin-top: 10px; padding: 8px; border-radius: 5px; font-weight: bold; display: none; }
+        .feedback.correct { background-color: #d4edda; color: #155724; border: 1px solid #c3e6cb; }
+        .feedback.incorrect { background-color: #f8d7da; color: #721c24; border: 1px solid #f5c6cb; }
+        .correct-indicator { color: #28a745; margin-left: auto; display: none; font-size: 1.2em; }
+        
+        button { padding: 15px 30px; background-color: #673ab7; color: white; border: none; border-radius: 8px; cursor: pointer; font-size: 18px; margin-top: 30px; display: block; width: 100%; transition: background-color 0.3s, transform 0.1s; box-shadow: 0 4px #4527a0; }
+        button:hover { background-color: #4527a0; }
+        button:active { transform: translateY(2px); box-shadow: 0 2px #4527a0; }
+        
+        #results { margin-top: 30px; padding: 25px; border: 3px solid #673ab7; border-radius: 10px; background-color: #f7f3ff; font-weight: bold; text-align: center; font-size: 20px; display: none; animation: fadeIn 0.5s; }
 
-        @keyframes gradientBG {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
-        }
-
-        .coming-soon {
-            background: rgba(255, 255, 255, 0.2);
-            padding: 40px;
-            border-radius: 10px;
-            backdrop-filter: blur(10px);
-            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
-            display: inline-block;
-        }
-
-        h1 {
-            font-size: 36px;
-            margin: 0;
-        }
-
-        p {
-            font-size: 18px;
-            margin-top: 10px;
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
         }
     </style>
 </head>
 <body>
 
-    <div class="coming-soon">
-        <h1>📢 Coming Soon...</h1>
-        <p>નવું પેજ ટૂંક સમયમાં ઉપલબ્ધ થશે.</p>
-    </div>
+<div class="container">
+    <h2>લઘુકાવ્યો (દુહા, મુક્તક, હાઇકુ) - MCQ Test</h2>
+    <form id="quizForm">
+        
+        <div class="question" id="q1" data-answer="D">
+            <p>1. કળિયુગની જાતનાં લક્ષણોમાં નીચેનામાંથી કયાનો સમાવેશ થાય છે?</p>
+            <div class="options">
+                <label><input type="radio" name="q1" value="A"> શરીરથી પ્રમાદી હોવું</label>
+                <label><input type="radio" name="q1" value="B"> હૈયાં ફૂટેલ હોવું</label>
+                <label><input type="radio" name="q1" value="C"> કશીયે વાતનો ધરવ ન હોવો</label>
+                <label><input type="radio" name="q1" value="D"> ઉપરના તમામ <span class="correct-indicator">✔</span></label>
+            </div>
+            <div class="feedback"></div>
+        </div>
+
+        <div class="question" id="q2" data-answer="B">
+            <p>2. મુક્તક અનુસાર, આગને કોણ ઠારી શકે?</p>
+            <div class="options">
+                <label><input type="radio" name="q2" value="A"> જે જિંદગીથી ડરે તે</label>
+                <label><input type="radio" name="q2" value="B"> જે આગને પી શકે તે <span class="correct-indicator">✔</span></label>
+                <label><input type="radio" name="q2" value="C"> જે ટાંકણાના ઘાથી તૂટી જાય તે</label>
+                <label><input type="radio" name="q2" value="D"> જે કદી આગ જોતો નથી તે</label>
+            </div>
+            <div class="feedback"></div>
+        </div>
+
+        <div class="question" id="q3" data-answer="B">
+            <p>3. 'છૈયો ખૂંદતો ખોળો' હાઇકુમાં કયા ભાવને મહત્ત્વ અપાયું છે?</p>
+            <div class="options">
+                <label><input type="radio" name="q3" value="A"> ભૌતિક સાધનોનું મહત્ત્વ</label>
+                <label><input type="radio" name="q3" value="B"> માનવીય સંવેદન અને માતૃત્વ <span class="correct-indicator">✔</span></label>
+                <label><input type="radio" name="q3" value="C"> ટેલિવિઝનના ગૌણ બનવાનું કારણ</label>
+                <label><input type="radio" name="q3" value="D"> છોકરાનું તોફાન</label>
+            </div>
+            <div class="feedback"></div>
+        </div>
+        
+        <div class="question" id="q4" data-answer="A">
+            <p>4. મુક્તકમાં 'આગને ઠારી શકે' રૂઢિપ્રયોગનો અર્થ શું છે?</p>
+            <div class="options">
+                <label><input type="radio" name="q4" value="A"> વિઘ્નોને શાંત કરવાં, પાર કરવાં <span class="correct-indicator">✔</span></label>
+                <label><input type="radio" name="q4" value="B"> આગ ઓલવવી</label>
+                <label><input type="radio" name="q4" value="C"> આગ પીવાનો પ્રયત્ન કરવો</label>
+                <label><input type="radio" name="q4" value="D"> ગરમીથી બચવું</label>
+            </div>
+            <div class="feedback"></div>
+        </div>
+
+        <div class="question" id="q5" data-answer="C">
+            <p>5. 'ધરવ' શબ્દનો અર્થ શું છે?</p>
+            <div class="options">
+                <label><input type="radio" name="q5" value="A"> ધીરજ</label>
+                <label><input type="radio" name="q5" value="B"> ધર્મ</label>
+                <label><input type="radio" name="q5" value="C"> તૃપ્તિ, સંતોષ <span class="correct-indicator">✔</span></label>
+                <label><input type="radio" name="q5" value="D"> ઘાવ</label>
+            </div>
+            <div class="feedback"></div>
+        </div>
+
+        <div class="question" id="q6" data-answer="B">
+            <p>6. હાઇકુ કાવ્યપ્રકારનું બંધારણ શું હોય છે?</p>
+            <div class="options">
+                <label><input type="radio" name="q6" value="A"> 6 + 6 + 6 અક્ષર</label>
+                <label><input type="radio" name="q6" value="B"> 5 + 7 + 5 અક્ષર <span class="correct-indicator">✔</span></label>
+                <label><input type="radio" name="q6" value="C"> 7 + 5 + 7 અક્ષર</label>
+                <label><input type="radio" name="q6" value="D"> 5 + 5 + 7 અક્ષર</label>
+            </div>
+            <div class="feedback"></div>
+        </div>
+
+        <div class="question" id="q7" data-answer="D">
+            <p>7. મુક્તકમાં આરસપહાણ પર ટાંકણાના ઘા સહેવા એ શેનું પ્રતીક છે?</p>
+            <div class="options">
+                <label><input type="radio" name="q7" value="A"> ક્રોધ</label>
+                <label><input type="radio" name="q7" value="B"> ગુસ્સો</label>
+                <label><input type="radio" name="q7" value="C"> સ્વભાવ</label>
+                <label><input type="radio" name="q7" value="D"> જીવનમાં સંઘર્ષ અને પરીક્ષાઓ <span class="correct-indicator">✔</span></label>
+            </div>
+            <div class="feedback"></div>
+        </div>
+
+        <div class="question" id="q8" data-answer="A">
+            <p>8. 'શાણા સમજે સાનમાં' આ પંક્તિમાં કયો ભાવ પ્રગટ થાય છે?</p>
+            <div class="options">
+                <label><input type="radio" name="q8" value="A"> સમજદાર માણસ ઇશારાથી જ સત્ય સમજી જાય છે. <span class="correct-indicator">✔</span></label>
+                <label><input type="radio" name="q8" value="B"> કળિયુગમાં કોઈ કશીયે વાત સમજતું નથી.</label>
+                <label><input type="radio" name="q8" value="C"> માણસને સાનમાં સમજવું ગમતું નથી.</label>
+                <label><input type="radio" name="q8" value="D"> સમજદાર માણસ ક્યારેય કળિયુગમાં નથી હોતો.</label>
+            </div>
+            <div class="feedback"></div>
+        </div>
+
+        <button type="button" onclick="checkQuiz()">જવાબ ચકાસો</button>
+    </form>
+    
+    <div id="results"></div>
+
+</div>
+
+<script>
+    const answers = {
+        q1: 'D', 
+        q2: 'B', 
+        q3: 'B', 
+        q4: 'A', 
+        q5: 'C', 
+        q6: 'B', 
+        q7: 'D', 
+        q8: 'A'  
+    };
+
+    function checkQuiz() {
+        let score = 0;
+        const totalQuestions = Object.keys(answers).length;
+        const form = document.getElementById('quizForm');
+        const resultsDiv = document.getElementById('results');
+        const questions = document.querySelectorAll('.question');
+        
+        questions.forEach((q, index) => {
+            const qName = 'q' + (index + 1);
+            const selectedRadio = form.elements[qName].value;
+            const correctAnswer = answers[qName];
+            const feedbackDiv = q.querySelector('.feedback');
+            
+            // Clear previous feedback and highlights
+            q.classList.remove('correct', 'incorrect');
+            feedbackDiv.style.display = 'none';
+            q.querySelectorAll('.correct-indicator').forEach(i => i.style.display = 'none');
+
+            if (selectedRadio) {
+                if (selectedRadio === correctAnswer) {
+                    score++;
+                    q.classList.add('correct');
+                    feedbackDiv.textContent = 'જવાબ સાચો છે!';
+                    feedbackDiv.classList.remove('incorrect');
+                    feedbackDiv.classList.add('correct');
+                } else {
+                    q.classList.add('incorrect');
+                    // Show correct answer indicator
+                    const correctLabel = q.querySelector(`input[value="${correctAnswer}"]`).closest('label');
+                    correctLabel.querySelector('.correct-indicator').style.display = 'inline';
+                    feedbackDiv.textContent = `જવાબ ખોટો છે. સાચો જવાબ: ${correctAnswer}.`;
+                    feedbackDiv.classList.remove('correct');
+                    feedbackDiv.classList.add('incorrect');
+                }
+                feedbackDiv.style.display = 'block';
+            } else {
+                // If not answered, show correct answer
+                const correctLabel = q.querySelector(`input[value="${correctAnswer}"]`).closest('label');
+                correctLabel.querySelector('.correct-indicator').style.display = 'inline';
+                feedbackDiv.textContent = 'આ પ્રશ્નનો જવાબ આપવામાં આવ્યો નથી. સાચો જવાબ: ' + correctAnswer + ' છે.';
+                feedbackDiv.classList.remove('correct', 'incorrect');
+                feedbackDiv.style.display = 'block';
+            }
+        });
+
+        resultsDiv.innerHTML = `તમારો અંતિમ સ્કોર: **${score}** માંથી **${totalQuestions}** છે.`;
+        resultsDiv.style.display = 'block';
+    }
+</script>
 
 </body>
 </html>
