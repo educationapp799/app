@@ -3,53 +3,198 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Coming Soon</title>
+    <title>ભગવદ્ ગીતા અને હું - MCQ Test</title>
     <style>
-        body {
-            font-family: 'Arial', sans-serif;
-            text-align: center;
-            background: linear-gradient(135deg, #ff7eb3, #ff758c, #ff7eb3, #ff758c);
-            background-size: 400% 400%;
-            animation: gradientBG 6s ease infinite;
-            height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            color: white;
-        }
+        body { font-family: 'Nirmala UI', 'Arial', sans-serif; line-height: 1.6; padding: 20px; background-color: #fce4ec; /* Light Pink for Gita Jayanti Theme */ color: #333; }
+        .container { max-width: 900px; margin: auto; background: white; padding: 30px; border-radius: 15px; box-shadow: 0 10px 25px rgba(0,0,0,0.15); }
+        h2 { text-align: center; color: #ad1457; /* Dark Pink */ border-bottom: 3px solid #ad1457; padding-bottom: 15px; margin-bottom: 30px; font-size: 2.2em; }
+        
+        .question { margin-bottom: 25px; padding: 20px; border: 1px solid #f48fb1; border-radius: 10px; background-color: #fffafa; box-shadow: 0 2px 5px rgba(0,0,0,0.05); }
+        .question p { font-weight: bold; color: #880e4f; /* Even Darker Pink */ margin-top: 0; font-size: 1.1em; }
+        .options label { display: flex; align-items: center; margin: 12px 0; cursor: pointer; font-size: 16px; padding: 10px; border-radius: 5px; transition: background-color 0.2s; }
+        .options label:hover { background-color: #fce4ec; } 
+        .options input[type="radio"] { margin-right: 15px; transform: scale(1.2); }
+        
+        .feedback { margin-top: 10px; padding: 8px; border-radius: 5px; font-weight: bold; display: none; }
+        .feedback.correct { background-color: #e8f5e9; color: #388e3c; border: 1px solid #c8e6c9; }
+        .feedback.incorrect { background-color: #ffebee; color: #d32f2f; border: 1px solid #ef9a9a; }
+        .correct-indicator { color: #2e7d32; margin-left: auto; display: none; font-size: 1.2em; font-weight: bold; }
+        
+        button { padding: 15px 30px; background-color: #ad1457; color: white; border: none; border-radius: 8px; cursor: pointer; font-size: 18px; margin-top: 30px; display: block; width: 100%; transition: background-color 0.3s, transform 0.1s; box-shadow: 0 4px #880e4f; }
+        button:hover { background-color: #880e4f; }
+        button:active { transform: translateY(2px); box-shadow: 0 2px #880e4f; }
+        
+        #results { margin-top: 30px; padding: 25px; border: 3px solid #ad1457; border-radius: 10px; background-color: #fffafa; font-weight: bold; text-align: center; font-size: 20px; display: none; animation: fadeIn 0.5s; }
 
-        @keyframes gradientBG {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
-        }
-
-        .coming-soon {
-            background: rgba(255, 255, 255, 0.2);
-            padding: 40px;
-            border-radius: 10px;
-            backdrop-filter: blur(10px);
-            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
-            display: inline-block;
-        }
-
-        h1 {
-            font-size: 36px;
-            margin: 0;
-        }
-
-        p {
-            font-size: 18px;
-            margin-top: 10px;
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
         }
     </style>
 </head>
 <body>
 
-    <div class="coming-soon">
-        <h1>📢 Coming Soon...</h1>
-        <p>નવું પેજ ટૂંક સમયમાં ઉપલબ્ધ થશે.</p>
-    </div>
+<div class="container">
+    <h2>ભગવદ્ ગીતા અને હું - MCQ Test</h2>
+    <p>નીચે આપેલા પ્રશ્નોના યોગ્ય વિકલ્પ પસંદ કરીને જવાબ ચકાસો.</p>
+    <form id="quizForm">
+        
+        <div class="question" id="q1" data-answer="C">
+            <p>1. 'ઍટમબૉમ્બના જનક' જે. રોબર્ટ ઓપનહાઇમરે પોતાના જીવનની ફિલોસોફીને સૌથી વધુ આકાર આપનાર ગ્રંથ કયો ગણાવ્યો છે?</p>
+            <div class="options">
+                <label><input type="radio" name="q1" value="A"> વેદ</label>
+                <label><input type="radio" name="q1" value="B"> ઉપનિષદ</label>
+                <label><input type="radio" name="q1" value="C"> **ભગવદ્ ગીતા** <span class="correct-indicator">✔</span></label>
+                <label><input type="radio" name="q1" value="D"> મહાભારત</label>
+            </div>
+            <div class="feedback"></div>
+        </div>
+
+        <div class="question" id="q2" data-answer="C">
+            <p>2. ગીતાજીના 4.34 શ્લોક પ્રમાણે, જ્ઞાન પ્રાપ્ત કરવા માટે તત્ત્વદર્શી જ્ઞાનીજનો પાસે જઈને શું કરવું જરૂરી છે?</p>
+            <div class="options">
+                <label><input type="radio" name="q2" value="A"> ફક્ત પ્રશ્ન પૂછવા</label>
+                <label><input type="radio" name="q2" value="B"> દાન કરવું અને વેદનું પઠન કરવું</label>
+                <label><input type="radio" name="q2" value="C"> **યોગ્ય રીતે પ્રણામ કરવા, સેવા કરવી અને સરળ ભાવે પ્રશ્ન પૂછવા** <span class="correct-indicator">✔</span></label>
+                <label><input type="radio" name="q2" value="D"> તપ અને યજ્ઞ કરવા</label>
+            </div>
+            <div class="feedback"></div>
+        </div>
+
+        <div class="question" id="q3" data-answer="C">
+            <p>3. ક્રોધની શૃંખલામાં 'ક્રોધથી સમ્મોહ' થાય છે, તો 'સ્મૃતિભ્રમથી' શું થાય છે?</p>
+            <div class="options">
+                <label><input type="radio" name="q3" value="A"> આસક્તિ</label>
+                <label><input type="radio" name="q3" value="B"> કામના</label>
+                <label><input type="radio" name="q3" value="C"> **બુદ્ધિનો નાશ** <span class="correct-indicator">✔</span></label>
+                <label><input type="radio" name="q3" value="D"> અંગો શિથિલ થવા</label>
+            </div>
+            <div class="feedback"></div>
+        </div>
+        
+        <div class="question" id="q4" data-answer="B">
+            <p>4. રાત્રે દીવો હોલવાઈ ગયા પછી પણ અર્જુન શાંતિથી જમી શક્યા. આ ઘટના અર્જુનના કયા ગુણ તરફ ઇશારો કરે છે?</p>
+            <div class="options">
+                <label><input type="radio" name="q4" value="A"> જિજ્ઞાસા</label>
+                <label><input type="radio" name="q4" value="B"> **સતત મહાવરો (અભ્યાસ)** <span class="correct-indicator">✔</span></label>
+                <label><input type="radio" name="q4" value="C"> નમ્રતા</label>
+                <label><input type="radio" name="q4" value="D"> બુદ્ધિનાશ</label>
+            </div>
+            <div class="feedback"></div>
+        </div>
+
+        <div class="question" id="q5" data-answer="B">
+            <p>5. 'ઉદ્ધરેદાત્મનાત્માનં નાત્માનમવસાદયેત્।' (ગીતા 6.5) આ શ્લોક કયો મુખ્ય સંદેશ આપે છે?</p>
+            <div class="options">
+                <label><input type="radio" name="q5" value="A"> બીજા પર આધાર રાખવો જોઈએ.</label>
+                <label><input type="radio" name="q5" value="B"> **વ્યક્તિ પોતે જ પોતાનો મિત્ર અને શત્રુ છે.** <span class="correct-indicator">✔</span></label>
+                <label><input type="radio" name="q5" value="C"> આહાર-વિહાર સંતુલિત રાખવા જોઈએ.</label>
+                <label><input type="radio" name="q5" value="D"> સ્થિતપ્રજ્ઞના ગુણો વિકસાવવા જોઈએ.</label>
+            </div>
+            <div class="feedback"></div>
+        </div>
+
+        <div class="question" id="q6" data-answer="B">
+            <p>6. થોમસ કાર્લાઇલે અમેરિકન દાર્શનિક રાલ્ફ વાલ્ડો એમર્સનને ગીતાનો અનુવાદ બતાવ્યો અને કહ્યું કે આ પુસ્તકે તેમના જીવનમાં શું આણ્યું છે?</p>
+            <div class="options">
+                <label><input type="radio" name="q6" value="A"> જ્ઞાન અને વિજ્ઞાન</label>
+                <label><input type="radio" name="q6" value="B"> **આરામ અને આશ્વાસન** <span class="correct-indicator">✔</span></label>
+                <label><input type="radio" name="q6" value="C"> ક્રાંતિ અને પરિવર્તન</label>
+                <label><input type="radio" name="q6" value="D"> ધર્મસંકટનો ઉકેલ</label>
+            </div>
+            <div class="feedback"></div>
+        </div>
+
+        <div class="question" id="q7" data-answer="C">
+            <p>7. ગીતાજીના મતે દુઃખોનો નાશ કરનાર યોગ કોનો સિદ્ધ થાય છે?</p>
+            <div class="options">
+                <label><input type="radio" name="q7" value="A"> જે તણાવમાં ઓછું ખાય છે તેનો.</label>
+                <label><input type="radio" name="q7" value="B"> જે આખો દિવસ ઊંઘે છે તેનો.</label>
+                <label><input type="radio" name="q7" value="C"> **જે યથાયોગ્ય આહાર-વિહાર, ચેષ્ટા, ઊંઘ અને જાગરણ કરે છે તેનો.** <span class="correct-indicator">✔</span></label>
+                <label><input type="radio" name="q7" value="D"> જે રાત્રે ઉજાગરા કરે છે તેનો.</label>
+            </div>
+            <div class="feedback"></div>
+        </div>
+
+        <div class="question" id="q8" data-answer="D">
+            <p>8. અર્જુનને યુદ્ધના મેદાનમાં સગાસંબંધીઓને જોઈને નબળા વિચારો આવ્યા ત્યારે તેના શરીર પર શું અસર થઈ નહોતી?</p>
+            <div class="options">
+                <label><input type="radio" name="q8" value="A"> અંગો શિથિલ થવા.</label>
+                <label><input type="radio" name="q8" value="B"> મોઢું સુકાવું અને શરીર ધ્રૂજવું.</label>
+                <label><input type="radio" name="q8" value="C"> હાથમાંથી ગાંડીવ પડી જવું.</label>
+                <label><input type="radio" name="q8" value="D"> **બુદ્ધિનું સ્થિર થવું.** <span class="correct-indicator">✔</span></label>
+            </div>
+            <div class="feedback"></div>
+        </div>
+
+        <button type="button" onclick="checkQuiz()">જવાબ ચકાસો</button>
+    </form>
+    
+    <div id="results"></div>
+
+</div>
+
+<script>
+    const answers = {
+        q1: 'C', 
+        q2: 'C', 
+        q3: 'C', 
+        q4: 'B', 
+        q5: 'B', 
+        q6: 'B', 
+        q7: 'C', 
+        q8: 'D'  
+    };
+
+    function checkQuiz() {
+        let score = 0;
+        const totalQuestions = Object.keys(answers).length;
+        const form = document.getElementById('quizForm');
+        const resultsDiv = document.getElementById('results');
+        const questions = document.querySelectorAll('.question');
+        
+        questions.forEach((q, index) => {
+            const qName = 'q' + (index + 1);
+            const selectedRadio = form.elements[qName].value;
+            const correctAnswer = answers[qName];
+            const feedbackDiv = q.querySelector('.feedback');
+            
+            // Clear previous feedback and highlights
+            q.classList.remove('correct', 'incorrect');
+            feedbackDiv.style.display = 'none';
+            q.querySelectorAll('.correct-indicator').forEach(i => i.style.display = 'none');
+
+            if (selectedRadio) {
+                if (selectedRadio === correctAnswer) {
+                    score++;
+                    q.classList.add('correct');
+                    feedbackDiv.textContent = 'જવાબ સાચો છે!';
+                    feedbackDiv.classList.remove('incorrect');
+                    feedbackDiv.classList.add('correct');
+                } else {
+                    q.classList.add('incorrect');
+                    // Show correct answer indicator
+                    const correctLabel = q.querySelector(`input[value="${correctAnswer}"]`).closest('label');
+                    correctLabel.querySelector('.correct-indicator').style.display = 'inline';
+                    feedbackDiv.textContent = `જવાબ ખોટો છે. સાચો જવાબ: ${correctAnswer}.`;
+                    feedbackDiv.classList.remove('correct');
+                    feedbackDiv.classList.add('incorrect');
+                }
+                feedbackDiv.style.display = 'block';
+            } else {
+                // If not answered, show correct answer
+                const correctLabel = q.querySelector(`input[value="${correctAnswer}"]`).closest('label');
+                correctLabel.querySelector('.correct-indicator').style.display = 'inline';
+                feedbackDiv.textContent = 'આ પ્રશ્નનો જવાબ આપવામાં આવ્યો નથી. સાચો જવાબ: ' + correctAnswer + ' છે.';
+                feedbackDiv.classList.remove('correct', 'incorrect');
+                feedbackDiv.style.display = 'block';
+            }
+        });
+
+        resultsDiv.innerHTML = `તમારો અંતિમ સ્કોર: **${score}** માંથી **${totalQuestions}** છે.`;
+        resultsDiv.style.display = 'block';
+    }
+</script>
 
 </body>
 </html>
