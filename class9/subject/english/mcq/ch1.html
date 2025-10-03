@@ -30,9 +30,6 @@
       margin: 15px 0 8px;
       font-size: 16px;
     }
-    .options {
-      position: relative;
-    }
     .options label {
       display: block;
       background: #f7f7f7;
@@ -44,10 +41,8 @@
       transition: 0.3s;
       word-wrap: break-word;
     }
-    .options input {
-      position: absolute;
-      opacity: 0;
-      pointer-events: none;
+    .options input[type="radio"] {
+      margin-right: 10px;
     }
     .options label:hover { background: #e0e0e0; }
     button {
@@ -74,25 +69,12 @@
     .correct { background: #c8e6c9 !important; }
     .wrong { background: #ffcdd2 !important; }
 
-    /* 📱 Mobile optimization */
+    /* Mobile optimization */
     @media (max-width: 600px) {
-      .container {
-        padding: 12px;
-      }
-      h2 {
-        font-size: 18px;
-      }
-      .question {
-        font-size: 15px;
-      }
-      .options label {
-        font-size: 14px;
-        padding: 8px;
-      }
-      button {
-        font-size: 15px;
-        padding: 10px;
-      }
+      h2 { font-size: 18px; }
+      .question { font-size: 15px; }
+      .options label { font-size: 14px; padding: 8px; }
+      button { font-size: 15px; padding: 10px; }
     }
   </style>
 </head>
@@ -100,7 +82,6 @@
   <div class="container">
     <h2>Unit 1: Cheetah's Tears – MCQ Test</h2>
     <form id="quizForm">
-      
       <!-- Q1 -->
       <div class="question">1. Vibhuti copied answers in the exam. Which expression fits?</div>
       <div class="options">
@@ -146,53 +127,9 @@
         <label><input type="radio" name="q5" value="d"> Edie envied → saw cheetah → leapt → cubs fed → caught cubs</label>
       </div>
 
-      <!-- Q6 -->
-      <div class="question">6. Message of story?</div>
-      <div class="options">
-        <label><input type="radio" name="q6" value="a"> Laziness is rewarded</label>
-        <label><input type="radio" name="q6" value="b"> Hard work & honesty are important</label>
-        <label><input type="radio" name="q6" value="c"> Crying brings help</label>
-        <label><input type="radio" name="q6" value="d"> Cubs are lucky</label>
-      </div>
-
-      <!-- Q7 -->
-      <div class="question">7. Cheetah’s maximum speed?</div>
-      <div class="options">
-        <label><input type="radio" name="q7" value="a"> 60 km/h</label>
-        <label><input type="radio" name="q7" value="b"> 80 km/h</label>
-        <label><input type="radio" name="q7" value="c"> 100 km/h</label>
-        <label><input type="radio" name="q7" value="d"> 120 km/h</label>
-      </div>
-
-      <!-- Q8 -->
-      <div class="question">8. Age of maturity of cheetah?</div>
-      <div class="options">
-        <label><input type="radio" name="q8" value="a"> 1 year</label>
-        <label><input type="radio" name="q8" value="b"> 2 years</label>
-        <label><input type="radio" name="q8" value="c"> 3 years</label>
-        <label><input type="radio" name="q8" value="d"> 4 years</label>
-      </div>
-
-      <!-- Q9 -->
-      <div class="question">9. Edie envied cubs because ___</div>
-      <div class="options">
-        <label><input type="radio" name="q9" value="a"> They got food without effort</label>
-        <label><input type="radio" name="q9" value="b"> They were stronger</label>
-        <label><input type="radio" name="q9" value="c"> They played in meadows</label>
-        <label><input type="radio" name="q9" value="d"> They could hunt deer</label>
-      </div>
-
-      <!-- Q10 -->
-      <div class="question">10. Who helped mother cheetah?</div>
-      <div class="options">
-        <label><input type="radio" name="q10" value="a"> Edie</label>
-        <label><input type="radio" name="q10" value="b"> Nirali</label>
-        <label><input type="radio" name="q10" value="c"> Shanno</label>
-        <label><input type="radio" name="q10" value="d"> Karim</label>
-      </div>
-
       <button type="button" onclick="checkAnswers()">Submit Test</button>
     </form>
+
     <div id="result" class="result"></div>
   </div>
 
@@ -202,12 +139,7 @@
       q2: "c",
       q3: "a",
       q4: "d",
-      q5: "a",
-      q6: "b",
-      q7: "c",
-      q8: "b",
-      q9: "a",
-      q10: "c"
+      q5: "a"
     };
 
     function checkAnswers() {
