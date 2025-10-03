@@ -1,832 +1,202 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Cheetah’s Tears — Unit 1 (MCQ Test)</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Unit 1 – Cheetah's Tears | MCQ Test</title>
   <style>
-    :root{
-      --bg1:#f7f8fb;
-      --card:#ffffff;
-      --accent:#375a7f;
-      --accent-2:#4caf50;
-      --muted:#6b7280;
-      --green:#16a34a;
-      --red:#ef4444;
-      --glass: rgba(255,255,255,0.6);
+    body {
+      font-family: Arial, sans-serif;
+      background: linear-gradient(120deg, #89f7fe, #66a6ff);
+      margin: 0;
+      padding: 20px;
     }
-    *{box-sizing:border-box}
-    html,body{height:100%;margin:0;font-family:Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;}
-    body{
-      background: linear-gradient(135deg,#E6EEF8 0%, #FDF6E3 100%);
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      padding:28px;
+    .container {
+      max-width: 800px;
+      margin: auto;
+      background: #fff;
+      padding: 25px;
+      border-radius: 12px;
+      box-shadow: 0px 6px 15px rgba(0,0,0,0.2);
     }
-
-    .app {
-      width:100%;
-      max-width:980px;
-      box-shadow: 0 10px 30px rgba(8,20,40,0.08);
-      border-radius:14px;
-      overflow:hidden;
-      background: linear-gradient(180deg, rgba(255,255,255,0.9), rgba(255,255,255,0.85));
-      display:grid;
-      grid-template-columns: 1fr 360px;
-      gap:0;
+    h2 {
+      text-align: center;
+      color: #333;
     }
-
-    /* left side: quiz */
-    .quiz {
-      padding:28px;
-      min-height:520px;
+    .question {
+      font-weight: bold;
+      margin: 18px 0 10px;
     }
-    header.top {
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap:16px;
-      margin-bottom:12px;
+    .options label {
+      display: block;
+      background: #f7f7f7;
+      margin: 6px 0;
+      padding: 8px 12px;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: 0.3s;
     }
-    .brand {
-      display:flex;
-      gap:12px;
-      align-items:center;
+    .options input { display: none; }
+    .options label:hover { background: #e0e0e0; }
+    button {
+      background: #4CAF50;
+      color: white;
+      border: none;
+      padding: 12px 20px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 16px;
+      margin-top: 20px;
+      width: 100%;
     }
-    .logo {
-      width:56px;height:56px;border-radius:10px;
-      display:grid;place-items:center;
-      background:linear-gradient(135deg,var(--accent),#7fb3d5);
-      color:white;font-weight:700;font-size:18px;
-      box-shadow: 0 6px 18px rgba(55,90,127,0.14);
+    button:hover { background: #388E3C; }
+    .result {
+      margin-top: 20px;
+      padding: 15px;
+      border-radius: 8px;
+      font-size: 18px;
+      font-weight: bold;
+      text-align: center;
+      display: none;
     }
-    h1 { margin:0;font-size:20px;color:var(--accent); }
-    p.subtitle { margin:0;font-size:13px;color:var(--muted); }
-
-    .meta {
-      display:flex;
-      gap:10px;
-      align-items:center;
-    }
-    .chip {
-      background:var(--glass);
-      padding:8px 10px;border-radius:10px;font-size:13px;color:var(--muted);
-      box-shadow: inset 0 -1px 0 rgba(0,0,0,0.02);
-    }
-
-    /* question card */
-    .card {
-      background:var(--card);
-      border-radius:12px;
-      padding:18px;
-      margin-top:16px;
-      box-shadow: 0 6px 18px rgba(16,24,40,0.04);
-      min-height:220px;
-      display:flex;
-      flex-direction:column;
-      gap:12px;
-    }
-    .q-top { display:flex;justify-content:space-between;align-items:center; gap:12px; }
-    .q-index { font-weight:600;color:var(--muted); }
-    .q-text { font-size:18px;color:#0f172a; font-weight:600; margin:6px 0 2px; }
-
-    .options {
-      display:flex;
-      flex-direction:column;
-      gap:10px;
-      margin-top:6px;
-    }
-    .option {
-      border-radius:10px;
-      padding:12px 12px;
-      background:#fbfdff;
-      border:1px solid rgba(15,23,42,0.04);
-      cursor:pointer;
-      transition:all .18s ease;
-      display:flex;
-      gap:12px;
-      align-items:center;
-    }
-    .option:hover{ transform:translateY(-3px); box-shadow: 0 8px 20px rgba(8,20,40,0.06); }
-    .option input{ display:none; }
-    .option .letter {
-      width:34px;height:34px;border-radius:8px;
-      display:grid;place-items:center;font-weight:700;color:var(--accent);
-      border:1px solid rgba(55,90,127,0.08);
-      background:linear-gradient(180deg,#fff, #f6fbff);
-    }
-    .option .label { font-size:15px;color:#051026; }
-
-    /* selected state */
-    .option.selected{ border-color:rgba(55,90,127,0.18); background:linear-gradient(180deg,#ecf6ff,#f8fbff); }
-
-    /* correct/wrong highlight (after submit) */
-    .option.correct { background: linear-gradient(90deg, rgba(16,185,129,0.12), rgba(16,185,129,0.06)); border-color: rgba(22,163,74,0.22); }
-    .option.wrong { background: linear-gradient(90deg, rgba(239,68,68,0.08), rgba(239,68,68,0.04)); border-color: rgba(239,68,68,0.18); opacity:0.95; }
-
-    /* control row */
-    .controls { display:flex;justify-content:space-between;align-items:center;margin-top:auto; gap:12px; }
-    .btn {
-      padding:10px 14px;border-radius:10px;border:none;cursor:pointer;font-weight:600;
-      background:var(--accent); color:#fff;
-      box-shadow: 0 8px 20px rgba(55,90,127,0.12);
-    }
-    .btn.ghost { background:transparent;color:var(--accent); border:1px solid rgba(55,90,127,0.08); box-shadow:none; }
-    .small { padding:8px 10px; font-size:14px; border-radius:8px; }
-
-    /* right side: sidebar */
-    .sidebar {
-      background:linear-gradient(180deg,#fbffff,#f7fbff);
-      padding:18px;
-      border-left:1px solid rgba(8,20,40,0.03);
-      min-height:520px;
-    }
-    .scorecard {
-      border-radius:12px;padding:14px;background:linear-gradient(90deg,#fff,#fbfeff);
-      box-shadow:0 6px 18px rgba(8,20,40,0.04);
-    }
-    .progressWrap{ margin-top:12px; }
-    .progress {
-      height:12px;
-      background: #f1f5f9;
-      border-radius:10px; overflow:hidden;
-    }
-    .progress > i {
-      display:block;height:100%; background: linear-gradient(90deg,var(--accent),#7fb3d5);
-      width:0%;
-    }
-    .summary { display:flex;gap:10px;margin-top:12px; }
-    .stat {
-      flex:1;
-      padding:10px;
-      border-radius:10px;
-      background:#fff;
-      text-align:center;
-      box-shadow: 0 6px 14px rgba(8,20,40,0.03);
-    }
-    .stat .num { font-weight:700; color:var(--accent); font-size:18px; }
-    .stat .lbl { color:var(--muted); font-size:13px; }
-
-    .q-grid { margin-top:14px; display:grid; grid-template-columns:repeat(5,1fr); gap:8px; }
-    .q-pill { background:#fff; padding:8px;border-radius:8px;border:1px solid rgba(8,20,40,0.04); text-align:center; cursor:pointer; font-weight:600; color:var(--muted); }
-    .q-pill.answered { background:linear-gradient(90deg,#ecf6ff,#f7fbff); color:var(--accent); border-color:rgba(55,90,127,0.08); }
-    .q-pill.current { outline:3px solid rgba(55,90,127,0.06); box-shadow: 0 8px 20px rgba(55,90,127,0.06); }
-
-    .legend { display:flex; gap:8px; margin-top:12px; align-items:center; flex-wrap:wrap; }
-    .legend .key { display:flex; gap:8px; align-items:center; font-size:13px; color:var(--muted); }
-    .key .box { width:14px;height:14px;border-radius:4px;display:inline-block; }
-
-    footer.smallNote { margin-top:16px; font-size:13px; color:var(--muted); }
-
-    /* result overlay */
-    .resultModal {
-      position:fixed; inset:0; display:none; align-items:center; justify-content:center;
-      background: linear-gradient(180deg, rgba(2,6,23,0.45), rgba(2,6,23,0.3));
-      z-index:60;
-    }
-    .resultCard {
-      width:100%; max-width:620px; background:#fff; border-radius:12px; padding:20px; text-align:center;
-      box-shadow:0 18px 50px rgba(2,6,23,0.5);
-    }
-    .bigScore { font-size:48px; font-weight:800; color:var(--accent); margin:6px 0; }
-    .feedback { font-size:16px; color:var(--muted); margin-bottom:12px; }
-
-    /* responsive */
-    @media (max-width:920px){
-      .app { grid-template-columns: 1fr; }
-      .sidebar { order:2; }
-      .quiz { order:1; }
-    }
+    .correct { background: #c8e6c9; }
+    .wrong { background: #ffcdd2; }
   </style>
 </head>
 <body>
-  <div class="app" role="application" aria-label="Cheetah's Tears Unit 1 MCQ Test">
-    <!-- LEFT: Quiz -->
-    <main class="quiz" id="quizRoot">
-      <header class="top" aria-hidden="false">
-        <div class="brand">
-          <div class="logo">CT</div>
-          <div>
-            <h1>Cheetah’s Tears — Unit 1</h1>
-            <p class="subtitle">MCQ Practice — Vocabulary • Comprehension • Language • Writing</p>
-          </div>
-        </div>
-        <div class="meta">
-          <div class="chip">Total: <span id="totalQ">0</span></div>
-          <div class="chip">Time: <span id="timer">—</span></div>
-        </div>
-      </header>
-
-      <section class="card" id="qCard" aria-live="polite">
-        <div class="q-top">
-          <div class="q-index">Question <span id="qNumber">1</span> / <span id="qTotal">1</span></div>
-          <div class="q-topic" id="qTopic" style="color:var(--muted);font-size:13px;">Section • Vocabulary</div>
-        </div>
-
-        <div class="q-text" id="qText">Loading…</div>
-
-        <div class="options" id="optionsList" role="radiogroup" aria-labelledby="qText">
-          <!-- options injected here -->
-        </div>
-
-        <div class="controls" aria-hidden="false">
-          <div style="display:flex;gap:8px;">
-            <button class="btn ghost small" id="prevBtn" onclick="prevQuestion()" title="Previous">← Prev</button>
-            <button class="btn ghost small" id="nextBtn" onclick="nextQuestion()" title="Next">Next →</button>
-          </div>
-
-          <div style="display:flex;gap:8px;">
-            <button class="btn small" id="clearBtn" onclick="clearAnswer()">Clear</button>
-            <button class="btn" id="submitBtn" onclick="submitQuiz()">Submit Test</button>
-          </div>
-        </div>
-      </section>
-
-      <footer class="smallNote" aria-hidden="false">
-        Tip: Navigate with Next / Prev. Select an option and click Submit to evaluate. You can review answers after submission.
-      </footer>
-    </main>
-
-    <!-- RIGHT: Sidebar -->
-    <aside class="sidebar" aria-hidden="false">
-      <div class="scorecard">
-        <div style="display:flex;justify-content:space-between;align-items:center;">
-          <div>
-            <div style="font-size:13px;color:var(--muted)">Progress</div>
-            <div style="font-weight:700;font-size:18px;color:var(--accent)">Unit 1 — Cheetah’s Tears</div>
-          </div>
-          <div style="text-align:right">
-            <div style="font-size:13px;color:var(--muted)">Status</div>
-            <div id="statusLabel" style="font-weight:700;color:var(--accent)">Not started</div>
-          </div>
-        </div>
-
-        <div class="progressWrap">
-          <div class="progress" aria-hidden="true"><i id="progressBar"></i></div>
-          <div class="summary">
-            <div class="stat"><div class="num" id="answeredCount">0</div><div class="lbl">Answered</div></div>
-            <div class="stat"><div class="num" id="remainingCount">0</div><div class="lbl">Remaining</div></div>
-            <div class="stat"><div class="num" id="scoreCount">—</div><div class="lbl">Score</div></div>
-          </div>
-
-          <div class="legend">
-            <div class="key"><span class="box" style="background:linear-gradient(90deg,#ecf6ff,#f7fbff);border:1px solid rgba(55,90,127,0.06)"></span> Answered</div>
-            <div class="key"><span class="box" style="background:linear-gradient(90deg,#dff7e6,#f7fff6);border:1px solid rgba(22,163,74,0.08)"></span> Correct</div>
-            <div class="key"><span class="box" style="background:linear-gradient(90deg,#fff0f0,#fff6f6);border:1px solid rgba(239,68,68,0.08)"></span> Wrong</div>
-          </div>
-
-          <div class="q-grid" id="qGrid" style="margin-top:14px;">
-            <!-- question pills injected -->
-          </div>
-
-          <div style="display:flex;gap:8px;margin-top:12px;">
-            <button class="btn ghost small" onclick="resetQuiz()">Reset</button>
-            <button class="btn small" onclick="reviewAnswers()" id="reviewBtn" disabled>Review</button>
-          </div>
-        </div>
+  <div class="container">
+    <h2>Unit 1: Cheetah's Tears – MCQ Test</h2>
+    <form id="quizForm">
+      
+      <!-- Q1 -->
+      <div class="question">1. Vibhuti copied answers in the exam. Which expression fits?</div>
+      <div class="options">
+        <label><input type="radio" name="q1" value="a"> Bravo!</label>
+        <label><input type="radio" name="q1" value="b"> Congratulations!</label>
+        <label><input type="radio" name="q1" value="c"> What a shame!</label>
+        <label><input type="radio" name="q1" value="d"> Well done!</label>
       </div>
-    </aside>
-  </div>
 
-  <!-- Result Modal -->
-  <div class="resultModal" id="resultModal" role="dialog" aria-modal="true">
-    <div class="resultCard" role="document">
-      <div style="display:flex;justify-content:center;align-items:center;gap:12px;margin-bottom:8px;">
-        <div style="width:64px;height:64px;border-radius:12px;display:grid;place-items:center;background:linear-gradient(135deg,var(--accent),#7fb3d5);color:#fff;font-weight:800;font-size:22px;">CT</div>
+      <!-- Q2 -->
+      <div class="question">2. Opposite of 'comfortable'?</div>
+      <div class="options">
+        <label><input type="radio" name="q2" value="a"> Wicked</label>
+        <label><input type="radio" name="q2" value="b"> Sad</label>
+        <label><input type="radio" name="q2" value="c"> Uncomfortable</label>
+        <label><input type="radio" name="q2" value="d"> Happy</label>
       </div>
-      <div class="bigScore" id="finalScore">0 / 0</div>
-      <div class="feedback" id="finalMsg">Feedback message</div>
-      <div style="display:flex;gap:10px;justify-content:center;margin-top:8px;">
-        <button class="btn" onclick="closeResult()">Close</button>
-        <button class="btn ghost" onclick="enterReviewMode()">Review Answers</button>
+
+      <!-- Q3 -->
+      <div class="question">3. Nirali’s papa bought her a bicycle so her younger brother ___ her.</div>
+      <div class="options">
+        <label><input type="radio" name="q3" value="a"> Envied</label>
+        <label><input type="radio" name="q3" value="b"> Loved</label>
+        <label><input type="radio" name="q3" value="c"> Ignored</label>
+        <label><input type="radio" name="q3" value="d"> Helped</label>
       </div>
-    </div>
+
+      <!-- Q4 -->
+      <div class="question">4. Edie decided to steal cub. Expression?</div>
+      <div class="options">
+        <label><input type="radio" name="q4" value="a"> Bravo!</label>
+        <label><input type="radio" name="q4" value="b"> How sad!</label>
+        <label><input type="radio" name="q4" value="c"> Well done!</label>
+        <label><input type="radio" name="q4" value="d"> What a shame!</label>
+      </div>
+
+      <!-- Q5 -->
+      <div class="question">5. Correct sequence: Deer → ? → Cub caught?</div>
+      <div class="options">
+        <label><input type="radio" name="q5" value="a"> Saw cheetah → leapt → cubs fed → Edie envied → caught cubs</label>
+        <label><input type="radio" name="q5" value="b"> Cubs fed → saw cheetah → Edie envied → leapt → caught cubs</label>
+        <label><input type="radio" name="q5" value="c"> Saw cheetah → cubs fed → Edie envied → leapt → caught cubs</label>
+        <label><input type="radio" name="q5" value="d"> Edie envied → saw cheetah → leapt → cubs fed → caught cubs</label>
+      </div>
+
+      <!-- Q6 -->
+      <div class="question">6. Message of story?</div>
+      <div class="options">
+        <label><input type="radio" name="q6" value="a"> Laziness is rewarded</label>
+        <label><input type="radio" name="q6" value="b"> Hard work & honesty are important</label>
+        <label><input type="radio" name="q6" value="c"> Crying brings help</label>
+        <label><input type="radio" name="q6" value="d"> Cubs are lucky</label>
+      </div>
+
+      <!-- Q7 -->
+      <div class="question">7. Cheetah’s maximum speed?</div>
+      <div class="options">
+        <label><input type="radio" name="q7" value="a"> 60 km/h</label>
+        <label><input type="radio" name="q7" value="b"> 80 km/h</label>
+        <label><input type="radio" name="q7" value="c"> 100 km/h</label>
+        <label><input type="radio" name="q7" value="d"> 120 km/h</label>
+      </div>
+
+      <!-- Q8 -->
+      <div class="question">8. Age of maturity of cheetah?</div>
+      <div class="options">
+        <label><input type="radio" name="q8" value="a"> 1 year</label>
+        <label><input type="radio" name="q8" value="b"> 2 years</label>
+        <label><input type="radio" name="q8" value="c"> 3 years</label>
+        <label><input type="radio" name="q8" value="d"> 4 years</label>
+      </div>
+
+      <!-- Q9 -->
+      <div class="question">9. Edie envied cubs because ___</div>
+      <div class="options">
+        <label><input type="radio" name="q9" value="a"> They got food without effort</label>
+        <label><input type="radio" name="q9" value="b"> They were stronger</label>
+        <label><input type="radio" name="q9" value="c"> They played in meadows</label>
+        <label><input type="radio" name="q9" value="d"> They could hunt deer</label>
+      </div>
+
+      <!-- Q10 -->
+      <div class="question">10. Who helped mother cheetah?</div>
+      <div class="options">
+        <label><input type="radio" name="q10" value="a"> Edie</label>
+        <label><input type="radio" name="q10" value="b"> Nirali</label>
+        <label><input type="radio" name="q10" value="c"> Shanno</label>
+        <label><input type="radio" name="q10" value="d"> Karim</label>
+      </div>
+
+      <button type="button" onclick="checkAnswers()">Submit Test</button>
+    </form>
+    <div id="result" class="result"></div>
   </div>
 
   <script>
-    /********************************************************************
-     * DATA: Questions derived from Unit 1 — Cheetah's Tears (from user)
-     * Each item: id, section, question, options [ {id,text}... ], answer (option id), explanation
-     ********************************************************************/
-    const QUESTIONS = [
-      // Vocabulary V.1 reactions
-      { id:1, section:'Vocabulary', question:"Vibhuti copied answers in the examination. What is the correct reaction?", 
-        options:[ {id:'a',text:'What a shame!'}, {id:'b',text:'Bravo!'}, {id:'c',text:'Well done!'}, {id:'d',text:'Best of Luck!'} ], answer:'a',
-        explanation:"Copying is wrong — reaction 'What a shame!' is appropriate." },
-
-      { id:2, section:'Vocabulary', question:"Jatin bandaged an injured dog in the street. Choose the reaction.", 
-        options:[ {id:'a',text:'Congratulations!'}, {id:'b',text:'What a shame!'}, {id:'c',text:'Bravo!'}, {id:'d',text:'Alas!'} ], answer:'c',
-        explanation:"Bandaging an injured animal is praiseworthy — 'Bravo!' fits." },
-
-      { id:3, section:'Vocabulary', question:"Khushali failed in the last test. Which reaction suits?", 
-        options:[ {id:'a',text:'Well done!'}, {id:'b',text:'Alas!'}, {id:'c',text:'Bravo!'}, {id:'d',text:'Best of Luck!'} ], answer:'b',
-        explanation:"Failure prompts sympathy: 'Alas!'." },
-
-      // Opposites V.2
-      { id:4, section:'Vocabulary', question:"Choose the opposite of 'wicked' from options.", 
-        options:[ {id:'a',text:'good'}, {id:'b',text:'lazy'}, {id:'c',text:'sad'}, {id:'d',text:'large'} ], answer:'a',
-        explanation:"'Wicked' opposite is 'good'." },
-
-      { id:5, section:'Vocabulary', question:"When the question paper is ___, the students seem happy. Fill with opposite of 'difficult'.", 
-        options:[ {id:'a',text:'easy'}, {id:'b',text:'heavy'}, {id:'c',text:'ugly'}, {id:'d',text:'large'} ], answer:'a',
-        explanation:"Opposite of 'difficult' is 'easy'." },
-
-      // Comprehension
-      { id:6, section:'Comprehension', question:"Why did Edie decide to steal a cheetah cub?", 
-        options:[ {id:'a',text:'He wanted a pet'}, {id:'b',text:'He envied cubs and wanted them to hunt for him'}, {id:'c',text:'He wanted to sell cubs'}, {id:'d',text:'He hated the tribe'} ], answer:'b',
-        explanation:"Edie envied the cubs as they got food easily and wanted them to hunt for him." },
-
-      { id:7, section:'Comprehension', question:"How did Edie catch the cubs?", 
-        options:[ {id:'a',text:'He poisoned them'}, {id:'b',text:'He used a net and dragged them'}, {id:'c',text:'He chased them for days'}, {id:'d',text:'He bribed the mother'} ], answer:'b',
-        explanation:"Edie threw a net over the cubs and hid them." },
-
-      { id:8, section:'Comprehension', question:"What was Shanno's reaction when he found out?", 
-        options:[ {id:'a',text:'He praised Edie'}, {id:'b',text:'He laughed'}, {id:'c',text:'He condemned Edie and returned cubs to mother'}, {id:'d',text:'He sold the cubs'} ], answer:'c',
-        explanation:"Shanno returned the cubs and scolded Edie for his laziness and wickedness." },
-
-      { id:9, section:'Comprehension', question:"What happened to Edie at the end?", 
-        options:[ {id:'a',text:'He was rewarded'}, {id:'b',text:'He became chief'}, {id:'c',text:'He was driven away from the tribe'}, {id:'d',text:'He married'} ], answer:'c',
-        explanation:"The tribe decided to drive Edie away for dishonouring them." },
-
-      // Facts about cheetah
-      { id:10, section:'Facts', question:"Approximate top speed of cheetah (short distances)?", 
-        options:[ {id:'a',text:'100 km/h'}, {id:'b',text:'60 km/h'}, {id:'c',text:'180 km/h'}, {id:'d',text:'40 km/h'} ], answer:'a',
-        explanation:"Cheetah can reach ~100 km/h but only briefly." },
-
-      { id:11, section:'Facts', question:"Cheetah identification: choose the correct trait.", 
-        options:[ {id:'a',text:'Clusters of spots like leopard'}, {id:'b',text:'Isolated black spots and lighter body'}, {id:'c',text:'Striped body'}, {id:'d',text:'Pure white fur'} ], answer:'b',
-        explanation:"Cheetah has isolated black spots and a lighter body." },
-
-      { id:12, section:'Facts', question:"Cheetah habitat (presently) is mainly:", 
-        options:[ {id:'a',text:'Antarctica'}, {id:'b',text:'Africa and open forests'}, {id:'c',text:'Deep oceans'}, {id:'d',text:'Urban cities'} ], answer:'b',
-        explanation:"Today cheetahs are mainly found in parts of Africa in open habitats." },
-
-      // Language practice L.1 Frog story
-      { id:13, section:'Language', question:"Did both frogs try to jump out of the pit?", 
-        options:[ {id:'a',text:'Yes, both tried'}, {id:'b',text:'No, neither tried'}, {id:'c',text:'Only one tried'}, {id:'d',text:'They were pushed out'} ], answer:'a',
-        explanation:"Both attempted to jump; one gave up later." },
-
-      { id:14, section:'Language', question:"Why did the successful frog keep jumping?", 
-        options:[ {id:'a',text:'He was deaf and thought they encouraged him'}, {id:'b',text:'He was angry'}, {id:'c',text:'He wanted food'}, {id:'d',text:'He was pushed'} ], answer:'a',
-        explanation:"He was deaf; he thought others were encouraging him." },
-
-      // Language practice tense/was-were
-      { id:15, section:'Language', question:"Fill: 'I ___ in bed as it was Sunday.' (was/wasn't/were)", 
-        options:[ {id:'a',text:"wasn't"}, {id:'b',text:'was'}, {id:'c',text:'were'}, {id:'d',text:"wasn'tn't"} ], answer:'b',
-        explanation:"Correct: 'I was in bed'." },
-
-      // Sequence / ordering comprehension
-      { id:16, section:'Comprehension', question:"Which event happened first in story sequence?", 
-        options:[ {id:'a',text:'Edie used a net'}, {id:'b',text:'He saw female cheetah crawling'}, {id:'c',text:'Mother cried until next evening'}, {id:'d',text:'Shanno returned cubs'} ], answer:'b',
-        explanation:"He first saw the cheetah crawling near deer." },
-
-      // Fill the facts C.5
-      { id:17, section:'Facts', question:"Typical weight of adult cheetah (approx)?", 
-        options:[ {id:'a',text:'65 kg'}, {id:'b',text:'250 kg'}, {id:'c',text:'10 kg'}, {id:'d',text:'300 kg'} ], answer:'a',
-        explanation:"Average adult around 50–70 kg; given text mentions 65 kg." },
-
-      // Moral / message
-      { id:18, section:'Comprehension', question:"Main message of 'Cheetah's Tears' is:", 
-        options:[ {id:'a',text:'Laziness and dishonesty lead to dishonour'}, {id:'b',text:'Always steal for comfort'}, {id:'c',text:'Cheetahs are dangerous to humans'}, {id:'d',text:'Hunting is shameful'} ], answer:'a',
-        explanation:"The story condemns laziness and stealing — it brings shame." },
-
-      // Vocabulary: V.3 use
-      { id:19, section:'Vocabulary', question:"Choose the word meaning 'a field with well grown green grass' (from text):", 
-        options:[ {id:'a',text:'meadow'}, {id:'b',text:'stain'}, {id:'c',text:'tribe'}, {id:'d',text:'habitat'} ], answer:'a',
-        explanation:"Meadow = lush green field." },
-
-      // Language L.4: past simple examples
-      { id:20, section:'Language', question:"Choose correct past form: 'I ___ the movie last week.'", 
-        options:[ {id:'a',text:'watched'}, {id:'b',text:'watch'}, {id:'c',text:'watches'}, {id:'d',text:'watching'} ], answer:'a',
-        explanation:"Past tense of 'watch' is 'watched'." },
-
-      // Writing: basic comprehension
-      { id:21, section:'Writing', question:"If you find a baby monkey without its mother, the first thing to do is:", 
-        options:[ {id:'a',text:'Put it in a safe place and protect it'}, {id:'b',text:'Leave it alone'}, {id:'c',text:'Sell it'}, {id:'d',text:'Throw stones'} ], answer:'a',
-        explanation:"Safety first — place it safe, protect and search for mother." },
-
-      // More comprehension - mother cheetah reaction
-      { id:22, section:'Comprehension', question:"What happened to the mother cheetah’s face after long weeping?", 
-        options:[ {id:'a',text:'Stains appeared on her cheeks'}, {id:'b',text:'It became white'}, {id:'c',text:'She smiled'}, {id:'d',text:'It grew hair'} ], answer:'a',
-        explanation:"Her long weeping caused dark stains on cheeks." },
-
-      // L.6 Weekend verbs (fill)
-      { id:23, section:'Language', question:"Pick the correct verb form: 'We ___ for shopping on Saturday.'", 
-        options:[ {id:'a',text:'go'}, {id:'b',text:'went'}, {id:'c',text:'gone'}, {id:'d',text:'going'} ], answer:'b',
-        explanation:"Past tense: 'We went for shopping'." },
-
-      // L.9 questions formation (simple)
-      { id:24, section:'Language', question:"Bhaskar sent an SMS to his friend an hour ago. Which question asks 'when'?", 
-        options:[ {id:'a',text:'Who sent an SMS?'}, {id:'b',text:'When did Bhaskar send an SMS?'}, {id:'c',text:'What did Bhaskar do?'}, {id:'d',text:'Whom did Bhaskar send?'} ], answer:'b',
-        explanation:"'When' question: 'When did Bhaskar send an SMS?'" },
-
-      // Final recap
-      { id:25, section:'Facts', question:"Cubs: how many cubs does female cheetah usually give birth to (as per text)?", 
-        options:[ {id:'a',text:'2 to 4'}, {id:'b',text:'5 to 7'}, {id:'c',text:'1 only'}, {id:'d',text:'10 to 12'} ], answer:'a',
-        explanation:"Typical litter size: 2–4 cubs." }
-    ];
-
-    /**********************************************************
-     * QUIZ STATE
-     **********************************************************/
-    let state = {
-      currentIndex: 0,                   // index in QUESTIONS array
-      answers: {},                       // {questionId: optionId}
-      submitted: false,
-      startTime: null,
-      timerInterval: null
+    const correctAnswers = {
+      q1: "c",
+      q2: "c",
+      q3: "a",
+      q4: "d",
+      q5: "a",
+      q6: "b",
+      q7: "c",
+      q8: "b",
+      q9: "a",
+      q10: "c"
     };
 
-    /**********************************************************
-     * UI ELEMENTS
-     **********************************************************/
-    const qNumberEl = document.getElementById('qNumber');
-    const qTotalEl = document.getElementById('qTotal');
-    const qTextEl = document.getElementById('qText');
-    const qTopicEl = document.getElementById('qTopic');
-    const optionsListEl = document.getElementById('optionsList');
-    const progressBar = document.getElementById('progressBar');
-    const answeredCountEl = document.getElementById('answeredCount');
-    const remainingCountEl = document.getElementById('remainingCount');
-    const scoreCountEl = document.getElementById('scoreCount');
-    const qGridEl = document.getElementById('qGrid');
-    const totalQEl = document.getElementById('totalQ');
-    const statusLabel = document.getElementById('statusLabel');
-    const timerEl = document.getElementById('timer');
-    const submitBtn = document.getElementById('submitBtn');
-    const reviewBtn = document.getElementById('reviewBtn');
-    const resultModal = document.getElementById('resultModal');
-    const finalScoreEl = document.getElementById('finalScore');
-    const finalMsgEl = document.getElementById('finalMsg');
+    function checkAnswers() {
+      let score = 0;
+      const total = Object.keys(correctAnswers).length;
 
-    /**********************************************************
-     * INIT
-     **********************************************************/
-    function init(){
-      // set totals
-      totalQEl.textContent = QUESTIONS.length;
-      qTotalEl.textContent = QUESTIONS.length;
-      document.getElementById('qTotal').textContent = QUESTIONS.length;
-      // populate grid
-      QUESTIONS.forEach((q, idx) => {
-        const pill = document.createElement('button');
-        pill.type = 'button';
-        pill.className = 'q-pill';
-        pill.textContent = idx+1;
-        pill.title = `Jump to Q${idx+1}`;
-        pill.onclick = () => { goToQuestion(idx); };
-        pill.id = 'pill-' + q.id;
-        qGridEl.appendChild(pill);
-      });
-
-      // set initial
-      state.startTime = Date.now();
-      startTimer();
-      renderQuestion(state.currentIndex);
-      updateSidebar();
-      totalQEl.textContent = QUESTIONS.length;
-      qTotalEl.textContent = QUESTIONS.length;
-      document.getElementById('qTotal').textContent = QUESTIONS.length;
-    }
-
-    /**********************************************************
-     * TIMER (simple elapsed time)
-     **********************************************************/
-    function startTimer(){
-      updateTimer();
-      state.timerInterval = setInterval(updateTimer, 1000);
-    }
-    function updateTimer(){
-      const secs = Math.floor((Date.now() - state.startTime)/1000);
-      const mm = Math.floor(secs/60).toString().padStart(2,'0');
-      const ss = (secs % 60).toString().padStart(2,'0');
-      timerEl.textContent = `${mm}:${ss}`;
-    }
-
-    /**********************************************************
-     * RENDER QUESTION
-     **********************************************************/
-    function renderQuestion(index){
-      const q = QUESTIONS[index];
-      if(!q) return;
-      state.currentIndex = index;
-      qNumberEl.textContent = index+1;
-      qTextEl.textContent = q.question;
-      qTopicEl.textContent = 'Section • ' + q.section;
-      // options
-      optionsListEl.innerHTML = '';
-      q.options.forEach(opt => {
-        const lbl = document.createElement('label');
-        lbl.className = 'option';
-        lbl.setAttribute('data-option-id', opt.id);
-        lbl.setAttribute('role','radio');
-        lbl.setAttribute('aria-checked','false');
-
-        const letter = document.createElement('div');
-        letter.className = 'letter';
-        letter.textContent = opt.id.toUpperCase();
-
-        const span = document.createElement('div');
-        span.className = 'label';
-        span.textContent = opt.text;
-
-        const input = document.createElement('input');
-        input.type = 'radio';
-        input.name = 'q' + q.id;
-        input.value = opt.id;
-        // clicking label selects
-        lbl.appendChild(letter);
-        lbl.appendChild(span);
-        lbl.appendChild(input);
-        lbl.onclick = (e) => {
-          if(state.submitted) return; // disable selection after submit
-          selectOption(q.id, opt.id);
-        };
-
-        optionsListEl.appendChild(lbl);
-      });
-
-      // restore selection if any
-      const saved = state.answers[q.id];
-      if(saved){
-        markSelectedOption(q.id, saved);
-      }
-      // highlight current pill
-      highlightPills();
-      // update controls
-      prevBtnToggle();
-    }
-
-    function markSelectedOption(qId, optId){
-      const opts = Array.from(document.querySelectorAll('.option'));
-      opts.forEach(o => {
-        const oid = o.getAttribute('data-option-id');
-        if(oid === optId) {
-          o.classList.add('selected');
-          o.setAttribute('aria-checked','true');
-          const input = o.querySelector('input');
-          if(input) input.checked = true;
-        } else {
-          o.classList.remove('selected');
-          o.setAttribute('aria-checked','false');
-          const input = o.querySelector('input');
-          if(input) input.checked = false;
+      for (let q in correctAnswers) {
+        let selected = document.querySelector(`input[name="${q}"]:checked`);
+        if (selected) {
+          if (selected.value === correctAnswers[q]) {
+            score++;
+            selected.parentElement.classList.add("correct");
+          } else {
+            selected.parentElement.classList.add("wrong");
+          }
         }
-      });
-    }
-
-    function selectOption(qId, optId){
-      state.answers[qId] = optId;
-      markSelectedOption(qId, optId);
-      updateSidebar();
-    }
-
-    /**********************************************************
-     * NAVIGATION
-     **********************************************************/
-    function nextQuestion(){
-      if(state.currentIndex < QUESTIONS.length - 1){
-        renderQuestion(state.currentIndex + 1);
-      }
-    }
-    function prevQuestion(){
-      if(state.currentIndex > 0){
-        renderQuestion(state.currentIndex - 1);
-      }
-    }
-    function goToQuestion(idx){
-      renderQuestion(idx);
-    }
-    function prevBtnToggle(){
-      document.getElementById('prevBtn').disabled = state.currentIndex === 0;
-      document.getElementById('nextBtn').disabled = state.currentIndex === QUESTIONS.length - 1;
-    }
-    function clearAnswer(){
-      const q = QUESTIONS[state.currentIndex];
-      if(!q) return;
-      delete state.answers[q.id];
-      // uncheck DOM
-      const opts = Array.from(document.querySelectorAll('.option'));
-      opts.forEach(o => {
-        o.classList.remove('selected');
-        o.setAttribute('aria-checked','false');
-        const input = o.querySelector('input');
-        if(input) input.checked = false;
-      });
-      updateSidebar();
-    }
-
-    /**********************************************************
-     * SIDEBAR UPDATE
-     **********************************************************/
-    function updateSidebar(){
-      const answered = Object.keys(state.answers).length;
-      const remaining = QUESTIONS.length - answered;
-      const pct = Math.round( (answered / QUESTIONS.length) * 100 );
-      progressBar.style.width = pct + '%';
-      answeredCountEl.textContent = answered;
-      remainingCountEl.textContent = remaining;
-      scoreCountEl.textContent = state.submitted ? computeScore() + ' / ' + QUESTIONS.length : '—';
-      statusLabel.textContent = state.submitted ? 'Submitted' : (answered ? 'In progress' : 'Not started');
-
-      // update pills
-      QUESTIONS.forEach((q, idx) => {
-        const pill = document.getElementById('pill-' + q.id);
-        if(!pill) return;
-        pill.classList.toggle('answered', !!state.answers[q.id]);
-      });
-
-      // enable review if submitted
-      reviewBtn.disabled = !state.submitted;
-    }
-
-    /**********************************************************
-     * SUBMISSION & SCORING
-     **********************************************************/
-    function computeScore(){
-      let sc = 0;
-      QUESTIONS.forEach(q => {
-        const a = state.answers[q.id];
-        if(a && a === q.answer) sc++;
-      });
-      return sc;
-    }
-
-    function submitQuiz(){
-      if(state.submitted){
-        alert('You have already submitted. Use Review to see details.');
-        return;
-      }
-      // Basic check: confirm if some unanswered
-      const answered = Object.keys(state.answers).length;
-      if(answered < QUESTIONS.length){
-        const proceed = confirm(`You have answered ${answered} of ${QUESTIONS.length}. Submit anyway?`);
-        if(!proceed) return;
       }
 
-      // lock selection and show correct/wrong highlights
-      state.submitted = true;
-      // stop timer
-      clearInterval(state.timerInterval);
-
-      QUESTIONS.forEach((q, idx) => {
-        // For each question, if currently visible, set classes; otherwise keep pill info for review
-        if(idx === state.currentIndex){
-          markOptionsPostSubmit(q);
-        }
-        // decorate pill: correct/wrong/blank
-        const pill = document.getElementById('pill-' + q.id);
-        const userAns = state.answers[q.id];
-        if(!userAns){
-          pill.style.background = '#fff';
-          pill.style.color = 'var(--muted)';
-          pill.title = `Q${idx+1} — Unanswered`;
-        } else if(userAns === q.answer){
-          pill.style.background = 'linear-gradient(90deg,#dff7e6,#f7fff6)';
-          pill.style.color = 'var(--accent)';
-          pill.title = `Q${idx+1} — Correct`;
-        } else {
-          pill.style.background = 'linear-gradient(90deg,#fff0f0,#fff6f6)';
-          pill.style.color = 'var(--muted)';
-          pill.title = `Q${idx+1} — Wrong`;
-        }
-        // show correct answer on each pill hover (via title)
-      });
-
-      updateSidebar();
-      // show modal with score
-      const sc = computeScore();
-      finalScoreEl.textContent = `${sc} / ${QUESTIONS.length}`;
-      const pct = Math.round((sc / QUESTIONS.length) * 100);
-      let msg = '';
-      if(pct === 100) msg = 'Outstanding! All correct.';
-      else if(pct >= 80) msg = 'Great job — very good!';
-      else if(pct >= 50) msg = 'Good attempt — review the wrong answers.';
-      else msg = 'Keep practicing — review and try again.';
-      finalMsgEl.textContent = `${msg} (${pct}%)`;
-      // show modal
-      resultModal.style.display = 'flex';
-      // also set score on sidebar
-      scoreCountEl.textContent = sc + ' / ' + QUESTIONS.length;
+      let resultBox = document.getElementById("result");
+      resultBox.style.display = "block";
+      resultBox.innerHTML = `✅ You scored <b>${score}</b> out of <b>${total}</b>`;
     }
-
-    function markOptionsPostSubmit(q){
-      // mark options in the currently shown card
-      const optNodes = Array.from(document.querySelectorAll('.option'));
-      optNodes.forEach(node => {
-        const oid = node.getAttribute('data-option-id');
-        node.classList.remove('correct','wrong','selected');
-        // add selected if user chose
-        const user = state.answers[q.id];
-        if(user && oid === user) node.classList.add('selected');
-        // correct highlight
-        if(oid === q.answer){
-          node.classList.add('correct');
-        }
-        if(state.answers[q.id] && oid === state.answers[q.id] && state.answers[q.id] !== q.answer) {
-          node.classList.add('wrong');
-        }
-        // ensure aria
-        const input = node.querySelector('input');
-        if(input) input.disabled = true;
-      });
-    }
-
-    function closeResult(){
-      resultModal.style.display = 'none';
-    }
-
-    /**********************************************************
-     * REVIEW MODE: show explanation and allow navigation to each question
-     **********************************************************/
-    function enterReviewMode(){
-      resultModal.style.display = 'none';
-      // navigate to first question
-      goToQuestion(0);
-      // ensure all questions show post-submit marking when visited
-      state.submitted = true;
-      // make each question render with correct/wrong classes
-      renderQuestion(state.currentIndex);
-      markOptionsPostSubmit(QUESTIONS[state.currentIndex]);
-      // change submit button to "Submitted"
-      submitBtn.textContent = 'Submitted';
-      submitBtn.disabled = true;
-    }
-
-    function reviewAnswers(){
-      // open modal with summary? We'll reuse result modal
-      const sc = computeScore();
-      finalScoreEl.textContent = `${sc} / ${QUESTIONS.length}`;
-      const pct = Math.round((sc / QUESTIONS.length) * 100);
-      finalMsgEl.textContent = `Review mode — ${pct}%`;
-      resultModal.style.display = 'flex';
-    }
-
-    /**********************************************************
-     * RESET / RESTART
-     **********************************************************/
-    function resetQuiz(){
-      if(!confirm('Reset will clear all answers and restart timer. Continue?')) return;
-      state = {
-        currentIndex: 0,
-        answers: {},
-        submitted: false,
-        startTime: Date.now(),
-        timerInterval: null
-      };
-      // reset pills
-      QUESTIONS.forEach((q, idx) => {
-        const pill = document.getElementById('pill-' + q.id);
-        pill.style.background = '';
-        pill.style.color = '';
-        pill.title = '';
-      });
-      // reset timer
-      clearInterval(state.timerInterval);
-      startTimer();
-      renderQuestion(0);
-      updateSidebar();
-      submitBtn.disabled = false;
-      submitBtn.textContent = 'Submit Test';
-      resultModal.style.display = 'none';
-    }
-
-    /**********************************************************
-     * ensure when moving between questions after submission we display highlights
-     **********************************************************/
-    const mutationObserver = new MutationObserver(() => {
-      if(state.submitted){
-        // when a question gets rendered, mark post-submit
-        markOptionsPostSubmit(QUESTIONS[state.currentIndex]);
-      }
-    });
-    mutationObserver.observe(optionsListEl, { childList:true, subtree:true });
-
-    /**********************************************************
-     * highlight current pill
-     **********************************************************/
-    function highlightPills(){
-      QUESTIONS.forEach((q, idx) => {
-        const pill = document.getElementById('pill-' + q.id);
-        if(!pill) return;
-        pill.classList.toggle('current', state.currentIndex === idx);
-      });
-    }
-
-    /**********************************************************
-     * On load
-     **********************************************************/
-    window.addEventListener('load', init);
-
-    // expose some functions to global for inline buttons
-    window.nextQuestion = nextQuestion;
-    window.prevQuestion = prevQuestion;
-    window.clearAnswer = clearAnswer;
-    window.submitQuiz = submitQuiz;
-    window.resetQuiz = resetQuiz;
-    window.reviewAnswers = reviewAnswers;
-    window.enterReviewMode = enterReviewMode;
   </script>
 </body>
 </html>
