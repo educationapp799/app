@@ -30,6 +30,9 @@
       margin: 15px 0 8px;
       font-size: 16px;
     }
+    .options {
+      position: relative;
+    }
     .options label {
       display: block;
       background: #f7f7f7;
@@ -41,7 +44,11 @@
       transition: 0.3s;
       word-wrap: break-word;
     }
-    .options input { display: none; }
+    .options input {
+      position: absolute;
+      opacity: 0;
+      pointer-events: none;
+    }
     .options label:hover { background: #e0e0e0; }
     button {
       background: #4CAF50;
@@ -94,7 +101,7 @@
     <h2>Unit 1: Cheetah's Tears – MCQ Test</h2>
     <form id="quizForm">
       
-      <!-- Example 10 Qs (you can extend more) -->
+      <!-- Q1 -->
       <div class="question">1. Vibhuti copied answers in the exam. Which expression fits?</div>
       <div class="options">
         <label><input type="radio" name="q1" value="a"> Bravo!</label>
@@ -103,6 +110,7 @@
         <label><input type="radio" name="q1" value="d"> Well done!</label>
       </div>
 
+      <!-- Q2 -->
       <div class="question">2. Opposite of 'comfortable'?</div>
       <div class="options">
         <label><input type="radio" name="q2" value="a"> Wicked</label>
@@ -111,6 +119,7 @@
         <label><input type="radio" name="q2" value="d"> Happy</label>
       </div>
 
+      <!-- Q3 -->
       <div class="question">3. Nirali’s papa bought her a bicycle so her younger brother ___ her.</div>
       <div class="options">
         <label><input type="radio" name="q3" value="a"> Envied</label>
@@ -119,6 +128,7 @@
         <label><input type="radio" name="q3" value="d"> Helped</label>
       </div>
 
+      <!-- Q4 -->
       <div class="question">4. Edie decided to steal cub. Expression?</div>
       <div class="options">
         <label><input type="radio" name="q4" value="a"> Bravo!</label>
@@ -127,6 +137,7 @@
         <label><input type="radio" name="q4" value="d"> What a shame!</label>
       </div>
 
+      <!-- Q5 -->
       <div class="question">5. Correct sequence: Deer → ? → Cub caught?</div>
       <div class="options">
         <label><input type="radio" name="q5" value="a"> Saw cheetah → leapt → cubs fed → Edie envied → caught cubs</label>
@@ -135,6 +146,7 @@
         <label><input type="radio" name="q5" value="d"> Edie envied → saw cheetah → leapt → cubs fed → caught cubs</label>
       </div>
 
+      <!-- Q6 -->
       <div class="question">6. Message of story?</div>
       <div class="options">
         <label><input type="radio" name="q6" value="a"> Laziness is rewarded</label>
@@ -143,6 +155,7 @@
         <label><input type="radio" name="q6" value="d"> Cubs are lucky</label>
       </div>
 
+      <!-- Q7 -->
       <div class="question">7. Cheetah’s maximum speed?</div>
       <div class="options">
         <label><input type="radio" name="q7" value="a"> 60 km/h</label>
@@ -151,6 +164,7 @@
         <label><input type="radio" name="q7" value="d"> 120 km/h</label>
       </div>
 
+      <!-- Q8 -->
       <div class="question">8. Age of maturity of cheetah?</div>
       <div class="options">
         <label><input type="radio" name="q8" value="a"> 1 year</label>
@@ -159,6 +173,7 @@
         <label><input type="radio" name="q8" value="d"> 4 years</label>
       </div>
 
+      <!-- Q9 -->
       <div class="question">9. Edie envied cubs because ___</div>
       <div class="options">
         <label><input type="radio" name="q9" value="a"> They got food without effort</label>
@@ -167,6 +182,7 @@
         <label><input type="radio" name="q9" value="d"> They could hunt deer</label>
       </div>
 
+      <!-- Q10 -->
       <div class="question">10. Who helped mother cheetah?</div>
       <div class="options">
         <label><input type="radio" name="q10" value="a"> Edie</label>
@@ -198,6 +214,11 @@
       let score = 0;
       const total = Object.keys(correctAnswers).length;
 
+      // Reset previous colors
+      document.querySelectorAll(".options label").forEach(label => {
+        label.classList.remove("correct", "wrong");
+      });
+
       for (let q in correctAnswers) {
         let selected = document.querySelector(`input[name="${q}"]:checked`);
         if (selected) {
@@ -213,6 +234,7 @@
       let resultBox = document.getElementById("result");
       resultBox.style.display = "block";
       resultBox.innerHTML = `✅ You scored <b>${score}</b> out of <b>${total}</b>`;
+      window.scrollTo({ top: 0, behavior: 'smooth' });
     }
   </script>
 </body>
