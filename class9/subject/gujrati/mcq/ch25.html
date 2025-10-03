@@ -3,53 +3,198 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Coming Soon</title>
+    <title>પથ-પ્રદર્શિની ગીતા - MCQ Test</title>
     <style>
-        body {
-            font-family: 'Arial', sans-serif;
-            text-align: center;
-            background: linear-gradient(135deg, #ff7eb3, #ff758c, #ff7eb3, #ff758c);
-            background-size: 400% 400%;
-            animation: gradientBG 6s ease infinite;
-            height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            color: white;
-        }
+        body { font-family: 'Nirmala UI', 'Arial', sans-serif; line-height: 1.6; padding: 20px; background-color: #e0f7fa; /* Light Cyan for Knowledge Theme */ color: #333; }
+        .container { max-width: 900px; margin: auto; background: white; padding: 30px; border-radius: 15px; box-shadow: 0 10px 25px rgba(0,0,0,0.15); }
+        h2 { text-align: center; color: #00838f; /* Dark Cyan */ border-bottom: 3px solid #00838f; padding-bottom: 15px; margin-bottom: 30px; font-size: 2.2em; }
+        
+        .question { margin-bottom: 25px; padding: 20px; border: 1px solid #4db6ac; border-radius: 10px; background-color: #f9ffff; box-shadow: 0 2px 5px rgba(0,0,0,0.05); }
+        .question p { font-weight: bold; color: #006064; /* Darker Cyan */ margin-top: 0; font-size: 1.1em; }
+        .options label { display: flex; align-items: center; margin: 12px 0; cursor: pointer; font-size: 16px; padding: 10px; border-radius: 5px; transition: background-color 0.2s; }
+        .options label:hover { background-color: #e0f7fa; } 
+        .options input[type="radio"] { margin-right: 15px; transform: scale(1.2); }
+        
+        .feedback { margin-top: 10px; padding: 8px; border-radius: 5px; font-weight: bold; display: none; }
+        .feedback.correct { background-color: #c8e6c9; color: #388e3c; border: 1px solid #a5d6a7; }
+        .feedback.incorrect { background-color: #ffcdd2; color: #d32f2f; border: 1px solid #ef9a9a; }
+        .correct-indicator { color: #2e7d32; margin-left: auto; display: none; font-size: 1.2em; font-weight: bold; }
+        
+        button { padding: 15px 30px; background-color: #00838f; color: white; border: none; border-radius: 8px; cursor: pointer; font-size: 18px; margin-top: 30px; display: block; width: 100%; transition: background-color 0.3s, transform 0.1s; box-shadow: 0 4px #006064; }
+        button:hover { background-color: #006064; }
+        button:active { transform: translateY(2px); box-shadow: 0 2px #006064; }
+        
+        #results { margin-top: 30px; padding: 25px; border: 3px solid #00838f; border-radius: 10px; background-color: #f9ffff; font-weight: bold; text-align: center; font-size: 20px; display: none; animation: fadeIn 0.5s; }
 
-        @keyframes gradientBG {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
-        }
-
-        .coming-soon {
-            background: rgba(255, 255, 255, 0.2);
-            padding: 40px;
-            border-radius: 10px;
-            backdrop-filter: blur(10px);
-            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
-            display: inline-block;
-        }
-
-        h1 {
-            font-size: 36px;
-            margin: 0;
-        }
-
-        p {
-            font-size: 18px;
-            margin-top: 10px;
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
         }
     </style>
 </head>
 <body>
 
-    <div class="coming-soon">
-        <h1>📢 Coming Soon...</h1>
-        <p>નવું પેજ ટૂંક સમયમાં ઉપલબ્ધ થશે.</p>
-    </div>
+<div class="container">
+    <h2>પથ-પ્રદર્શિની ગીતા - MCQ Test</h2>
+    <p>નીચે આપેલા પ્રશ્નોના યોગ્ય વિકલ્પ પસંદ કરીને જવાબ ચકાસો.</p>
+    <form id="quizForm">
+        
+        <div class="question" id="q1" data-answer="B">
+            <p>1. શ્રીમદ્ ભગવદ્ ગીતા મહર્ષિ વેદવ્યાસ વિરચિત મહાભારતના કયા પર્વનો ભાગ છે?</p>
+            <div class="options">
+                <label><input type="radio" name="q1" value="A"> આદિપર્વ</label>
+                <label><input type="radio" name="q1" value="B"> ભીષ્મપર્વ <span class="correct-indicator">✔</span></label>
+                <label><input type="radio" name="q1" value="C"> કર્ણપર્વ</label>
+                <label><input type="radio" name="q1" value="D"> શાંતિપર્વ</label>
+            </div>
+            <div class="feedback"></div>
+        </div>
+
+        <div class="question" id="q2" data-answer="D">
+            <p>2. ગીતાજીના 7.2 શ્લોકનો મર્મ શું છે?</p>
+            <div class="options">
+                <label><input type="radio" name="q2" value="A"> કર્મ કરવું તે જ યોગ છે.</label>
+                <label><input type="radio" name="q2" value="B"> નિશ્ચયબુદ્ધિ સ્થિર રાખવી.</label>
+                <label><input type="radio" name="q2" value="C"> બધા જીવો પ્રત્યે સમભાવ.</label>
+                <label><input type="radio" name="q2" value="D"> **વિજ્ઞાન સહિત તત્ત્વજ્ઞાન, જેને જાણ્યા પછી બીજું કશું જાણવાલાયક શેષ નથી રહેતું.** <span class="correct-indicator">✔</span></label>
+            </div>
+            <div class="feedback"></div>
+        </div>
+
+        <div class="question" id="q3" data-answer="A">
+            <p>3. 'મમૈવાંશો જીવલોકે જીવભૂતઃ સનાતનઃ।' આ શ્લોક કયો સંદેશ આપે છે?</p>
+            <div class="options">
+                <label><input type="radio" name="q3" value="A"> **સર્વ જીવાત્મા ઈશ્વરનો જ અંશ છે, તેથી માનવ-માનવમાં ભેદભાવ કરવો ન જોઈએ.** <span class="correct-indicator">✔</span></label>
+                <label><input type="radio" name="q3" value="B"> મનુષ્યએ ફક્ત પોતાનું કર્મ કરવું જોઈએ.</label>
+                <label><input type="radio" name="q3" value="C"> વ્યક્તિનું મન તેનો શત્રુ છે.</label>
+                <label><input type="radio" name="q3" value="D"> જ્ઞાન મેળવવું તે સૌથી મોટું ધ્યેય છે.</label>
+            </div>
+            <div class="feedback"></div>
+        </div>
+        
+        <div class="question" id="q4" data-answer="C">
+            <p>4. 'યોગઃ કર્મસુ કૌશલમ્।' શ્લોક અનુસાર, કૌશલ્યના આધારે શ્રેષ્ઠ કામ મળી રહે છે. આ વાતને સાબિત કરવા ભારત સરકારની કઈ યોજનાનું ઉદાહરણ આપવામાં આવ્યું છે?</p>
+            <div class="options">
+                <label><input type="radio" name="q4" value="A"> બેટી બચાવો બેટી પઢાવો યોજના</label>
+                <label><input type="radio" name="q4" value="B"> જન ધન યોજના</label>
+                <label><input type="radio" name="q4" value="C"> **પ્રધાનમંત્રી કૌશલ વિકાસ યોજના** <span class="correct-indicator">✔</span></label>
+                <label><input type="radio" name="q4" value="D"> સ્વચ્છ ભારત મિશન</label>
+            </div>
+            <div class="feedback"></div>
+        </div>
+
+        <div class="question" id="q5" data-answer="B">
+            <p>5. સિન્ધુતાઈ સપકાલનને 'પદ્મશ્રી'થી સન્માનિત કરવામાં આવ્યા, કારણ કે તેમણે કયું મહાન કાર્ય કર્યું હતું?</p>
+            <div class="options">
+                <label><input type="radio" name="q5" value="A"> દેશ માટે ગણિતમાં પ્રથમ આવ્યા.</label>
+                <label><input type="radio" name="q5" value="B"> **નિઃસહાય બાળકો માટે આશ્રમો સ્થાપ્યા.** <span class="correct-indicator">✔</span></label>
+                <label><input type="radio" name="q5" value="C"> સતીપ્રથા નાબૂદ કરી.</label>
+                <label><input type="radio" name="q5" value="D"> ચેસની રમતમાં વિશ્વવિજેતા બન્યા.</label>
+            </div>
+            <div class="feedback"></div>
+        </div>
+
+        <div class="question" id="q6" data-answer="D">
+            <p>6. ગીતાજીના 6.6 શ્લોક પ્રમાણે, જે જીવાત્માઓ દ્વારા મન જીતવામાં આવ્યું છે, તે તેમનો મિત્ર છે. જેઓ નિષ્ફળ છે, એમના માટે મન કોની જેમ કામ કરે છે?</p>
+            <div class="options">
+                <label><input type="radio" name="q6" value="A"> શિક્ષક</label>
+                <label><input type="radio" name="q6" value="B"> ગુરુ</label>
+                <label><input type="radio" name="q6" value="C"> પથદર્શક</label>
+                <label><input type="radio" name="q6" value="D"> **શત્રુ** <span class="correct-indicator">✔</span></label>
+            </div>
+            <div class="feedback"></div>
+        </div>
+
+        <div class="question" id="q7" data-answer="A">
+            <p>7. આદિ શંકરાચાર્યે સ્થાપેલા ચાર મઠોમાં પૂર્વમાં આવેલો મઠ કયો છે?</p>
+            <div class="options">
+                <label><input type="radio" name="q7" value="A"> જગન્નાથપુરીમાં ગોવર્ધન મઠ <span class="correct-indicator">✔</span></label>
+                <label><input type="radio" name="q7" value="B"> બદરીનાથ મઠ</label>
+                <label><input type="radio" name="q7" value="C"> શૃંગેરી મઠ</label>
+                <label><input type="radio" name="q7" value="D"> દ્વારકા મઠ</label>
+            </div>
+            <div class="feedback"></div>
+        </div>
+
+        <div class="question" id="q8" data-answer="B">
+            <p>8. 'યદ્યદાચરતિ શ્રેષ્ઠસ્તત્તદેવેતરો જનઃ।' (ગીતા 3.21) આ શ્લોકનું તાત્પર્ય શું છે?</p>
+            <div class="options">
+                <label><input type="radio" name="q8" value="A"> દરેક વ્યક્તિએ શ્રેષ્ઠ બનવું જોઈએ.</label>
+                <label><input type="radio" name="q8" value="B"> **શ્રેષ્ઠ પુરુષ જે આચરે છે, અન્ય માણસો પણ તેને જ અનુસરે છે.** <span class="correct-indicator">✔</span></label>
+                <label><input type="radio" name="q8" value="C"> સકળ માનવ-સમૂહ શ્રેષ્ઠ હોય છે.</label>
+                <label><input type="radio" name="q8" value="D"> ગુરુજીએ કહ્યું કે દીન-દુખિયાંની સેવા કરવી.</label>
+            </div>
+            <div class="feedback"></div>
+        </div>
+
+        <button type="button" onclick="checkQuiz()">જવાબ ચકાસો</button>
+    </form>
+    
+    <div id="results"></div>
+
+</div>
+
+<script>
+    const answers = {
+        q1: 'B', 
+        q2: 'D', 
+        q3: 'A', 
+        q4: 'C', 
+        q5: 'B', 
+        q6: 'D', 
+        q7: 'A', 
+        q8: 'B'  
+    };
+
+    function checkQuiz() {
+        let score = 0;
+        const totalQuestions = Object.keys(answers).length;
+        const form = document.getElementById('quizForm');
+        const resultsDiv = document.getElementById('results');
+        const questions = document.querySelectorAll('.question');
+        
+        questions.forEach((q, index) => {
+            const qName = 'q' + (index + 1);
+            const selectedRadio = form.elements[qName].value;
+            const correctAnswer = answers[qName];
+            const feedbackDiv = q.querySelector('.feedback');
+            
+            // Clear previous feedback and highlights
+            q.classList.remove('correct', 'incorrect');
+            feedbackDiv.style.display = 'none';
+            q.querySelectorAll('.correct-indicator').forEach(i => i.style.display = 'none');
+
+            if (selectedRadio) {
+                if (selectedRadio === correctAnswer) {
+                    score++;
+                    q.classList.add('correct');
+                    feedbackDiv.textContent = 'જવાબ સાચો છે!';
+                    feedbackDiv.classList.remove('incorrect');
+                    feedbackDiv.classList.add('correct');
+                } else {
+                    q.classList.add('incorrect');
+                    // Show correct answer indicator
+                    const correctLabel = q.querySelector(`input[value="${correctAnswer}"]`).closest('label');
+                    correctLabel.querySelector('.correct-indicator').style.display = 'inline';
+                    feedbackDiv.textContent = `જવાબ ખોટો છે. સાચો જવાબ: ${correctAnswer}.`;
+                    feedbackDiv.classList.remove('correct');
+                    feedbackDiv.classList.add('incorrect');
+                }
+                feedbackDiv.style.display = 'block';
+            } else {
+                // If not answered, show correct answer
+                const correctLabel = q.querySelector(`input[value="${correctAnswer}"]`).closest('label');
+                correctLabel.querySelector('.correct-indicator').style.display = 'inline';
+                feedbackDiv.textContent = 'આ પ્રશ્નનો જવાબ આપવામાં આવ્યો નથી. સાચો જવાબ: ' + correctAnswer + ' છે.';
+                feedbackDiv.classList.remove('correct', 'incorrect');
+                feedbackDiv.style.display = 'block';
+            }
+        });
+
+        resultsDiv.innerHTML = `તમારો અંતિમ સ્કોર: **${score}** માંથી **${totalQuestions}** છે.`;
+        resultsDiv.style.display = 'block';
+    }
+</script>
 
 </body>
 </html>
