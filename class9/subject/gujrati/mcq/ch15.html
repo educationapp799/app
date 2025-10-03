@@ -3,53 +3,197 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Coming Soon</title>
+    <title>ગોદ માતની ક્યાં ? - MCQ Test</title>
     <style>
-        body {
-            font-family: 'Arial', sans-serif;
-            text-align: center;
-            background: linear-gradient(135deg, #ff7eb3, #ff758c, #ff7eb3, #ff758c);
-            background-size: 400% 400%;
-            animation: gradientBG 6s ease infinite;
-            height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            color: white;
-        }
+        body { font-family: 'Nirmala UI', 'Arial', sans-serif; line-height: 1.6; padding: 20px; background-color: #fce4ec; /* Light Pink for love/motherhood theme */ color: #333; }
+        .container { max-width: 900px; margin: auto; background: white; padding: 30px; border-radius: 15px; box-shadow: 0 10px 25px rgba(0,0,0,0.1); }
+        h2 { text-align: center; color: #ad1457; /* Dark Pink/Maroon */ border-bottom: 3px solid #ad1457; padding-bottom: 15px; margin-bottom: 30px; font-size: 2.2em; }
+        
+        .question { margin-bottom: 25px; padding: 20px; border: 1px solid #f48fb1; border-radius: 10px; background-color: #fff7f9; box-shadow: 0 2px 5px rgba(0,0,0,0.05); }
+        .question p { font-weight: bold; color: #880e4f; /* Deeper Pink */ margin-top: 0; font-size: 1.1em; }
+        .options label { display: flex; align-items: center; margin: 12px 0; cursor: pointer; font-size: 16px; padding: 10px; border-radius: 5px; transition: background-color 0.2s; }
+        .options label:hover { background-color: #fce4ec; } 
+        .options input[type="radio"] { margin-right: 15px; transform: scale(1.2); }
+        
+        .feedback { margin-top: 10px; padding: 8px; border-radius: 5px; font-weight: bold; display: none; }
+        .feedback.correct { background-color: #d4edda; color: #155724; border: 1px solid #c3e6cb; }
+        .feedback.incorrect { background-color: #f8d7da; color: #721c24; border: 1px solid #f5c6cb; }
+        .correct-indicator { color: #28a745; margin-left: auto; display: none; font-size: 1.2em; }
+        
+        button { padding: 15px 30px; background-color: #ad1457; color: white; border: none; border-radius: 8px; cursor: pointer; font-size: 18px; margin-top: 30px; display: block; width: 100%; transition: background-color 0.3s, transform 0.1s; box-shadow: 0 4px #880e4f; }
+        button:hover { background-color: #880e4f; }
+        button:active { transform: translateY(2px); box-shadow: 0 2px #880e4f; }
+        
+        #results { margin-top: 30px; padding: 25px; border: 3px solid #ad1457; border-radius: 10px; background-color: #fff7f9; font-weight: bold; text-align: center; font-size: 20px; display: none; animation: fadeIn 0.5s; }
 
-        @keyframes gradientBG {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
-        }
-
-        .coming-soon {
-            background: rgba(255, 255, 255, 0.2);
-            padding: 40px;
-            border-radius: 10px;
-            backdrop-filter: blur(10px);
-            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
-            display: inline-block;
-        }
-
-        h1 {
-            font-size: 36px;
-            margin: 0;
-        }
-
-        p {
-            font-size: 18px;
-            margin-top: 10px;
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
         }
     </style>
 </head>
 <body>
 
-    <div class="coming-soon">
-        <h1>📢 Coming Soon...</h1>
-        <p>નવું પેજ ટૂંક સમયમાં ઉપલબ્ધ થશે.</p>
-    </div>
+<div class="container">
+    <h2>ગોદ માતની ક્યાં ? - MCQ Test</h2>
+    <form id="quizForm">
+        
+        <div class="question" id="q1" data-answer="D">
+            <p>1. માતાના ટહુકા પાસે કોની વિસાત નથી?</p>
+            <div class="options">
+                <label><input type="radio" name="q1" value="A"> સૂર</label>
+                <label><input type="radio" name="q1" value="B"> તાલ</label>
+                <label><input type="radio" name="q1" value="C"> સંગીત</label>
+                <label><input type="radio" name="q1" value="D"> (A) (B) (C) ત્રણેય <span class="correct-indicator">✔</span></label>
+            </div>
+            <div class="feedback"></div>
+        </div>
+
+        <div class="question" id="q2" data-answer="D">
+            <p>2. 'હાજર હાથ હજાર હોય' વાક્યનો અર્થ શું છે?</p>
+            <div class="options">
+                <label><input type="radio" name="q2" value="A"> માત્ર એક હજાર હાથની વાત છે.</label>
+                <label><input type="radio" name="q2" value="B"> કોઈ મદદ કરવા આવતું નથી.</label>
+                <label><input type="radio" name="q2" value="C"> માતાની મમતા જ દેખાય છે.</label>
+                <label><input type="radio" name="q2" value="D"> બધા જ મદદ કરવા તૈયાર હોય. <span class="correct-indicator">✔</span></label>
+            </div>
+            <div class="feedback"></div>
+        </div>
+
+        <div class="question" id="q3" data-answer="C">
+            <p>3. માતાની છાયાને કવિ કોની સાથે સરખાવે છે?</p>
+            <div class="options">
+                <label><input type="radio" name="q3" value="A"> ઉનાળાના તડકા સાથે</label>
+                <label><input type="radio" name="q3" value="B"> શિયાળાની ઠંડી સાથે</label>
+                <label><input type="radio" name="q3" value="C"> ભર્યા ઉનાળાની પરબ સાથે <span class="correct-indicator">✔</span></label>
+                <label><input type="radio" name="q3" value="D"> છત્તર સાથે</label>
+            </div>
+            <div class="feedback"></div>
+        </div>
+        
+        <div class="question" id="q4" data-answer="B">
+            <p>4. કવિને શિયાળામાં હૂંફ કયા સ્વરૂપે મળે છે?</p>
+            <div class="options">
+                <label><input type="radio" name="q4" value="A"> શય્યામાં સૂવાથી</label>
+                <label><input type="radio" name="q4" value="B"> માતાની લાગણીરૂપી માયાથી <span class="correct-indicator">✔</span></label>
+                <label><input type="radio" name="q4" value="C"> તાપણું કરીને</label>
+                <label><input type="radio" name="q4" value="D"> ગરમ કપડાં પહેરીને</label>
+            </div>
+            <div class="feedback"></div>
+        </div>
+
+        <div class="question" id="q5" data-answer="A">
+            <p>5. ચંદ્રકાન્ત શેઠનું વતન ખેડા જિલ્લાનું કયું ગામ છે?</p>
+            <div class="options">
+                <label><input type="radio" name="q5" value="A"> ઠાસરા <span class="correct-indicator">✔</span></label>
+                <label><input type="radio" name="q5" value="B"> વાંકાનેર</label>
+                <label><input type="radio" name="q5" value="C"> રાજકોટ</label>
+                <label><input type="radio" name="q5" value="D"> મોરબી</label>
+            </div>
+            <div class="feedback"></div>
+        </div>
+
+        <div class="question" id="q6" data-answer="B">
+            <p>6. માના પાલવની તુલના કોની સાથે કરવામાં આવી છે?</p>
+            <div class="options">
+                <label><input type="radio" name="q6" value="A"> ચાંદ-સૂરજ</label>
+                <label><input type="radio" name="q6" value="B"> પલ્લવ અને પુષ્પો <span class="correct-indicator">✔</span></label>
+                <label><input type="radio" name="q6" value="C"> છત</label>
+                <label><input type="radio" name="q6" value="D"> મેહ</label>
+            </div>
+            <div class="feedback"></div>
+        </div>
+
+        <div class="question" id="q7" data-answer="D">
+            <p>7. 'સોડ' શબ્દનો યોગ્ય અર્થ શું છે?</p>
+            <div class="options">
+                <label><input type="radio" name="q7" value="A"> છત</label>
+                <label><input type="radio" name="q7" value="B"> પથારી</label>
+                <label><input type="radio" name="q7" value="C"> ખોળો</label>
+                <label><input type="radio" name="q7" value="D"> પાસું, પડખું <span class="correct-indicator">✔</span></label>
+            </div>
+            <div class="feedback"></div>
+        </div>
+
+        <div class="question" id="q8" data-answer="C">
+            <p>8. માતાની આંખોની તુલના કવિ શેનાથી કરે છે?</p>
+            <div class="options">
+                <label><input type="radio" name="q8" value="A"> પલ્લવ અને પુષ્પો</label>
+                <label><input type="radio" name="q8" value="B"> હેતની હેલી</label>
+                <label><input type="radio" name="q8" value="C"> ચાંદ, સૂરજ ને તારા <span class="correct-indicator">✔</span></label>
+                <label><input type="radio" name="q8" value="D"> ભર્યા ઉનાળે પરબ</label>
+            </div>
+            <div class="feedback"></div>
+        </div>
+
+        <button type="button" onclick="checkQuiz()">જવાબ ચકાસો</button>
+    </form>
+    
+    <div id="results"></div>
+
+</div>
+
+<script>
+    const answers = {
+        q1: 'D', 
+        q2: 'D', 
+        q3: 'C', 
+        q4: 'B', 
+        q5: 'A', 
+        q6: 'B', 
+        q7: 'D', 
+        q8: 'C'  
+    };
+
+    function checkQuiz() {
+        let score = 0;
+        const totalQuestions = Object.keys(answers).length;
+        const form = document.getElementById('quizForm');
+        const resultsDiv = document.getElementById('results');
+        const questions = document.querySelectorAll('.question');
+        
+        questions.forEach((q, index) => {
+            const qName = 'q' + (index + 1);
+            const selectedRadio = form.elements[qName].value;
+            const correctAnswer = answers[qName];
+            const feedbackDiv = q.querySelector('.feedback');
+            
+            // Clear previous feedback and highlights
+            q.classList.remove('correct', 'incorrect');
+            feedbackDiv.style.display = 'none';
+            q.querySelectorAll('.correct-indicator').forEach(i => i.style.display = 'none');
+
+            if (selectedRadio) {
+                if (selectedRadio === correctAnswer) {
+                    score++;
+                    q.classList.add('correct');
+                    feedbackDiv.textContent = 'જવાબ સાચો છે!';
+                    feedbackDiv.classList.remove('incorrect');
+                    feedbackDiv.classList.add('correct');
+                } else {
+                    q.classList.add('incorrect');
+                    // Show correct answer indicator
+                    const correctLabel = q.querySelector(`input[value="${correctAnswer}"]`).closest('label');
+                    correctLabel.querySelector('.correct-indicator').style.display = 'inline';
+                    feedbackDiv.textContent = `જવાબ ખોટો છે. સાચો જવાબ: ${correctAnswer}.`;
+                    feedbackDiv.classList.remove('correct');
+                    feedbackDiv.classList.add('incorrect');
+                }
+                feedbackDiv.style.display = 'block';
+            } else {
+                // If not answered, show correct answer
+                const correctLabel = q.querySelector(`input[value="${correctAnswer}"]`).closest('label');
+                correctLabel.querySelector('.correct-indicator').style.display = 'inline';
+                feedbackDiv.textContent = 'આ પ્રશ્નનો જવાબ આપવામાં આવ્યો નથી. સાચો જવાબ: ' + correctAnswer + ' છે.';
+                feedbackDiv.classList.remove('correct', 'incorrect');
+                feedbackDiv.style.display = 'block';
+            }
+        });
+
+        resultsDiv.innerHTML = `તમારો અંતિમ સ્કોર: **${score}** માંથી **${totalQuestions}** છે.`;
+        resultsDiv.style.display = 'block';
+    }
+</script>
 
 </body>
 </html>
