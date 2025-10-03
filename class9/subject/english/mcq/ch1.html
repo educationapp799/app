@@ -1,79 +1,132 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MCQ Test</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 20px;
-        }
-        .question {
-            margin-bottom: 15px;
-        }
-        .result {
-            margin-top: 20px;
-            font-weight: bold;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MCQ Test - Chapter 1</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: linear-gradient(135deg, #74ebd5, #ACB6E5);
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+    .container {
+      background: #fff;
+      padding: 20px 30px;
+      border-radius: 15px;
+      box-shadow: 0px 8px 20px rgba(0,0,0,0.2);
+      width: 90%;
+      max-width: 600px;
+      animation: fadeIn 1s ease-in-out;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    h2 {
+      text-align: center;
+      color: #333;
+    }
+    .question {
+      font-weight: bold;
+      margin: 15px 0 10px;
+    }
+    .options label {
+      display: block;
+      background: #f4f4f4;
+      margin: 8px 0;
+      padding: 10px;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    .options input {
+      display: none;
+    }
+    .options label:hover {
+      background: #e0e0e0;
+    }
+    button {
+      background: #4CAF50;
+      color: white;
+      border: none;
+      padding: 12px 18px;
+      border-radius: 10px;
+      cursor: pointer;
+      font-size: 16px;
+      margin-top: 15px;
+      width: 100%;
+      transition: 0.3s;
+    }
+    button:hover {
+      background: #388E3C;
+    }
+    .result {
+      margin-top: 20px;
+      padding: 15px;
+      background: #f1f1f1;
+      border-radius: 10px;
+      display: none;
+      font-size: 18px;
+      text-align: center;
+    }
+  </style>
 </head>
 <body>
-    <h2>MCQ Test</h2>
+  <div class="container">
+    <h2>MCQ Test - Chapter 1</h2>
     <form id="quizForm">
-        <div class="question">
-            <p>1. What is the capital of France?</p>
-            <input type="radio" name="q1" value="Paris"> Paris<br>
-            <input type="radio" name="q1" value="London"> London<br>
-            <input type="radio" name="q1" value="Berlin"> Berlin<br>
-        </div>
-        <div class="question">
-            <p>2. What is 5 + 3?</p>
-            <input type="radio" name="q2" value="6"> 6<br>
-            <input type="radio" name="q2" value="8"> 8<br>
-            <input type="radio" name="q2" value="10"> 10<br>
-        </div>
-        <div class="question">
-            <p>3. Which planet is known as the Red Planet?</p>
-            <input type="radio" name="q3" value="Mars"> Mars<br>
-            <input type="radio" name="q3" value="Venus"> Venus<br>
-            <input type="radio" name="q3" value="Jupiter"> Jupiter<br>
-        </div>
-        <div class="question">
-            <p>4. Who wrote 'Hamlet'?</p>
-            <input type="radio" name="q4" value="Shakespeare"> William Shakespeare<br>
-            <input type="radio" name="q4" value="Hemingway"> Ernest Hemingway<br>
-            <input type="radio" name="q4" value="Austen"> Jane Austen<br>
-        </div>
-        <div class="question">
-            <p>5. What is the chemical symbol for water?</p>
-            <input type="radio" name="q5" value="H2O"> H<sub>2</sub>O<br>
-            <input type="radio" name="q5" value="O2"> O<sub>2</sub><br>
-            <input type="radio" name="q5" value="CO2"> CO<sub>2</sub><br>
-        </div>
-        <button type="button" onclick="checkAnswers()">Submit</button>
-    </form>
-    <p class="result" id="result"></p>
+      <div class="question">1. HTML ka full form kya hai?</div>
+      <div class="options">
+        <label><input type="radio" name="q1" value="a"> Hyper Text Markup Language</label>
+        <label><input type="radio" name="q1" value="b"> High Tech Modern Language</label>
+        <label><input type="radio" name="q1" value="c"> Hyperlinks and Text Markup Language</label>
+        <label><input type="radio" name="q1" value="d"> None of these</label>
+      </div>
 
-    <script>
-        function checkAnswers() {
-            let answers = {
-                q1: "Paris",
-                q2: "8",
-                q3: "Mars",
-                q4: "Shakespeare",
-                q5: "H2O"
-            };
-            let score = 0;
-            for (let key in answers) {
-                let selected = document.querySelector(`input[name="${key}"]:checked`);
-                if (selected && selected.value === answers[key]) {
-                    score++;
-                }
-            }
-            document.getElementById("result").innerText = `You scored ${score} out of 5.`;
+      <div class="question">2. CSS ka use kis liye hota hai?</div>
+      <div class="options">
+        <label><input type="radio" name="q2" value="a"> Webpage ki styling ke liye</label>
+        <label><input type="radio" name="q2" value="b"> Database connect karne ke liye</label>
+        <label><input type="radio" name="q2" value="c"> Server chalane ke liye</label>
+        <label><input type="radio" name="q2" value="d"> None</label>
+      </div>
+
+      <div class="question">3. JavaScript mainly kahan run hoti hai?</div>
+      <div class="options">
+        <label><input type="radio" name="q3" value="a"> Browser me</label>
+        <label><input type="radio" name="q3" value="b"> Database me</label>
+        <label><input type="radio" name="q3" value="c"> Server ke OS me</label>
+        <label><input type="radio" name="q3" value="d"> None</label>
+      </div>
+
+      <button type="button" onclick="checkAnswers()">Submit</button>
+    </form>
+    <div class="result" id="resultBox"></div>
+  </div>
+
+  <script>
+    function checkAnswers() {
+      let answers = { q1: "a", q2: "a", q3: "a" };
+      let score = 0;
+      let total = Object.keys(answers).length;
+
+      for (let q in answers) {
+        let selected = document.querySelector(`input[name="${q}"]:checked`);
+        if (selected && selected.value === answers[q]) {
+          score++;
         }
-    </script>
+      }
+
+      let resultBox = document.getElementById("resultBox");
+      resultBox.style.display = "block";
+      resultBox.innerHTML = `You scored <b>${score}</b> out of <b>${total}</b>`;
+    }
+  </script>
 </body>
 </html>
-
