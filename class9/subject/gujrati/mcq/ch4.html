@@ -3,53 +3,155 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Coming Soon</title>
+    <title>ગોપાળબાપા - MCQ Test</title>
     <style>
-        body {
-            font-family: 'Arial', sans-serif;
-            text-align: center;
-            background: linear-gradient(135deg, #ff7eb3, #ff758c, #ff7eb3, #ff758c);
-            background-size: 400% 400%;
-            animation: gradientBG 6s ease infinite;
-            height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            color: white;
-        }
-
-        @keyframes gradientBG {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
-        }
-
-        .coming-soon {
-            background: rgba(255, 255, 255, 0.2);
-            padding: 40px;
-            border-radius: 10px;
-            backdrop-filter: blur(10px);
-            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
-            display: inline-block;
-        }
-
-        h1 {
-            font-size: 36px;
-            margin: 0;
-        }
-
-        p {
-            font-size: 18px;
-            margin-top: 10px;
-        }
+        body { font-family: Arial, sans-serif; line-height: 1.6; padding: 20px; background-color: #f7f7f7; }
+        .container { max-width: 800px; margin: auto; background: white; padding: 30px; border-radius: 12px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); }
+        h2 { text-align: center; color: #333; border-bottom: 2px solid #ccc; padding-bottom: 10px; margin-bottom: 25px; }
+        .question { margin-bottom: 25px; padding: 18px; border: 1px solid #ddd; border-radius: 8px; background-color: #fff; transition: background-color 0.3s; }
+        .question p { font-weight: bold; color: #0056b3; margin-top: 0; }
+        .options label { display: block; margin: 12px 0; cursor: pointer; font-size: 16px; }
+        .options input[type="radio"] { margin-right: 12px; transform: scale(1.2); }
+        button { padding: 12px 25px; background-color: #28a745; color: white; border: none; border-radius: 5px; cursor: pointer; font-size: 17px; margin-top: 20px; display: block; width: 100%; transition: background-color 0.3s; }
+        button:hover { background-color: #1e7e34; }
+        #results { margin-top: 30px; padding: 20px; border: 3px solid #007bff; border-radius: 8px; background-color: #e9f7ff; font-weight: bold; text-align: center; font-size: 18px; display: none; }
+        .correct-answer { background-color: #d4edda; border-color: #c3e6cb; }
+        .incorrect-answer { background-color: #f8d7da; border-color: #f5c6cb; }
     </style>
 </head>
 <body>
 
-    <div class="coming-soon">
-        <h1>📢 Coming Soon...</h1>
-        <p>નવું પેજ ટૂંક સમયમાં ઉપલબ્ધ થશે.</p>
-    </div>
+<div class="container">
+    <h2>ગોપાળબાપા - MCQ Test</h2>
+    <form id="quizForm">
+        
+        <div class="question" data-answer="D">
+            <p>1. 'ગોપાળબાપા' પાઠ મનુભાઈ પંચોળી 'દર્શક'ની કઈ બૃહન્નવલમાંથી લેવામાં આવ્યો છે?</p>
+            <div class="options">
+                <label><input type="radio" name="q1" value="A"> દીપ નિર્વાણ</label>
+                <label><input type="radio" name="q1" value="B"> સોક્રેટિસ</label>
+                <label><input type="radio" name="q1" value="C"> કુરુક્ષેત્ર</label>
+                <label><input type="radio" name="q1" value="D"> ઝેર તો પીધાં છે જાણી જાણી</label>
+            </div>
+        </div>
+
+        <div class="question" data-answer="C">
+            <p>2. ગોપાળબાપાએ મહારાજને ભેટમાં શું આપ્યું હતું?</p>
+            <div class="options">
+                <label><input type="radio" name="q2" value="A"> આંબા</label>
+                <label><input type="radio" name="q2" value="B"> કેરી</label>
+                <label><input type="radio" name="q2" value="C"> બોર</label>
+                <label><input type="radio" name="q2" value="D"> ચીકુ</label>
+            </div>
+        </div>
+
+        <div class="question" data-answer="B">
+            <p>3. ગોપાળબાપા શાનો વેપાર કરવા ઇચ્છતા હતા?</p>
+            <div class="options">
+                <label><input type="radio" name="q3" value="A"> કોલસાનો</label>
+                <label><input type="radio" name="q3" value="B"> હરિનામનો</label>
+                <label><input type="radio" name="q3" value="C"> પરચૂરણ</label>
+                <label><input type="radio" name="q3" value="D"> મગફળીના સોદાનો</label>
+            </div>
+        </div>
+        
+        <div class="question" data-answer="D">
+            <p>4. "આ તમારી પડખેના દીપડા ન રંજાડે તોય ઘણું છે." - આ વાક્યમાં 'પડખેના દીપડા' શબ્દ કોના માટે વપરાયો છે?</p>
+            <div class="options">
+                <label><input type="radio" name="q4" value="A"> ગીરના જંગલમાંથી આવેલા દીપડા</label>
+                <label><input type="radio" name="q4" value="B"> મહારાજના અંગરક્ષકો</label>
+                <label><input type="radio" name="q4" value="C"> શિકારીઓ</label>
+                <label><input type="radio" name="q4" value="D"> રાજવહીવટના વહીવટદારો</label>
+            </div>
+        </div>
+
+        <div class="question" data-answer="C">
+            <p>5. ગોપાળબાપાના ગુરુ કોણ હતા?</p>
+            <div class="options">
+                <label><input type="radio" name="q5" value="A"> સાંદીપનિ ઋષિ</label>
+                <label><input type="radio" name="q5" value="B"> પેશ્વા ભગત</label>
+                <label><input type="radio" name="q5" value="C"> માંડણ ભગત</label>
+                <label><input type="radio" name="q5" value="D"> દત્તાત્રેય</label>
+            </div>
+        </div>
+
+        <div class="question" data-answer="B">
+            <p>6. ગોપાળબાપા કોના માટે જમીનની ખટપટ કરતા હતા?</p>
+            <div class="options">
+                <label><input type="radio" name="q6" value="A"> પોતાના માટે</label>
+                <label><input type="radio" name="q6" value="B"> ભાઈબંધના દીકરા માટે</label>
+                <label><input type="radio" name="q6" value="C"> ગુરુ માંડણ ભગતના આશ્રમ માટે</label>
+                <label><input type="radio" name="q6" value="D"> ગામના છોકરાં માટે</label>
+            </div>
+        </div>
+
+        <div class="question" data-answer="A">
+            <p>7. ગોપાળબાપાએ શિવાલયની જગ્યાએ શું બનાવવાનું કહ્યું?</p>
+            <div class="options">
+                <label><input type="radio" name="q7" value="A"> ધરમશાળા</label>
+                <label><input type="radio" name="q7" value="B"> પાઠશાળા</label>
+                <label><input type="radio" name="q7" value="C"> અન્નક્ષેત્ર</label>
+                <label><input type="radio" name="q7" value="D"> બોરડીનું ઝૂંડ</label>
+            </div>
+        </div>
+
+        <div class="question" data-answer="D">
+            <p>8. માંડણ ભગતના કયા વર્તનથી ગોપાળબાપાએ તેમને 'પારખી લીધા'?</p>
+            <div class="options">
+                <label><input type="radio" name="q8" value="A"> તેમનો વાંસળી જેવો અવાજ</label>
+                <label><input type="radio" name="q8" value="B"> તેમની ગુલાબી આત્મા</label>
+                <label><input type="radio" name="q8" value="C"> તેમની રિદ્ધિ-સિદ્ધિ</label>
+                <label><input type="radio" name="q8" value="D"> ગીંગોડાને બીજે ખાજ લેવા જવાનું કહી ઉખેડવાની ના પાડી</label>
+            </div>
+        </div>
+
+        <button type="button" onclick="checkQuiz()">જવાબ ચકાસો</button>
+    </form>
+    
+    <div id="results"></div>
+
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const questions = document.querySelectorAll('.question');
+        questions.forEach(q => {
+            const radios = q.querySelectorAll('input[type="radio"]');
+            radios.forEach(radio => {
+                radio.addEventListener('change', () => {
+                    // Remove previous highlights on change
+                    q.classList.remove('correct-answer', 'incorrect-answer');
+                });
+            });
+        });
+    });
+
+    function checkQuiz() {
+        let score = 0;
+        const form = document.getElementById('quizForm');
+        const resultsDiv = document.getElementById('results');
+        const questions = document.querySelectorAll('.question');
+        const totalQuestions = questions.length;
+        
+        questions.forEach((q, index) => {
+            const qName = 'q' + (index + 1);
+            const selected = form.elements[qName].value;
+            const correctAnswer = q.getAttribute('data-answer');
+
+            q.classList.remove('correct-answer', 'incorrect-answer');
+
+            if (selected === correctAnswer) {
+                score++;
+                q.classList.add('correct-answer');
+            } else if (selected) {
+                q.classList.add('incorrect-answer');
+            }
+        });
+
+        resultsDiv.innerHTML = `તમારો સ્કોર: **${score}** માંથી **${totalQuestions}**.`;
+        resultsDiv.style.display = 'block';
+    }
+</script>
 
 </body>
 </html>
