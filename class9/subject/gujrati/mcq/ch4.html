@@ -3,106 +3,133 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ગોપાળબાપા - MCQ Test</title>
+    <title>ગોપાળબાપા - MCQ Test (Advanced)</title>
     <style>
-        body { font-family: Arial, sans-serif; line-height: 1.6; padding: 20px; background-color: #f7f7f7; }
-        .container { max-width: 800px; margin: auto; background: white; padding: 30px; border-radius: 12px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); }
-        h2 { text-align: center; color: #333; border-bottom: 2px solid #ccc; padding-bottom: 10px; margin-bottom: 25px; }
-        .question { margin-bottom: 25px; padding: 18px; border: 1px solid #ddd; border-radius: 8px; background-color: #fff; transition: background-color 0.3s; }
-        .question p { font-weight: bold; color: #0056b3; margin-top: 0; }
-        .options label { display: block; margin: 12px 0; cursor: pointer; font-size: 16px; }
-        .options input[type="radio"] { margin-right: 12px; transform: scale(1.2); }
-        button { padding: 12px 25px; background-color: #28a745; color: white; border: none; border-radius: 5px; cursor: pointer; font-size: 17px; margin-top: 20px; display: block; width: 100%; transition: background-color 0.3s; }
-        button:hover { background-color: #1e7e34; }
-        #results { margin-top: 30px; padding: 20px; border: 3px solid #007bff; border-radius: 8px; background-color: #e9f7ff; font-weight: bold; text-align: center; font-size: 18px; display: none; }
-        .correct-answer { background-color: #d4edda; border-color: #c3e6cb; }
-        .incorrect-answer { background-color: #f8d7da; border-color: #f5c6cb; }
+        body { font-family: 'Nirmala UI', 'Arial', sans-serif; line-height: 1.6; padding: 20px; background-color: #f0f4f8; color: #333; }
+        .container { max-width: 900px; margin: auto; background: white; padding: 30px; border-radius: 15px; box-shadow: 0 10px 25px rgba(0,0,0,0.1); }
+        h2 { text-align: center; color: #007bff; border-bottom: 3px solid #007bff; padding-bottom: 15px; margin-bottom: 30px; font-size: 2em; }
+        .progress-bar-container { height: 10px; background-color: #e9ecef; border-radius: 5px; margin-bottom: 20px; overflow: hidden; }
+        #progressBar { height: 100%; width: 0%; background-color: #28a745; border-radius: 5px; transition: width 0.4s; }
+        .question { margin-bottom: 25px; padding: 20px; border: 1px solid #ddd; border-radius: 10px; background-color: #fff; box-shadow: 0 2px 5px rgba(0,0,0,0.05); }
+        .question p { font-weight: bold; color: #0056b3; margin-top: 0; font-size: 1.1em; }
+        .options label { display: flex; align-items: center; margin: 12px 0; cursor: pointer; font-size: 16px; padding: 10px; border-radius: 5px; transition: background-color 0.2s; }
+        .options label:hover { background-color: #f1f1f1; }
+        .options input[type="radio"] { margin-right: 15px; transform: scale(1.2); }
+        .feedback { margin-top: 10px; padding: 8px; border-radius: 5px; font-weight: bold; display: none; }
+        .feedback.correct { background-color: #d4edda; color: #155724; border: 1px solid #c3e6cb; }
+        .feedback.incorrect { background-color: #f8d7da; color: #721c24; border: 1px solid #f5c6cb; }
+        .correct-indicator { color: #28a745; margin-left: auto; display: none; }
+        
+        button { padding: 15px 30px; background-color: #007bff; color: white; border: none; border-radius: 8px; cursor: pointer; font-size: 18px; margin-top: 30px; display: block; width: 100%; transition: background-color 0.3s, transform 0.1s; box-shadow: 0 4px #0056b3; }
+        button:hover { background-color: #0056b3; }
+        button:active { transform: translateY(2px); box-shadow: 0 2px #0056b3; }
+        
+        #results { margin-top: 30px; padding: 25px; border: 3px solid #28a745; border-radius: 10px; background-color: #e6ffed; font-weight: bold; text-align: center; font-size: 20px; display: none; animation: fadeIn 0.5s; }
+
+        /* Animation */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
     </style>
 </head>
 <body>
 
 <div class="container">
     <h2>ગોપાળબાપા - MCQ Test</h2>
+
+    <div class="progress-bar-container">
+        <div id="progressBar"></div>
+    </div>
+
     <form id="quizForm">
         
-        <div class="question" data-answer="D">
+        <div class="question" id="q1" data-answer="D">
             <p>1. 'ગોપાળબાપા' પાઠ મનુભાઈ પંચોળી 'દર્શક'ની કઈ બૃહન્નવલમાંથી લેવામાં આવ્યો છે?</p>
             <div class="options">
                 <label><input type="radio" name="q1" value="A"> દીપ નિર્વાણ</label>
                 <label><input type="radio" name="q1" value="B"> સોક્રેટિસ</label>
                 <label><input type="radio" name="q1" value="C"> કુરુક્ષેત્ર</label>
-                <label><input type="radio" name="q1" value="D"> ઝેર તો પીધાં છે જાણી જાણી</label>
+                <label><input type="radio" name="q1" value="D"> ઝેર તો પીધાં છે જાણી જાણી <span class="correct-indicator">✔</span></label>
             </div>
+            <div class="feedback"></div>
         </div>
 
-        <div class="question" data-answer="C">
+        <div class="question" id="q2" data-answer="C">
             <p>2. ગોપાળબાપાએ મહારાજને ભેટમાં શું આપ્યું હતું?</p>
             <div class="options">
                 <label><input type="radio" name="q2" value="A"> આંબા</label>
                 <label><input type="radio" name="q2" value="B"> કેરી</label>
-                <label><input type="radio" name="q2" value="C"> બોર</label>
+                <label><input type="radio" name="q2" value="C"> બોર <span class="correct-indicator">✔</span></label>
                 <label><input type="radio" name="q2" value="D"> ચીકુ</label>
             </div>
+             <div class="feedback"></div>
         </div>
 
-        <div class="question" data-answer="B">
+        <div class="question" id="q3" data-answer="B">
             <p>3. ગોપાળબાપા શાનો વેપાર કરવા ઇચ્છતા હતા?</p>
             <div class="options">
                 <label><input type="radio" name="q3" value="A"> કોલસાનો</label>
-                <label><input type="radio" name="q3" value="B"> હરિનામનો</label>
+                <label><input type="radio" name="q3" value="B"> હરિનામનો <span class="correct-indicator">✔</span></label>
                 <label><input type="radio" name="q3" value="C"> પરચૂરણ</label>
                 <label><input type="radio" name="q3" value="D"> મગફળીના સોદાનો</label>
             </div>
+             <div class="feedback"></div>
         </div>
         
-        <div class="question" data-answer="D">
+        <div class="question" id="q4" data-answer="D">
             <p>4. "આ તમારી પડખેના દીપડા ન રંજાડે તોય ઘણું છે." - આ વાક્યમાં 'પડખેના દીપડા' શબ્દ કોના માટે વપરાયો છે?</p>
             <div class="options">
                 <label><input type="radio" name="q4" value="A"> ગીરના જંગલમાંથી આવેલા દીપડા</label>
                 <label><input type="radio" name="q4" value="B"> મહારાજના અંગરક્ષકો</label>
                 <label><input type="radio" name="q4" value="C"> શિકારીઓ</label>
-                <label><input type="radio" name="q4" value="D"> રાજવહીવટના વહીવટદારો</label>
+                <label><input type="radio" name="q4" value="D"> રાજવહીવટના વહીવટદારો <span class="correct-indicator">✔</span></label>
             </div>
+             <div class="feedback"></div>
         </div>
 
-        <div class="question" data-answer="C">
+        <div class="question" id="q5" data-answer="C">
             <p>5. ગોપાળબાપાના ગુરુ કોણ હતા?</p>
             <div class="options">
                 <label><input type="radio" name="q5" value="A"> સાંદીપનિ ઋષિ</label>
                 <label><input type="radio" name="q5" value="B"> પેશ્વા ભગત</label>
-                <label><input type="radio" name="q5" value="C"> માંડણ ભગત</label>
+                <label><input type="radio" name="q5" value="C"> માંડણ ભગત <span class="correct-indicator">✔</span></label>
                 <label><input type="radio" name="q5" value="D"> દત્તાત્રેય</label>
             </div>
+             <div class="feedback"></div>
         </div>
 
-        <div class="question" data-answer="B">
+        <div class="question" id="q6" data-answer="B">
             <p>6. ગોપાળબાપા કોના માટે જમીનની ખટપટ કરતા હતા?</p>
             <div class="options">
                 <label><input type="radio" name="q6" value="A"> પોતાના માટે</label>
-                <label><input type="radio" name="q6" value="B"> ભાઈબંધના દીકરા માટે</label>
+                <label><input type="radio" name="q6" value="B"> ભાઈબંધના દીકરા માટે <span class="correct-indicator">✔</span></label>
                 <label><input type="radio" name="q6" value="C"> ગુરુ માંડણ ભગતના આશ્રમ માટે</label>
                 <label><input type="radio" name="q6" value="D"> ગામના છોકરાં માટે</label>
             </div>
+             <div class="feedback"></div>
         </div>
 
-        <div class="question" data-answer="A">
+        <div class="question" id="q7" data-answer="A">
             <p>7. ગોપાળબાપાએ શિવાલયની જગ્યાએ શું બનાવવાનું કહ્યું?</p>
             <div class="options">
-                <label><input type="radio" name="q7" value="A"> ધરમશાળા</label>
+                <label><input type="radio" name="q7" value="A"> ધરમશાળા <span class="correct-indicator">✔</span></label>
                 <label><input type="radio" name="q7" value="B"> પાઠશાળા</label>
                 <label><input type="radio" name="q7" value="C"> અન્નક્ષેત્ર</label>
                 <label><input type="radio" name="q7" value="D"> બોરડીનું ઝૂંડ</label>
             </div>
+             <div class="feedback"></div>
         </div>
 
-        <div class="question" data-answer="D">
+        <div class="question" id="q8" data-answer="D">
             <p>8. માંડણ ભગતના કયા વર્તનથી ગોપાળબાપાએ તેમને 'પારખી લીધા'?</p>
             <div class="options">
                 <label><input type="radio" name="q8" value="A"> તેમનો વાંસળી જેવો અવાજ</label>
                 <label><input type="radio" name="q8" value="B"> તેમની ગુલાબી આત્મા</label>
                 <label><input type="radio" name="q8" value="C"> તેમની રિદ્ધિ-સિદ્ધિ</label>
-                <label><input type="radio" name="q8" value="D"> ગીંગોડાને બીજે ખાજ લેવા જવાનું કહી ઉખેડવાની ના પાડી</label>
+                <label><input type="radio" name="q8" value="D"> ગીંગોડાને બીજે ખાજ લેવા જવાનું કહી ઉખેડવાની ના પાડી <span class="correct-indicator">✔</span></label>
             </div>
+             <div class="feedback"></div>
         </div>
 
         <button type="button" onclick="checkQuiz()">જવાબ ચકાસો</button>
@@ -113,43 +140,80 @@
 </div>
 
 <script>
-    document.addEventListener('DOMContentLoaded', () => {
-        const questions = document.querySelectorAll('.question');
-        questions.forEach(q => {
-            const radios = q.querySelectorAll('input[type="radio"]');
-            radios.forEach(radio => {
-                radio.addEventListener('change', () => {
-                    // Remove previous highlights on change
-                    q.classList.remove('correct-answer', 'incorrect-answer');
-                });
-            });
+    const totalQuestions = 8;
+    const questions = document.querySelectorAll('.question');
+    const progressBar = document.getElementById('progressBar');
+
+    // Function to update progress bar
+    function updateProgress() {
+        let answeredQuestions = 0;
+        questions.forEach((q) => {
+            const radioButtons = q.querySelectorAll('input[type="radio"]:checked');
+            if (radioButtons.length > 0) {
+                answeredQuestions++;
+            }
+        });
+        const progressPercentage = (answeredQuestions / totalQuestions) * 100;
+        progressBar.style.width = `${progressPercentage}%`;
+    }
+
+    // Event listeners for progress update
+    questions.forEach(q => {
+        q.querySelectorAll('input[type="radio]').forEach(radio => {
+            radio.addEventListener('change', updateProgress);
         });
     });
 
+    // Main check function
     function checkQuiz() {
         let score = 0;
         const form = document.getElementById('quizForm');
         const resultsDiv = document.getElementById('results');
-        const questions = document.querySelectorAll('.question');
-        const totalQuestions = questions.length;
         
         questions.forEach((q, index) => {
             const qName = 'q' + (index + 1);
-            const selected = form.elements[qName].value;
+            const selectedRadio = form.elements[qName].value;
             const correctAnswer = q.getAttribute('data-answer');
-
+            const feedbackDiv = q.querySelector('.feedback');
+            
+            // Clear previous feedback
             q.classList.remove('correct-answer', 'incorrect-answer');
+            feedbackDiv.style.display = 'none';
+            q.querySelectorAll('.correct-indicator').forEach(i => i.style.display = 'none');
 
-            if (selected === correctAnswer) {
-                score++;
-                q.classList.add('correct-answer');
-            } else if (selected) {
-                q.classList.add('incorrect-answer');
+            // Find the selected option's label for highlighting
+            const selectedLabel = q.querySelector(`input[value="${selectedRadio}"]`).closest('label');
+            
+            if (selectedRadio) {
+                if (selectedRadio === correctAnswer) {
+                    score++;
+                    q.classList.add('correct-answer');
+                    feedbackDiv.textContent = 'જવાબ સાચો છે!';
+                    feedbackDiv.classList.remove('incorrect');
+                    feedbackDiv.classList.add('correct');
+                } else {
+                    q.classList.add('incorrect-answer');
+                    // Show correct answer and incorrect status
+                    q.querySelector(`label input[value="${correctAnswer}"]`).closest('label').querySelector('.correct-indicator').style.display = 'inline';
+                    feedbackDiv.textContent = `જવાબ ખોટો છે. સાચો જવાબ: ${correctAnswer}.`;
+                    feedbackDiv.classList.remove('correct');
+                    feedbackDiv.classList.add('incorrect');
+                }
+                feedbackDiv.style.display = 'block';
+            } else {
+                // If not answered, still show the correct answer after checking
+                q.querySelector(`label input[value="${correctAnswer}"]`).closest('label').querySelector('.correct-indicator').style.display = 'inline';
+                feedbackDiv.textContent = 'આ પ્રશ્નનો જવાબ આપવામાં આવ્યો નથી.';
+                feedbackDiv.classList.remove('correct', 'incorrect');
+                feedbackDiv.style.display = 'block';
             }
         });
 
-        resultsDiv.innerHTML = `તમારો સ્કોર: **${score}** માંથી **${totalQuestions}**.`;
+        resultsDiv.innerHTML = `તમારો અંતિમ સ્કોર: **${score}** માંથી **${totalQuestions}** છે.`;
         resultsDiv.style.display = 'block';
+        
+        // Ensure progress bar is full after checking
+        progressBar.style.width = '100%'; 
     }
 </script>
 
