@@ -9,7 +9,205 @@
             font-family: 'Arial', sans-serif;
             text-align: center;
             background: linear-gradient(135deg, #ff7eb3, #ff758c, #ff7eb3, #ff758c);
-            background-size: 400% 400%;
+            background-size: 400% 400%;<!DOCTYPE html>
+<html lang="gu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>વાડી પરનાં વહાલાં - MCQ Test</title>
+    <style>
+        body { font-family: 'Nirmala UI', 'Arial', sans-serif; line-height: 1.6; padding: 20px; background-color: #e8f5e9; /* Light Green for nature theme */ color: #333; }
+        .container { max-width: 900px; margin: auto; background: white; padding: 30px; border-radius: 15px; box-shadow: 0 10px 25px rgba(0,0,0,0.1); }
+        h2 { text-align: center; color: #43a047; /* Green */ border-bottom: 3px solid #43a047; padding-bottom: 15px; margin-bottom: 30px; font-size: 2.2em; }
+        
+        .question { margin-bottom: 25px; padding: 20px; border: 1px solid #a5d6a7; border-radius: 10px; background-color: #f7fff7; box-shadow: 0 2px 5px rgba(0,0,0,0.05); }
+        .question p { font-weight: bold; color: #2e7d32; /* Darker Green */ margin-top: 0; font-size: 1.1em; }
+        .options label { display: flex; align-items: center; margin: 12px 0; cursor: pointer; font-size: 16px; padding: 10px; border-radius: 5px; transition: background-color 0.2s; }
+        .options label:hover { background-color: #e8f5e9; } 
+        .options input[type="radio"] { margin-right: 15px; transform: scale(1.2); }
+        
+        .feedback { margin-top: 10px; padding: 8px; border-radius: 5px; font-weight: bold; display: none; }
+        .feedback.correct { background-color: #d4edda; color: #155724; border: 1px solid #c3e6cb; }
+        .feedback.incorrect { background-color: #f8d7da; color: #721c24; border: 1px solid #f5c6cb; }
+        .correct-indicator { color: #28a745; margin-left: auto; display: none; font-size: 1.2em; }
+        
+        button { padding: 15px 30px; background-color: #43a047; color: white; border: none; border-radius: 8px; cursor: pointer; font-size: 18px; margin-top: 30px; display: block; width: 100%; transition: background-color 0.3s, transform 0.1s; box-shadow: 0 4px #2e7d32; }
+        button:hover { background-color: #2e7d32; }
+        button:active { transform: translateY(2px); box-shadow: 0 2px #2e7d32; }
+        
+        #results { margin-top: 30px; padding: 25px; border: 3px solid #43a047; border-radius: 10px; background-color: #f7fff7; font-weight: bold; text-align: center; font-size: 20px; display: none; animation: fadeIn 0.5s; }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>વાડી પરનાં વહાલાં - MCQ Test</h2>
+    <form id="quizForm">
+        
+        <div class="question" id="q1" data-answer="D">
+            <p>1. બાળકોની નજરમાં શું આવી જાય છે?</p>
+            <div class="options">
+                <label><input type="radio" name="q1" value="A"> ઢેલે કેટલાં ઈંડાં મૂક્યા છે તે</label>
+                <label><input type="radio" name="q1" value="B"> બુલબુલે ક્યાં ને કેવો માળો કર્યો છે તે</label>
+                <label><input type="radio" name="q1" value="C"> કાકીડાએ કેવા રંગો ધારણ કર્યા છે તે</label>
+                <label><input type="radio" name="q1" value="D"> (A) (B) (C) ત્રણેય <span class="correct-indicator">✔</span></label>
+            </div>
+            <div class="feedback"></div>
+        </div>
+
+        <div class="question" id="q2" data-answer="D">
+            <p>2. જંતુ-જગતનાં દર્શન માટે કયો સમય વધારે યોગ્ય છે?</p>
+            <div class="options">
+                <label><input type="radio" name="q2" value="A"> બપોરનો</label>
+                <label><input type="radio" name="q2" value="B"> દિવસના કોલાહલનો</label>
+                <label><input type="radio" name="q2" value="C"> સવારનો</label>
+                <label><input type="radio" name="q2" value="D"> રાતનો શાંત નીરવ સમય <span class="correct-indicator">✔</span></label>
+            </div>
+            <div class="feedback"></div>
+        </div>
+
+        <div class="question" id="q3" data-answer="D">
+            <p>3. કુદરતના કારવાન-કાફલાને વાડી શું આપે છે?</p>
+            <div class="options">
+                <label><input type="radio" name="q3" value="A"> આશ્રય અને આવાસ</label>
+                <label><input type="radio" name="q3" value="B"> આકાર અને આહ્લાદ</label>
+                <label><input type="radio" name="q3" value="C"> વાડી કશું જ આપતી નથી</label>
+                <label><input type="radio" name="q3" value="D"> (A) અને (B) બંને <span class="correct-indicator">✔</span></label>
+            </div>
+            <div class="feedback"></div>
+        </div>
+        
+        <div class="question" id="q4" data-answer="C">
+            <p>4. વાડીમાં ક્યારેક ક્યારેક કયાં પ્રાણીઓનાં દર્શન થઈ જાય છે?</p>
+            <div class="options">
+                <label><input type="radio" name="q4" value="A"> શેઢાડી ને શેળાનાં</label>
+                <label><input type="radio" name="q4" value="B"> ઘોરખોદિયાં ને ભૂંડડાંનાં</label>
+                <label><input type="radio" name="q4" value="C"> દીપડા ને સિંહનાં <span class="correct-indicator">✔</span></label>
+                <label><input type="radio" name="q4" value="D"> શિયાળ અને હરણાંનાં</label>
+            </div>
+            <div class="feedback"></div>
+        </div>
+
+        <div class="question" id="q5" data-answer="B">
+            <p>5. ઇસ્માઇલભાઈ નાગોરીએ પૂનાની કઈ કૉલેજમાંથી સ્નાતકની ડિગ્રી મેળવી હતી?</p>
+            <div class="options">
+                <label><input type="radio" name="q5" value="A"> કલા કૉલેજ</label>
+                <label><input type="radio" name="q5" value="B"> ખેતીવાડી કૉલેજ <span class="correct-indicator">✔</span></label>
+                <label><input type="radio" name="q5" value="C"> ઇજનેરી કૉલેજ</label>
+                <label><input type="radio" name="q5" value="D"> વિજ્ઞાન કૉલેજ</label>
+            </div>
+            <div class="feedback"></div>
+        </div>
+
+        <div class="question" id="q6" data-answer="B">
+            <p>6. વાડીના માલિકની નિદ્રાની સરખામણી કોની સાથે કરવામાં આવી છે?</p>
+            <div class="options">
+                <label><input type="radio" name="q6" value="A"> જાગ્રત સૈનિક</label>
+                <label><input type="radio" name="q6" value="B"> બાળકવાળી માતાની માફક <span class="correct-indicator">✔</span></label>
+                <label><input type="radio" name="q6" value="C"> ભરવાડ</label>
+                <label><input type="radio" name="q6" value="D"> યોગી</label>
+            </div>
+            <div class="feedback"></div>
+        </div>
+
+        <div class="question" id="q7" data-answer="D">
+            <p>7. 'ચિરસ્મરણીય' શબ્દનો અર્થ શું છે?</p>
+            <div class="options">
+                <label><input type="radio" name="q7" value="A"> ટૂંકા સમય માટે યાદ રહે તેવું</label>
+                <label><input type="radio" name="q7" value="B"> ઝડપથી ભૂલાઈ જાય તેવું</label>
+                <label><input type="radio" name="q7" value="C"> અગત્યનું ન હોય તેવું</label>
+                <label><input type="radio" name="q7" value="D"> હંમેશાં યાદ રહે તેવું <span class="correct-indicator">✔</span></label>
+            </div>
+            <div class="feedback"></div>
+        </div>
+
+        <div class="question" id="q8" data-answer="A">
+            <p>8. ચિચોડો ચાલુ થાય ત્યારે મદદ માટે કોણ કોણ સામેલ થાય છે?</p>
+            <div class="options">
+                <label><input type="radio" name="q8" value="A"> સગાંવહાલાં અને અરસપરસની ઢાલવાળા ખેડૂતો <span class="correct-indicator">✔</span></label>
+                <label><input type="radio" name="q8" value="B"> ફક્ત મજૂરો</label>
+                <label><input type="radio" name="q8" value="C"> દૂરના મહેમાનો</label>
+                <label><input type="radio" name="q8" value="D"> બાળકો</label>
+            </div>
+            <div class="feedback"></div>
+        </div>
+
+        <button type="button" onclick="checkQuiz()">જવાબ ચકાસો</button>
+    </form>
+    
+    <div id="results"></div>
+
+</div>
+
+<script>
+    const answers = {
+        q1: 'D', 
+        q2: 'D', 
+        q3: 'D', 
+        q4: 'C', 
+        q5: 'B', 
+        q6: 'B', 
+        q7: 'D', 
+        q8: 'A'  
+    };
+
+    function checkQuiz() {
+        let score = 0;
+        const totalQuestions = Object.keys(answers).length;
+        const form = document.getElementById('quizForm');
+        const resultsDiv = document.getElementById('results');
+        const questions = document.querySelectorAll('.question');
+        
+        questions.forEach((q, index) => {
+            const qName = 'q' + (index + 1);
+            const selectedRadio = form.elements[qName].value;
+            const correctAnswer = answers[qName];
+            const feedbackDiv = q.querySelector('.feedback');
+            
+            // Clear previous feedback and highlights
+            q.classList.remove('correct', 'incorrect');
+            feedbackDiv.style.display = 'none';
+            q.querySelectorAll('.correct-indicator').forEach(i => i.style.display = 'none');
+
+            if (selectedRadio) {
+                if (selectedRadio === correctAnswer) {
+                    score++;
+                    q.classList.add('correct');
+                    feedbackDiv.textContent = 'જવાબ સાચો છે!';
+                    feedbackDiv.classList.remove('incorrect');
+                    feedbackDiv.classList.add('correct');
+                } else {
+                    q.classList.add('incorrect');
+                    // Show correct answer indicator
+                    const correctLabel = q.querySelector(`input[value="${correctAnswer}"]`).closest('label');
+                    correctLabel.querySelector('.correct-indicator').style.display = 'inline';
+                    feedbackDiv.textContent = `જવાબ ખોટો છે. સાચો જવાબ: ${correctAnswer}.`;
+                    feedbackDiv.classList.remove('correct');
+                    feedbackDiv.classList.add('incorrect');
+                }
+                feedbackDiv.style.display = 'block';
+            } else {
+                // If not answered, show correct answer
+                const correctLabel = q.querySelector(`input[value="${correctAnswer}"]`).closest('label');
+                correctLabel.querySelector('.correct-indicator').style.display = 'inline';
+                feedbackDiv.textContent = 'આ પ્રશ્નનો જવાબ આપવામાં આવ્યો નથી. સાચો જવાબ: ' + correctAnswer + ' છે.';
+                feedbackDiv.classList.remove('correct', 'incorrect');
+                feedbackDiv.style.display = 'block';
+            }
+        });
+
+        resultsDiv.innerHTML = `તમારો અંતિમ સ્કોર: **${score}** માંથી **${totalQuestions}** છે.`;
+        resultsDiv.style.display = 'block';
+    }
+</script>
+
+</body>
+</html>
             animation: gradientBG 6s ease infinite;
             height: 100vh;
             display: flex;
@@ -53,3 +251,4 @@
 
 </body>
 </html>
+
