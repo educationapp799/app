@@ -3,129 +3,150 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>MCQ Test - Chapter 1</title>
+  <title>Cheetah’s Tears - MCQ Test</title>
   <style>
     body {
       font-family: Arial, sans-serif;
-      background: linear-gradient(135deg, #74ebd5, #ACB6E5);
+      background: linear-gradient(120deg, #f6d365, #fda085);
       margin: 0;
-      padding: 0;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      min-height: 100vh;
+      padding: 20px;
     }
-    .container {
+    .quiz-container {
+      max-width: 800px;
+      margin: auto;
       background: #fff;
-      padding: 20px 30px;
+      padding: 20px;
       border-radius: 15px;
       box-shadow: 0px 8px 20px rgba(0,0,0,0.2);
-      width: 90%;
-      max-width: 600px;
       animation: fadeIn 1s ease-in-out;
-    }
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(30px); }
-      to { opacity: 1; transform: translateY(0); }
     }
     h2 {
       text-align: center;
+      margin-bottom: 20px;
       color: #333;
     }
     .question {
       font-weight: bold;
       margin: 15px 0 10px;
+      color: #222;
     }
     .options label {
       display: block;
-      background: #f4f4f4;
+      background: #f9f9f9;
       margin: 8px 0;
       padding: 10px;
       border-radius: 10px;
       cursor: pointer;
       transition: 0.3s;
     }
-    .options input {
-      display: none;
-    }
-    .options label:hover {
-      background: #e0e0e0;
-    }
+    .options input { display: none; }
+    .options label:hover { background: #e6e6e6; }
     button {
+      display: block;
+      margin: 20px auto;
+      padding: 12px 18px;
+      border: none;
       background: #4CAF50;
       color: white;
-      border: none;
-      padding: 12px 18px;
+      font-size: 16px;
       border-radius: 10px;
       cursor: pointer;
-      font-size: 16px;
-      margin-top: 15px;
-      width: 100%;
       transition: 0.3s;
     }
-    button:hover {
-      background: #388E3C;
-    }
+    button:hover { background: #388E3C; }
     .result {
+      display: none;
       margin-top: 20px;
       padding: 15px;
       background: #f1f1f1;
       border-radius: 10px;
-      display: none;
       font-size: 18px;
       text-align: center;
     }
+    .correct { background: #c8e6c9 !important; }
+    .wrong { background: #ffcdd2 !important; }
   </style>
 </head>
 <body>
-  <div class="container">
-    <h2>MCQ Test - Chapter 1</h2>
+  <div class="quiz-container">
+    <h2>MCQ Test – Cheetah’s Tears (Unit 1)</h2>
     <form id="quizForm">
-      <div class="question">1. HTML ka full form kya hai?</div>
+
+      <div class="question">1. Vibhuti copied answers in the exam. Correct reaction?</div>
       <div class="options">
-        <label><input type="radio" name="q1" value="a"> Hyper Text Markup Language</label>
-        <label><input type="radio" name="q1" value="b"> High Tech Modern Language</label>
-        <label><input type="radio" name="q1" value="c"> Hyperlinks and Text Markup Language</label>
-        <label><input type="radio" name="q1" value="d"> None of these</label>
+        <label><input type="radio" name="q1" value="a"> Well done!</label>
+        <label><input type="radio" name="q1" value="b"> Bravo!</label>
+        <label><input type="radio" name="q1" value="c"> What a shame!</label>
+        <label><input type="radio" name="q1" value="d"> Congratulations!</label>
       </div>
 
-      <div class="question">2. CSS ka use kis liye hota hai?</div>
+      <div class="question">2. Opposite of “wicked” is …</div>
       <div class="options">
-        <label><input type="radio" name="q2" value="a"> Webpage ki styling ke liye</label>
-        <label><input type="radio" name="q2" value="b"> Database connect karne ke liye</label>
-        <label><input type="radio" name="q2" value="c"> Server chalane ke liye</label>
-        <label><input type="radio" name="q2" value="d"> None</label>
+        <label><input type="radio" name="q2" value="a"> Happy</label>
+        <label><input type="radio" name="q2" value="b"> Good</label>
+        <label><input type="radio" name="q2" value="c"> Sad</label>
+        <label><input type="radio" name="q2" value="d"> Lazy</label>
       </div>
 
-      <div class="question">3. JavaScript mainly kahan run hoti hai?</div>
+      <div class="question">3. Cheetah’s habitat is …</div>
       <div class="options">
-        <label><input type="radio" name="q3" value="a"> Browser me</label>
-        <label><input type="radio" name="q3" value="b"> Database me</label>
-        <label><input type="radio" name="q3" value="c"> Server ke OS me</label>
-        <label><input type="radio" name="q3" value="d"> None</label>
+        <label><input type="radio" name="q3" value="a"> Open forests</label>
+        <label><input type="radio" name="q3" value="b"> Desert</label>
+        <label><input type="radio" name="q3" value="c"> Snow mountains</label>
+        <label><input type="radio" name="q3" value="d"> River banks</label>
       </div>
 
-      <button type="button" onclick="checkAnswers()">Submit</button>
+      <div class="question">4. Why did Edie want the cubs?</div>
+      <div class="options">
+        <label><input type="radio" name="q4" value="a"> For playing</label>
+        <label><input type="radio" name="q4" value="b"> For selling</label>
+        <label><input type="radio" name="q4" value="c"> To hunt for him</label>
+        <label><input type="radio" name="q4" value="d"> To show tribe</label>
+      </div>
+
+      <div class="question">5. Speed of Cheetah is …</div>
+      <div class="options">
+        <label><input type="radio" name="q5" value="a"> 65 km/h</label>
+        <label><input type="radio" name="q5" value="b"> 80 km/h</label>
+        <label><input type="radio" name="q5" value="c"> 100 km/h</label>
+        <label><input type="radio" name="q5" value="d"> 120 km/h</label>
+      </div>
+
     </form>
+    <button type="button" onclick="checkAnswers()">Submit Test</button>
     <div class="result" id="resultBox"></div>
   </div>
 
   <script>
-    function checkAnswers() {
-      let answers = { q1: "a", q2: "a", q3: "a" };
-      let score = 0;
-      let total = Object.keys(answers).length;
+    const correctAnswers = {
+      q1: "c",
+      q2: "b",
+      q3: "a",
+      q4: "c",
+      q5: "c"
+    };
 
-      for (let q in answers) {
+    function checkAnswers() {
+      let score = 0;
+      let total = Object.keys(correctAnswers).length;
+
+      for (let q in correctAnswers) {
         let selected = document.querySelector(`input[name="${q}"]:checked`);
-        if (selected && selected.value === answers[q]) {
-          score++;
+        let labels = document.querySelectorAll(`input[name="${q}"]+label, input[name="${q}"]`);
+        if (selected) {
+          let parent = selected.parentElement;
+          if (selected.value === correctAnswers[q]) {
+            parent.classList.add("correct");
+            score++;
+          } else {
+            parent.classList.add("wrong");
+          }
         }
       }
 
       let resultBox = document.getElementById("resultBox");
       resultBox.style.display = "block";
-      resultBox.innerHTML = `You scored <b>${score}</b> out of <b>${total}</b>`;
+      resultBox.innerHTML = `✅ You scored <b>${score}</b> out of <b>${total}</b>`;
     }
   </script>
 </body>
