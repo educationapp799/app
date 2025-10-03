@@ -3,53 +3,197 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Coming Soon</title>
+    <title>રસ્તો કરી જવાના - MCQ Test</title>
     <style>
-        body {
-            font-family: 'Arial', sans-serif;
-            text-align: center;
-            background: linear-gradient(135deg, #ff7eb3, #ff758c, #ff7eb3, #ff758c);
-            background-size: 400% 400%;
-            animation: gradientBG 6s ease infinite;
-            height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            color: white;
-        }
+        body { font-family: 'Nirmala UI', 'Arial', sans-serif; line-height: 1.6; padding: 20px; background-color: #fff3e0; /* Light Orange/Khumar theme */ color: #333; }
+        .container { max-width: 900px; margin: auto; background: white; padding: 30px; border-radius: 15px; box-shadow: 0 10px 25px rgba(0,0,0,0.1); }
+        h2 { text-align: center; color: #ff9800; /* Orange */ border-bottom: 3px solid #ff9800; padding-bottom: 15px; margin-bottom: 30px; font-size: 2.2em; }
+        
+        .question { margin-bottom: 25px; padding: 20px; border: 1px solid #ffe0b2; border-radius: 10px; background-color: #fff8f0; box-shadow: 0 2px 5px rgba(0,0,0,0.05); }
+        .question p { font-weight: bold; color: #ef6c00; /* Darker Orange */ margin-top: 0; font-size: 1.1em; }
+        .options label { display: flex; align-items: center; margin: 12px 0; cursor: pointer; font-size: 16px; padding: 10px; border-radius: 5px; transition: background-color 0.2s; }
+        .options label:hover { background-color: #fff3e0; } 
+        .options input[type="radio"] { margin-right: 15px; transform: scale(1.2); }
+        
+        .feedback { margin-top: 10px; padding: 8px; border-radius: 5px; font-weight: bold; display: none; }
+        .feedback.correct { background-color: #e6ffed; color: #1e6e3c; border: 1px solid #c9f5d3; }
+        .feedback.incorrect { background-color: #f8d7da; color: #721c24; border: 1px solid #f5c6cb; }
+        .correct-indicator { color: #28a745; margin-left: auto; display: none; font-size: 1.2em; }
+        
+        button { padding: 15px 30px; background-color: #ff9800; color: white; border: none; border-radius: 8px; cursor: pointer; font-size: 18px; margin-top: 30px; display: block; width: 100%; transition: background-color 0.3s, transform 0.1s; box-shadow: 0 4px #ef6c00; }
+        button:hover { background-color: #ef6c00; }
+        button:active { transform: translateY(2px); box-shadow: 0 2px #ef6c00; }
+        
+        #results { margin-top: 30px; padding: 25px; border: 3px solid #ff9800; border-radius: 10px; background-color: #fff5e8; font-weight: bold; text-align: center; font-size: 20px; display: none; animation: fadeIn 0.5s; }
 
-        @keyframes gradientBG {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
-        }
-
-        .coming-soon {
-            background: rgba(255, 255, 255, 0.2);
-            padding: 40px;
-            border-radius: 10px;
-            backdrop-filter: blur(10px);
-            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
-            display: inline-block;
-        }
-
-        h1 {
-            font-size: 36px;
-            margin: 0;
-        }
-
-        p {
-            font-size: 18px;
-            margin-top: 10px;
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
         }
     </style>
 </head>
 <body>
 
-    <div class="coming-soon">
-        <h1>📢 Coming Soon...</h1>
-        <p>નવું પેજ ટૂંક સમયમાં ઉપલબ્ધ થશે.</p>
-    </div>
+<div class="container">
+    <h2>રસ્તો કરી જવાના - MCQ Test</h2>
+    <form id="quizForm">
+        
+        <div class="question" id="q1" data-answer="A">
+            <p>1. 'દુનિયાથી દિલના ચારે છેડા ભરી જવાના !' દ્વારા કવિ શું વ્યક્ત કરે છે?</p>
+            <div class="options">
+                <label><input type="radio" name="q1" value="A"> જીવનમાં લોકોનો પ્રેમ અને સંતોષ પ્રાપ્ત કરવાની વાત. <span class="correct-indicator">✔</span></label>
+                <label><input type="radio" name="q1" value="B"> દુનિયાથી ખાલી હાથે જવાની વાત.</label>
+                <label><input type="radio" name="q1" value="C"> દુનિયાને માપી લેવાની વાત.</label>
+                <label><input type="radio" name="q1" value="D"> દિલમાં કોઈને સ્થાન ન આપવાની વાત.</label>
+            </div>
+            <div class="feedback"></div>
+        </div>
+
+        <div class="question" id="q2" data-answer="D">
+            <p>2. કવિ કઈ રીતે પોતાનું જીવન પૂર્ણ કરવા ઇચ્છે છે?</p>
+            <div class="options">
+                <label><input type="radio" name="q2" value="A"> બીજાની મસ્તીમાં ભળીને</label>
+                <label><input type="radio" name="q2" value="B"> વિશાળ સમુદ્રમાં ડૂબીને</label>
+                <label><input type="radio" name="q2" value="C"> બિંદુમાં ડૂબીને</label>
+                <label><input type="radio" name="q2" value="D"> પોતાની જ મસ્તીમાં મસ્ત થઈને <span class="correct-indicator">✔</span></label>
+            </div>
+            <div class="feedback"></div>
+        </div>
+
+        <div class="question" id="q3" data-answer="C">
+            <p>3. કવિ દુઃખ માત્રની દવા કઈ ગણે છે?</p>
+            <div class="options">
+                <label><input type="radio" name="q3" value="A"> ડૉક્ટરની દવા</label>
+                <label><input type="radio" name="q3" value="B"> કાળની મદદ</label>
+                <label><input type="radio" name="q3" value="C"> કવિનું આત્મબળ <span class="correct-indicator">✔</span></label>
+                <label><input type="radio" name="q3" value="D"> ઈશ્વરનો સાથ</label>
+            </div>
+            <div class="feedback"></div>
+        </div>
+        
+        <div class="question" id="q4" data-answer="B">
+            <p>4. કવિ કાળને શું પડકાર આપે છે?</p>
+            <div class="options">
+                <label><input type="radio" name="q4" value="A"> તું દુઃખ આપે તો પણ અમે હસી જવાના.</label>
+                <label><input type="radio" name="q4" value="B"> તું થાય તે કરી લે, અમે ઈશ્વરના ધણી છીએ. <span class="correct-indicator">✔</span></label>
+                <label><input type="radio" name="q4" value="C"> તું અમને મદદ કરીશ તો જ અમે જીવીશું.</label>
+                <label><input type="radio" name="q4" value="D"> તું અમને માફ કરી દે.</label>
+            </div>
+            <div class="feedback"></div>
+        </div>
+
+        <div class="question" id="q5" data-answer="A">
+            <p>5. 'અમૃત ઘાયલ'નું વતન કયું છે?</p>
+            <div class="options">
+                <label><input type="radio" name="q5" value="A"> સરધાર <span class="correct-indicator">✔</span></label>
+                <label><input type="radio" name="q5" value="B"> રાજકોટ</label>
+                <label><input type="radio" name="q5" value="C"> વડોદરા</label>
+                <label><input type="radio" name="q5" value="D"> અમદાવાદ</label>
+            </div>
+            <div class="feedback"></div>
+        </div>
+
+        <div class="question" id="q6" data-answer="C">
+            <p>6. કવિ શેમાં ડૂબીને સિંધુ તરી જવાની વાત કરે છે?</p>
+            <div class="options">
+                <label><input type="radio" name="q6" value="A"> દરિયામાં</label>
+                <label><input type="radio" name="q6" value="B"> નદીમાં</label>
+                <label><input type="radio" name="q6" value="C"> બિંદુમાં <span class="correct-indicator">✔</span></label>
+                <label><input type="radio" name="q6" value="D"> કૂવામાં</label>
+            </div>
+            <div class="feedback"></div>
+        </div>
+
+        <div class="question" id="q7" data-answer="D">
+            <p>7. કવિ શેનાથી જખ્મને ટાંકા ભરી જવાની વાત કરે છે?</p>
+            <div class="options">
+                <label><input type="radio" name="q7" value="A"> સોય-દોરાથી</label>
+                <label><input type="radio" name="q7" value="B"> મલમથી</label>
+                <label><input type="radio" name="q7" value="C"> ખુમારીથી</label>
+                <label><input type="radio" name="q7" value="D"> નજરથી <span class="correct-indicator">✔</span></label>
+            </div>
+            <div class="feedback"></div>
+        </div>
+
+        <div class="question" id="q8" data-answer="C">
+            <p>8. 'અવિરામ' શબ્દનો યોગ્ય વિરુદ્ધાર્થી શબ્દ કયો છે?</p>
+            <div class="options">
+                <label><input type="radio" name="q8" value="A"> વિરામહીન</label>
+                <label><input type="radio" name="q8" value="B"> પ્રકાશ</label>
+                <label><input type="radio" name="q8" value="C"> વિરામ <span class="correct-indicator">✔</span></label>
+                <label><input type="radio" name="q8" value="D"> દીપક</label>
+            </div>
+            <div class="feedback"></div>
+        </div>
+
+        <button type="button" onclick="checkQuiz()">જવાબ ચકાસો</button>
+    </form>
+    
+    <div id="results"></div>
+
+</div>
+
+<script>
+    const answers = {
+        q1: 'A', 
+        q2: 'D', 
+        q3: 'C', 
+        q4: 'B', 
+        q5: 'A', 
+        q6: 'C', 
+        q7: 'D', 
+        q8: 'C'  
+    };
+
+    function checkQuiz() {
+        let score = 0;
+        const totalQuestions = Object.keys(answers).length;
+        const form = document.getElementById('quizForm');
+        const resultsDiv = document.getElementById('results');
+        const questions = document.querySelectorAll('.question');
+        
+        questions.forEach((q, index) => {
+            const qName = 'q' + (index + 1);
+            const selectedRadio = form.elements[qName].value;
+            const correctAnswer = answers[qName];
+            const feedbackDiv = q.querySelector('.feedback');
+            
+            // Clear previous feedback and highlights
+            q.classList.remove('correct', 'incorrect');
+            feedbackDiv.style.display = 'none';
+            q.querySelectorAll('.correct-indicator').forEach(i => i.style.display = 'none');
+
+            if (selectedRadio) {
+                if (selectedRadio === correctAnswer) {
+                    score++;
+                    q.classList.add('correct');
+                    feedbackDiv.textContent = 'જવાબ સાચો છે!';
+                    feedbackDiv.classList.remove('incorrect');
+                    feedbackDiv.classList.add('correct');
+                } else {
+                    q.classList.add('incorrect');
+                    // Show correct answer indicator
+                    const correctLabel = q.querySelector(`input[value="${correctAnswer}"]`).closest('label');
+                    correctLabel.querySelector('.correct-indicator').style.display = 'inline';
+                    feedbackDiv.textContent = `જવાબ ખોટો છે. સાચો જવાબ: ${correctAnswer}.`;
+                    feedbackDiv.classList.remove('correct');
+                    feedbackDiv.classList.add('incorrect');
+                }
+                feedbackDiv.style.display = 'block';
+            } else {
+                // If not answered, show correct answer
+                const correctLabel = q.querySelector(`input[value="${correctAnswer}"]`).closest('label');
+                correctLabel.querySelector('.correct-indicator').style.display = 'inline';
+                feedbackDiv.textContent = 'આ પ્રશ્નનો જવાબ આપવામાં આવ્યો નથી. સાચો જવાબ: ' + correctAnswer + ' છે.';
+                feedbackDiv.classList.remove('correct', 'incorrect');
+                feedbackDiv.style.display = 'block';
+            }
+        });
+
+        resultsDiv.innerHTML = `તમારો અંતિમ સ્કોર: **${score}** માંથી **${totalQuestions}** છે.`;
+        resultsDiv.style.display = 'block';
+    }
+</script>
 
 </body>
 </html>
