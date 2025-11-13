@@ -1,55 +1,155 @@
 <!DOCTYPE html>
-<html lang="gu">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Coming Soon</title>
-    <style>
-        body {
-            font-family: 'Arial', sans-serif;
-            text-align: center;
-            background: linear-gradient(135deg, #ff7eb3, #ff758c, #ff7eb3, #ff758c);
-            background-size: 400% 400%;
-            animation: gradientBG 6s ease infinite;
-            height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            color: white;
-        }
-
-        @keyframes gradientBG {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
-        }
-
-        .coming-soon {
-            background: rgba(255, 255, 255, 0.2);
-            padding: 40px;
-            border-radius: 10px;
-            backdrop-filter: blur(10px);
-            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
-            display: inline-block;
-        }
-
-        h1 {
-            font-size: 36px;
-            margin: 0;
-        }
-
-        p {
-            font-size: 18px;
-            margin-top: 10px;
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Be The Best - Poem MCQ Test</title>
+<style>
+  body {
+    font-family: "Poppins", sans-serif;
+    background: linear-gradient(135deg, #e3f2fd, #ffffff);
+    padding: 20px;
+    color: #0d47a1;
+  }
+  h1 {
+    text-align: center;
+    color: #1565c0;
+  }
+  .question {
+    background: #ffffff;
+    border-radius: 12px;
+    padding: 15px;
+    margin: 10px 0;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  }
+  button {
+    display: block;
+    margin: 20px auto;
+    padding: 10px 25px;
+    border: none;
+    border-radius: 8px;
+    background-color: #1976d2;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  button:hover {
+    background-color: #0d47a1;
+  }
+  #result {
+    text-align: center;
+    font-size: 20px;
+    color: #0d47a1;
+    font-weight: bold;
+  }
+</style>
 </head>
 <body>
+  <h1>🏆 Be The Best - Poem MCQ Test 🏆</h1>
 
-    <div class="coming-soon">
-        <h1>📢 Coming Soon...</h1>
-        <p>નવું પેજ ટૂંક સમયમાં ઉપલબ્ધ થશે.</p>
+  <form id="quizForm">
+
+    <!-- C.1 Nearest Meaning -->
+    <div class="question">
+      <p>1. “There is something for all of us here.” means —</p>
+      <label><input type="radio" name="q1" value="a"> Everybody has a scope to become something.</label><br>
+      <label><input type="radio" name="q1" value="b"> If we become something, we get something.</label><br>
+      <label><input type="radio" name="q1" value="c"> God has reserved some space for us here in this world.</label>
     </div>
 
+    <div class="question">
+      <p>2. “And the task you must do is the near.” means —</p>
+      <label><input type="radio" name="q2" value="a"> It is certain that we must become something.</label><br>
+      <label><input type="radio" name="q2" value="b"> We must do something in our neighbouring area.</label><br>
+      <label><input type="radio" name="q2" value="c"> Decide what we should do or become at the earliest.</label>
+    </div>
+
+    <div class="question">
+      <p>3. “Be the best whatever you are.” means —</p>
+      <label><input type="radio" name="q3" value="a"> We should do our work in the best possible manner.</label><br>
+      <label><input type="radio" name="q3" value="b"> Put in your best. Don’t feel ashamed even if you are small. Just do the best.</label><br>
+      <label><input type="radio" name="q3" value="c"> We should be the best amongst all.</label>
+    </div>
+
+    <!-- C.2 Table Conversion -->
+    <div class="question">
+      <p>4. If you cannot be a pine tree, you can be —</p>
+      <label><input type="radio" name="q4" value="a"> A bush or a small plant</label><br>
+      <label><input type="radio" name="q4" value="b"> A mountain</label><br>
+      <label><input type="radio" name="q4" value="c"> A rock</label>
+    </div>
+
+    <div class="question">
+      <p>5. If you can’t be a muskie, you can be —</p>
+      <label><input type="radio" name="q5" value="a"> A crab</label><br>
+      <label><input type="radio" name="q5" value="b"> A bass — the liveliest fish in the lake</label><br>
+      <label><input type="radio" name="q5" value="c"> A river</label>
+    </div>
+
+    <!-- C.3 Comprehension Questions -->
+    <div class="question">
+      <p>6. What advice does the poet give in the first stanza?</p>
+      <label><input type="radio" name="q6" value="a"> Be the best in whatever position you are.</label><br>
+      <label><input type="radio" name="q6" value="b"> Try to become rich and powerful.</label><br>
+      <label><input type="radio" name="q6" value="c"> Always aim to be a captain.</label>
+    </div>
+
+    <div class="question">
+      <p>7. Why does the poet say “We can’t all be captains”?</p>
+      <label><input type="radio" name="q7" value="a"> Because only a few can be leaders, others must be crew.</label><br>
+      <label><input type="radio" name="q7" value="b"> Because everyone should be lazy.</label><br>
+      <label><input type="radio" name="q7" value="c"> Because captains are not needed.</label>
+    </div>
+
+    <div class="question">
+      <p>8. What, according to the poet, decides our victory or failure?</p>
+      <label><input type="radio" name="q8" value="a"> Our size and position</label><br>
+      <label><input type="radio" name="q8" value="b"> Our hard work and dedication</label><br>
+      <label><input type="radio" name="q8" value="c"> Our wealth and beauty</label>
+    </div>
+
+    <div class="question">
+      <p>9. What is the central message of the poem?</p>
+      <label><input type="radio" name="q9" value="a"> Success depends on being the best of what you are.</label><br>
+      <label><input type="radio" name="q9" value="b"> Only big people can succeed.</label><br>
+      <label><input type="radio" name="q9" value="c"> Failures are permanent.</label>
+    </div>
+
+    <div class="question">
+      <p>10. Who, according to you, is a best person?</p>
+      <label><input type="radio" name="q10" value="a"> One who gives his best effort honestly.</label><br>
+      <label><input type="radio" name="q10" value="b"> One who becomes rich.</label><br>
+      <label><input type="radio" name="q10" value="c"> One who wins by cheating.</label>
+    </div>
+
+    <button type="button" onclick="checkAnswers()">Submit Answers</button>
+  </form>
+
+  <div id="result"></div>
+
+  <script>
+    function checkAnswers() {
+      const answers = {
+        q1: "a",
+        q2: "c",
+        q3: "b",
+        q4: "a",
+        q5: "b",
+        q6: "a",
+        q7: "a",
+        q8: "b",
+        q9: "a",
+        q10: "a"
+      };
+      let score = 0;
+      for (let key in answers) {
+        const selected = document.querySelector(`input[name="${key}"]:checked`);
+        if (selected && selected.value === answers[key]) score++;
+      }
+      const total = Object.keys(answers).length;
+      document.getElementById("result").innerHTML = 
+        `✅ You scored ${score} out of ${total}!`;
+    }
+  </script>
 </body>
 </html>
