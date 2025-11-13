@@ -1,173 +1,231 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Unit 1 – Cheetah's Tears | MCQ Test</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Cheetah's Tears — MCQ Test</title>
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      background: linear-gradient(120deg, #89f7fe, #66a6ff);
-      margin: 0;
-      padding: 10px;
-    }
-    .container {
-      max-width: 100%;
-      margin: auto;
-      background: #fff;
-      padding: 15px;
-      border-radius: 12px;
-      box-shadow: 0px 4px 12px rgba(0,0,0,0.2);
-    }
-    h2 {
-      text-align: center;
-      color: #333;
-      font-size: 20px;
-      margin-bottom: 15px;
-    }
-    .question {
-      font-weight: bold;
-      margin: 15px 0 8px;
-      font-size: 16px;
-    }
-    .options label {
-      display: block;
-      background: #f7f7f7;
-      margin: 5px 0;
-      padding: 10px;
-      border-radius: 8px;
-      cursor: pointer;
-      font-size: 15px;
-      transition: 0.3s;
-      word-wrap: break-word;
-    }
-    .options input[type="radio"] {
-      margin-right: 10px;
-    }
-    .options label:hover { background: #e0e0e0; }
-    button {
-      background: #4CAF50;
-      color: white;
-      border: none;
-      padding: 12px;
-      border-radius: 8px;
-      cursor: pointer;
-      font-size: 16px;
-      margin-top: 20px;
-      width: 100%;
-    }
-    button:hover { background: #388E3C; }
-    .result {
-      margin-top: 15px;
-      padding: 12px;
-      border-radius: 8px;
-      font-size: 16px;
-      font-weight: bold;
-      text-align: center;
-      display: none;
-    }
-    .correct { background: #c8e6c9 !important; }
-    .wrong { background: #ffcdd2 !important; }
-
-    /* Mobile optimization */
-    @media (max-width: 600px) {
-      h2 { font-size: 18px; }
-      .question { font-size: 15px; }
-      .options label { font-size: 14px; padding: 8px; }
-      button { font-size: 15px; padding: 10px; }
-    }
+    :root{--bg:#f7fbff;--card:#ffffff;--accent:#0b63d6;--muted:#6b7280}
+    body{font-family:Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial; background:var(--bg); margin:0; padding:32px; color:#0f172a}
+    .wrap{max-width:900px;margin:0 auto}
+    header{display:flex;gap:16px;align-items:center;margin-bottom:18px}
+    h1{font-size:20px;margin:0}
+    p.lead{margin:2px 0 0;color:var(--muted)}
+    .card{background:var(--card);border-radius:12px;padding:20px;box-shadow:0 6px 20px rgba(11,99,214,0.06);margin-bottom:18px}
+    .q{margin-bottom:14px;padding:10px;border-radius:8px;border:1px solid #eef2ff}
+    .q h3{margin:0 0 8px;font-size:16px}
+    label.option{display:block;padding:8px;border-radius:8px;cursor:pointer;border:1px solid transparent}
+    input[type=radio]{margin-right:10px}
+    label.option:hover{background:#fbfdff}
+    .controls{display:flex;gap:8px;align-items:center}
+    button{background:var(--accent);color:white;border:none;padding:10px 14px;border-radius:8px;cursor:pointer}
+    button.secondary{background:#e6eefc;color:var(--accent)}
+    .result{padding:14px;border-radius:8px;margin-top:12px}
+    .correct{background:#ecfdf5;color:#065f46}
+    .wrong{background:#fff1f2;color:#831843}
+    .explain{font-size:14px;color:var(--muted);margin-top:8px}
+    footer{font-size:13px;color:var(--muted);text-align:center;margin-top:18px}
+    .hidden{display:none}
+    @media (max-width:640px){body{padding:18px}}
   </style>
 </head>
 <body>
-  <div class="container">
-    <h2>Unit 1: Cheetah's Tears – MCQ Test</h2>
-    <form id="quizForm">
-      <!-- Q1 -->
-      <div class="question">1. Vibhuti copied answers in the exam. Which expression fits?</div>
-      <div class="options">
-        <label><input type="radio" name="q1" value="a"> Bravo!</label>
-        <label><input type="radio" name="q1" value="b"> Congratulations!</label>
-        <label><input type="radio" name="q1" value="c"> What a shame!</label>
-        <label><input type="radio" name="q1" value="d"> Well done!</label>
+  <div class="wrap">
+    <header>
+      <div>
+        <h1>Cheetah's Tears — MCQ Test</h1>
+        <p class="lead">15 multiple-choice questions based on the chapter. Choose one answer per question and press <strong>Submit</strong>.</p>
       </div>
+    </header>
 
-      <!-- Q2 -->
-      <div class="question">2. Opposite of 'comfortable'?</div>
-      <div class="options">
-        <label><input type="radio" name="q2" value="a"> Wicked</label>
-        <label><input type="radio" name="q2" value="b"> Sad</label>
-        <label><input type="radio" name="q2" value="c"> Uncomfortable</label>
-        <label><input type="radio" name="q2" value="d"> Happy</label>
-      </div>
+    <div id="quiz" class="card" aria-live="polite"></div>
 
-      <!-- Q3 -->
-      <div class="question">3. Nirali’s papa bought her a bicycle so her younger brother ___ her.</div>
-      <div class="options">
-        <label><input type="radio" name="q3" value="a"> Envied</label>
-        <label><input type="radio" name="q3" value="b"> Loved</label>
-        <label><input type="radio" name="q3" value="c"> Ignored</label>
-        <label><input type="radio" name="q3" value="d"> Helped</label>
-      </div>
+    <div class="card controls">
+      <button id="submitBtn">Submit</button>
+      <button id="showAnswersBtn" class="secondary">Show Answers</button>
+      <button id="resetBtn" class="secondary">Reset</button>
+      <div style="margin-left:auto;color:var(--muted)" id="scoreLabel"></div>
+    </div>
 
-      <!-- Q4 -->
-      <div class="question">4. Edie decided to steal cub. Expression?</div>
-      <div class="options">
-        <label><input type="radio" name="q4" value="a"> Bravo!</label>
-        <label><input type="radio" name="q4" value="b"> How sad!</label>
-        <label><input type="radio" name="q4" value="c"> Well done!</label>
-        <label><input type="radio" name="q4" value="d"> What a shame!</label>
-      </div>
-
-      <!-- Q5 -->
-      <div class="question">5. Correct sequence: Deer → ? → Cub caught?</div>
-      <div class="options">
-        <label><input type="radio" name="q5" value="a"> Saw cheetah → leapt → cubs fed → Edie envied → caught cubs</label>
-        <label><input type="radio" name="q5" value="b"> Cubs fed → saw cheetah → Edie envied → leapt → caught cubs</label>
-        <label><input type="radio" name="q5" value="c"> Saw cheetah → cubs fed → Edie envied → leapt → caught cubs</label>
-        <label><input type="radio" name="q5" value="d"> Edie envied → saw cheetah → leapt → cubs fed → caught cubs</label>
-      </div>
-
-      <button type="button" onclick="checkAnswers()">Submit Test</button>
-    </form>
-
-    <div id="result" class="result"></div>
+    <footer>Made for class practice — edit questions easily inside the HTML file.</footer>
   </div>
 
   <script>
-    const correctAnswers = {
-      q1: "c",
-      q2: "c",
-      q3: "a",
-      q4: "d",
-      q5: "a"
-    };
+    // QUESTION BANK: edit or extend these objects
+    const questions = [
+      {
+        q: "Who is the lazy hunter in the story?",
+        options: ["Shanno","Edie","The shopkeeper","The wise man"],
+        a: 1,
+        explain: "Edie was the lazy hunter who wanted an easy way to hunt."
+      },
+      {
+        q: "Why did Edie decide to catch a cheetah cub?",
+        options: ["To keep as a pet","To train it to hunt for him","To sell it","To protect it"],
+        a: 1,
+        explain: "He wanted a hunter like the cheetah so he wouldn't have to hunt himself."
+      },
+      {
+        q: "How did Edie catch the cubs?",
+        options: ["Poisoned them","Used a net","Called the mother away","Dug a pit"],
+        a: 1,
+        explain: "He threw a net over the cubs and caught them."
+      },
+      {
+        q: "What was the reaction of the mother cheetah when she could not find her cubs?",
+        options: ["She attacked the village","She cried the whole night","She left the area","She forgave Edie immediately"],
+        a: 1,
+        explain: "She cried and her tears made stains on her cheeks."
+      },
+      {
+        q: "Who returned the cubs to their mother?",
+        options: ["Edie","Shanno","The entire tribe","The shopkeeper"],
+        a: 1,
+        explain: "Shanno found the cubs and returned them to the mother."
+      },
+      {
+        q: "According to Shanno, how must a hunter hunt?",
+        options: ["Using traps only","With his own strength and skill","By stealing","By asking animals"],
+        a: 1,
+        explain: "Shanno said a hunter must hunt with his own strength and skill."
+      },
+      {
+        q: "Which message is the main moral of the story?",
+        options: ["Stealing is clever","Laziness brings honour","Hard work and honesty are best","Animals are dangerous"],
+        a: 2,
+        explain: "The tale teaches that hard work and honesty are better than laziness and theft."
+      },
+      {
+        q: "Where is the Zulu tribe mainly found?",
+        options: ["India","KwaZulu-Natal province of South Africa","Australia","Brazil"],
+        a: 1,
+        explain: "They are mainly found in KwaZulu-Natal province of South Africa."
+      },
+      {
+        q: "Which of the following is NOT part of the cheetah facts given?",
+        options: ["Top speed ~100 km/h","Lives in open forests","Has clusters of spots like a leopard","Weight at birth ~300 gm"],
+        a: 2,
+        explain: "The cheetah has isolated black spots, not clusters (that's leopard)."
+      },
+      {
+        q: "Cheetahs usually hunt by: ",
+        options: ["Running very fast for long distances","Creeping silently then leaping","Hunting in packs","Using traps"],
+        a: 1,
+        explain: "They creep silently behind prey and then leap to catch it."
+      },
+      {
+        q: "How many cubs does a female cheetah usually give birth to at a time?",
+        options: ["1","2 to 4","5 to 7","8 to 10"],
+        a: 1,
+        explain: "She typically gives birth to 2–4 cubs."
+      },
+      {
+        q: "Which sentence shows Edie was lazy?",
+        options: ["He chased deer for hours","He wanted an easy way to get a deer","He trained other hunters","He refused to eat"],
+        a: 1,
+        explain: "He wanted an easy way to get deer instead of hunting himself."
+      },
+      {
+        q: "What stained the mother cheetah's cheeks?",
+        options: ["Mud","Blood","Her tears","Paint"],
+        a: 2,
+        explain: "Her long weeping made dark stains from her tears."
+      },
+      {
+        q: "Which of the following is true about cheetahs (from the facts)?",
+        options: ["They can maintain top speed for long distances","They are solitary creatures","They live in family herds","They preserve their prey for later"],
+        a: 1,
+        explain: "Cheetahs are solitary and do not live in groups."
+      },
+      {
+        q: "What did the tribe decide to do to Edie?",
+        options: ["Praise him","Drive him away from the village","Make him chief","Teach him hunting"],
+        a: 1,
+        explain: "They decided to drive Edie away for his wicked act."
+      }
+    ];
 
-    function checkAnswers() {
+    const quiz = document.getElementById('quiz');
+    const submitBtn = document.getElementById('submitBtn');
+    const showAnswersBtn = document.getElementById('showAnswersBtn');
+    const resetBtn = document.getElementById('resetBtn');
+    const scoreLabel = document.getElementById('scoreLabel');
+
+    function renderQuiz(){
+      quiz.innerHTML = '';
+      questions.forEach((item, idx) => {
+        const qDiv = document.createElement('div');
+        qDiv.className = 'q';
+        qDiv.id = 'q' + idx;
+        qDiv.innerHTML = `<h3>Q${idx+1}. ${item.q}</h3>`;
+        item.options.forEach((opt, oi) => {
+          const id = `q${idx}_opt${oi}`;
+          const label = document.createElement('label');
+          label.className = 'option';
+          label.htmlFor = id;
+          label.innerHTML = `<input type="radio" name="q${idx}" id="${id}" value="${oi}" /> ${opt}`;
+          qDiv.appendChild(label);
+        });
+        quiz.appendChild(qDiv);
+      });
+    }
+
+    function grade(){
       let score = 0;
-      const total = Object.keys(correctAnswers).length;
-
-      // Reset previous colors
-      document.querySelectorAll(".options label").forEach(label => {
-        label.classList.remove("correct", "wrong");
+      questions.forEach((item, idx) => {
+        const chosen = document.querySelector(`input[name=q${idx}]:checked`);
+        const qDiv = document.getElementById('q' + idx);
+        // cleanup
+        qDiv.querySelectorAll('.result').forEach(n=>n.remove());
+        if(chosen){
+          const val = Number(chosen.value);
+          if(val === item.a){
+            score++;
+            const div = document.createElement('div'); div.className='result correct'; div.textContent = 'Correct ✓';
+            qDiv.appendChild(div);
+          } else {
+            const div = document.createElement('div'); div.className='result wrong'; div.textContent = 'Wrong ✗';
+            qDiv.appendChild(div);
+            // highlight correct option
+            const correctInput = document.getElementById(`q${idx}_opt${item.a}`);
+            if(correctInput) correctInput.parentElement.style.border = '1px dashed #065f46';
+          }
+        } else {
+          const div = document.createElement('div'); div.className='result wrong'; div.textContent = 'No answer selected';
+          qDiv.appendChild(div);
+        }
+        const expl = document.createElement('div'); expl.className='explain'; expl.textContent = item.explain; qDiv.appendChild(expl);
       });
 
-      for (let q in correctAnswers) {
-        let selected = document.querySelector(`input[name="${q}"]:checked`);
-        if (selected) {
-          if (selected.value === correctAnswers[q]) {
-            score++;
-            selected.parentElement.classList.add("correct");
-          } else {
-            selected.parentElement.classList.add("wrong");
-          }
-        }
-      }
-
-      let resultBox = document.getElementById("result");
-      resultBox.style.display = "block";
-      resultBox.innerHTML = `✅ You scored <b>${score}</b> out of <b>${total}</b>`;
-      window.scrollTo({ top: 0, behavior: 'smooth' });
+      scoreLabel.textContent = `Score: ${score} / ${questions.length}`;
+      return score;
     }
+
+    submitBtn.addEventListener('click', ()=>{
+      grade();
+      // scroll to top of results
+      window.scrollTo({top:0,behavior:'smooth'});
+    });
+
+    showAnswersBtn.addEventListener('click', ()=>{
+      // reveal correct options visually
+      questions.forEach((item, idx)=>{
+        const correct = document.getElementById(`q${idx}_opt${item.a}`);
+        if(correct){
+          correct.checked = true;
+          correct.parentElement.style.background = '#f1f9ff';
+          correct.parentElement.style.border = '1px solid #cfe7ff';
+        }
+      });
+    });
+
+    resetBtn.addEventListener('click', ()=>{
+      renderQuiz();
+      scoreLabel.textContent = '';
+    });
+
+    // initial render
+    renderQuiz();
   </script>
 </body>
 </html>
