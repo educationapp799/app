@@ -1,55 +1,209 @@
 <!DOCTYPE html>
-<html lang="gu">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Coming Soon</title>
-    <style>
-        body {
-            font-family: 'Arial', sans-serif;
-            text-align: center;
-            background: linear-gradient(135deg, #ff7eb3, #ff758c, #ff7eb3, #ff758c);
-            background-size: 400% 400%;
-            animation: gradientBG 6s ease infinite;
-            height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            color: white;
-        }
-
-        @keyframes gradientBG {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
-        }
-
-        .coming-soon {
-            background: rgba(255, 255, 255, 0.2);
-            padding: 40px;
-            border-radius: 10px;
-            backdrop-filter: blur(10px);
-            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
-            display: inline-block;
-        }
-
-        h1 {
-            font-size: 36px;
-            margin: 0;
-        }
-
-        p {
-            font-size: 18px;
-            margin-top: 10px;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>UNIT 4 - CALL OF THE HILLS (MCQ Test)</title>
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(120deg, #e3f2fd, #bbdefb);
+      color: #222;
+      margin: 0;
+      padding: 20px;
+    }
+    .container {
+      max-width: 700px;
+      margin: auto;
+      background: white;
+      border-radius: 15px;
+      padding: 30px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+    h1 {
+      text-align: center;
+      color: #0d47a1;
+    }
+    .question {
+      margin-bottom: 20px;
+      font-weight: 500;
+    }
+    .options label {
+      display: block;
+      background: #f4f4f4;
+      margin: 6px 0;
+      padding: 10px;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+    .options input[type="radio"] {
+      margin-right: 10px;
+    }
+    .options label:hover {
+      background: #dce775;
+    }
+    button {
+      display: block;
+      width: 100%;
+      padding: 12px;
+      background: #1976d2;
+      color: white;
+      border: none;
+      font-size: 16px;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+    button:hover {
+      background: #0d47a1;
+    }
+    #result {
+      margin-top: 20px;
+      font-weight: bold;
+      text-align: center;
+      font-size: 18px;
+    }
+  </style>
 </head>
 <body>
 
-    <div class="coming-soon">
-        <h1>📢 Coming Soon...</h1>
-        <p>નવું પેજ ટૂંક સમયમાં ઉપલબ્ધ થશે.</p>
-    </div>
+  <div class="container">
+    <h1>UNIT 4 — CALL OF THE HILLS (MCQ TEST)</h1>
+    <form id="quizForm">
+
+      <div class="question">
+        1. What was the name of Abbu Khan’s new goat?
+        <div class="options">
+          <label><input type="radio" name="q1" value="A"> Kalua</label>
+          <label><input type="radio" name="q1" value="B"> Chandani</label>
+          <label><input type="radio" name="q1" value="C"> Mithu</label>
+          <label><input type="radio" name="q1" value="D"> Sweetu</label>
+        </div>
+      </div>
+
+      <div class="question">
+        2. Why did Chandani stop eating food?
+        <div class="options">
+          <label><input type="radio" name="q2" value="A"> She was sick</label>
+          <label><input type="radio" name="q2" value="B"> She loved the hills and wanted freedom</label>
+          <label><input type="radio" name="q2" value="C"> She was angry with Abbu Khan</label>
+          <label><input type="radio" name="q2" value="D"> She wanted to meet Kalua</label>
+        </div>
+      </div>
+
+      <div class="question">
+        3. Who killed Kalua?
+        <div class="options">
+          <label><input type="radio" name="q3" value="A"> Chandani</label>
+          <label><input type="radio" name="q3" value="B"> Abbu Khan</label>
+          <label><input type="radio" name="q3" value="C"> The wolf</label>
+          <label><input type="radio" name="q3" value="D"> Govinda</label>
+        </div>
+      </div>
+
+      <div class="question">
+        4. What did Chandani love the most?
+        <div class="options">
+          <label><input type="radio" name="q4" value="A"> The forest</label>
+          <label><input type="radio" name="q4" value="B"> The hills and fresh breeze</label>
+          <label><input type="radio" name="q4" value="C"> The cage</label>
+          <label><input type="radio" name="q4" value="D"> The hut</label>
+        </div>
+      </div>
+
+      <div class="question">
+        5. Who is the real winner according to the wise old bird?
+        <div class="options">
+          <label><input type="radio" name="q5" value="A"> The wolf</label>
+          <label><input type="radio" name="q5" value="B"> Chandani</label>
+          <label><input type="radio" name="q5" value="C"> Abbu Khan</label>
+          <label><input type="radio" name="q5" value="D"> Govinda</label>
+        </div>
+      </div>
+
+      <div class="question">
+        6. What was Abbu Khan’s profession?
+        <div class="options">
+          <label><input type="radio" name="q6" value="A"> Farmer</label>
+          <label><input type="radio" name="q6" value="B"> Goat keeper</label>
+          <label><input type="radio" name="q6" value="C"> Soldier</label>
+          <label><input type="radio" name="q6" value="D"> Trader</label>
+        </div>
+      </div>
+
+      <div class="question">
+        7. How did Chandani escape from the hut?
+        <div class="options">
+          <label><input type="radio" name="q7" value="A"> Through the door</label>
+          <label><input type="radio" name="q7" value="B"> Through a window</label>
+          <label><input type="radio" name="q7" value="C"> Abbu Khan freed her</label>
+          <label><input type="radio" name="q7" value="D"> She broke the rope</label>
+        </div>
+      </div>
+
+      <div class="question">
+        8. What did the wolf represent in the story?
+        <div class="options">
+          <label><input type="radio" name="q8" value="A"> Love</label>
+          <label><input type="radio" name="q8" value="B"> Freedom</label>
+          <label><input type="radio" name="q8" value="C"> Danger and fear</label>
+          <label><input type="radio" name="q8" value="D"> Friendship</label>
+        </div>
+      </div>
+
+      <div class="question">
+        9. What lesson does the story teach?
+        <div class="options">
+          <label><input type="radio" name="q9" value="A"> Freedom is precious, even if risky</label>
+          <label><input type="radio" name="q9" value="B"> Always obey your master</label>
+          <label><input type="radio" name="q9" value="C"> Animals love cages</label>
+          <label><input type="radio" name="q9" value="D"> Hills are dangerous</label>
+        </div>
+      </div>
+
+      <div class="question">
+        10. Who said, “Chandani is the winner”?
+        <div class="options">
+          <label><input type="radio" name="q10" value="A"> Abbu Khan</label>
+          <label><input type="radio" name="q10" value="B"> Govinda</label>
+          <label><input type="radio" name="q10" value="C"> A wise old bird</label>
+          <label><input type="radio" name="q10" value="D"> Chandani</label>
+        </div>
+      </div>
+
+      <button type="button" onclick="checkAnswers()">Submit Test</button>
+    </form>
+
+    <div id="result"></div>
+  </div>
+
+  <script>
+    function checkAnswers() {
+      const answers = {
+        q1: "B",
+        q2: "B",
+        q3: "C",
+        q4: "B",
+        q5: "B",
+        q6: "B",
+        q7: "B",
+        q8: "C",
+        q9: "A",
+        q10: "C"
+      };
+      let score = 0;
+      for (let q in answers) {
+        const selected = document.querySelector(`input[name="${q}"]:checked`);
+        if (selected && selected.value === answers[q]) {
+          score++;
+        }
+      }
+      const total = Object.keys(answers).length;
+      const percent = Math.round((score / total) * 100);
+      document.getElementById("result").innerHTML =
+        `✅ You scored ${score}/${total} (${percent}%)`;
+    }
+  </script>
 
 </body>
 </html>
