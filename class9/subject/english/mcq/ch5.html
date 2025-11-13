@@ -1,55 +1,171 @@
 <!DOCTYPE html>
-<html lang="gu">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Coming Soon</title>
-    <style>
-        body {
-            font-family: 'Arial', sans-serif;
-            text-align: center;
-            background: linear-gradient(135deg, #ff7eb3, #ff758c, #ff7eb3, #ff758c);
-            background-size: 400% 400%;
-            animation: gradientBG 6s ease infinite;
-            height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            color: white;
-        }
-
-        @keyframes gradientBG {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
-        }
-
-        .coming-soon {
-            background: rgba(255, 255, 255, 0.2);
-            padding: 40px;
-            border-radius: 10px;
-            backdrop-filter: blur(10px);
-            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
-            display: inline-block;
-        }
-
-        h1 {
-            font-size: 36px;
-            margin: 0;
-        }
-
-        p {
-            font-size: 18px;
-            margin-top: 10px;
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rani Ki Vaav - MCQ Test</title>
+<style>
+  body {
+    font-family: "Poppins", sans-serif;
+    background: #f8f9fa;
+    margin: 0;
+    padding: 20px;
+  }
+  .container {
+    max-width: 800px;
+    margin: auto;
+    background: white;
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  }
+  h1 {
+    text-align: center;
+    color: #0077b6;
+  }
+  .question {
+    margin: 20px 0;
+  }
+  .question h3 {
+    color: #222;
+  }
+  button {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    background: #0077b6;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  button:hover {
+    background: #005f87;
+  }
+  #result {
+    text-align: center;
+    font-weight: bold;
+    font-size: 20px;
+    margin-top: 20px;
+  }
+</style>
 </head>
 <body>
+<div class="container">
+  <h1>Unit 5 – RANI KI VAAV (MCQ Test)</h1>
 
-    <div class="coming-soon">
-        <h1>📢 Coming Soon...</h1>
-        <p>નવું પેજ ટૂંક સમયમાં ઉપલબ્ધ થશે.</p>
+  <form id="quizForm">
+    <div class="question">
+      <h3>1. Who constructed Rani Ki Vaav?</h3>
+      <label><input type="radio" name="q1" value="a"> King Bhimdev-I</label><br>
+      <label><input type="radio" name="q1" value="b"> Queen Udayamati</label><br>
+      <label><input type="radio" name="q1" value="c"> Queen Padmavati</label><br>
+      <label><input type="radio" name="q1" value="d"> Rani Rudrama Devi</label>
     </div>
 
+    <div class="question">
+      <h3>2. In which city is Rani Ki Vaav located?</h3>
+      <label><input type="radio" name="q2" value="a"> Modhera</label><br>
+      <label><input type="radio" name="q2" value="b"> Patan</label><br>
+      <label><input type="radio" name="q2" value="c"> Junagadh</label><br>
+      <label><input type="radio" name="q2" value="d"> Ahmedabad</label>
+    </div>
+
+    <div class="question">
+      <h3>3. Rani Ki Vaav was built during which period?</h3>
+      <label><input type="radio" name="q3" value="a"> 1022–1063 A.D.</label><br>
+      <label><input type="radio" name="q3" value="b"> 1200–1300 A.D.</label><br>
+      <label><input type="radio" name="q3" value="c"> 900–950 A.D.</label><br>
+      <label><input type="radio" name="q3" value="d"> 1100–1200 A.D.</label>
+    </div>
+
+    <div class="question">
+      <h3>4. Rani Ki Vaav is mainly dedicated to which god?</h3>
+      <label><input type="radio" name="q4" value="a"> Lord Shiva</label><br>
+      <label><input type="radio" name="q4" value="b"> Lord Vishnu</label><br>
+      <label><input type="radio" name="q4" value="c"> Lord Brahma</label><br>
+      <label><input type="radio" name="q4" value="d"> Goddess Parvati</label>
+    </div>
+
+    <div class="question">
+      <h3>5. How many storeys does Rani Ki Vaav have?</h3>
+      <label><input type="radio" name="q5" value="a"> 5</label><br>
+      <label><input type="radio" name="q5" value="b"> 7</label><br>
+      <label><input type="radio" name="q5" value="c"> 9</label><br>
+      <label><input type="radio" name="q5" value="d"> 4</label>
+    </div>
+
+    <div class="question">
+      <h3>6. Who declared Rani Ki Vaav a World Heritage Site?</h3>
+      <label><input type="radio" name="q6" value="a"> ASI</label><br>
+      <label><input type="radio" name="q6" value="b"> UNESCO</label><br>
+      <label><input type="radio" name="q6" value="c"> Government of India</label><br>
+      <label><input type="radio" name="q6" value="d"> Gujarat Tourism</label>
+    </div>
+
+    <div class="question">
+      <h3>7. What was the main purpose of building the Vaav?</h3>
+      <label><input type="radio" name="q7" value="a"> For worship</label><br>
+      <label><input type="radio" name="q7" value="b"> For solving water scarcity</label><br>
+      <label><input type="radio" name="q7" value="c"> For royal residence</label><br>
+      <label><input type="radio" name="q7" value="d"> For storing grains</label>
+    </div>
+
+    <div class="question">
+      <h3>8. How many big sculptures are there in the Vaav?</h3>
+      <label><input type="radio" name="q8" value="a"> 200</label><br>
+      <label><input type="radio" name="q8" value="b"> 300</label><br>
+      <label><input type="radio" name="q8" value="c"> 400</label><br>
+      <label><input type="radio" name="q8" value="d"> 500</label>
+    </div>
+
+    <div class="question">
+      <h3>9. Which dynasty did King Bhimdev-I belong to?</h3>
+      <label><input type="radio" name="q9" value="a"> Maurya</label><br>
+      <label><input type="radio" name="q9" value="b"> Solanki</label><br>
+      <label><input type="radio" name="q9" value="c"> Gupta</label><br>
+      <label><input type="radio" name="q9" value="d"> Chalukya</label>
+    </div>
+
+    <div class="question">
+      <h3>10. For how many centuries was Rani Ki Vaav buried under silt?</h3>
+      <label><input type="radio" name="q10" value="a"> Four</label><br>
+      <label><input type="radio" name="q10" value="b"> Seven</label><br>
+      <label><input type="radio" name="q10" value="c"> Five</label><br>
+      <label><input type="radio" name="q10" value="d"> Six</label>
+    </div>
+
+    <button type="button" onclick="checkAnswers()">Submit Test</button>
+  </form>
+
+  <div id="result"></div>
+</div>
+
+<script>
+function checkAnswers() {
+  const correct = {
+    q1: "b",
+    q2: "b",
+    q3: "a",
+    q4: "b",
+    q5: "b",
+    q6: "b",
+    q7: "b",
+    q8: "c",
+    q9: "b",
+    q10: "b"
+  };
+
+  let score = 0;
+  for (let key in correct) {
+    const answer = document.querySelector(`input[name="${key}"]:checked`);
+    if (answer && answer.value === correct[key]) score++;
+  }
+
+  const result = document.getElementById("result");
+  result.innerHTML = `You got <span style="color:#0077b6">${score}</span> out of 10 correct!`;
+}
+</script>
 </body>
 </html>
