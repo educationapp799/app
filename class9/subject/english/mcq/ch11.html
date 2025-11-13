@@ -1,55 +1,178 @@
 <!DOCTYPE html>
-<html lang="gu">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Coming Soon</title>
-    <style>
-        body {
-            font-family: 'Arial', sans-serif;
-            text-align: center;
-            background: linear-gradient(135deg, #ff7eb3, #ff758c, #ff7eb3, #ff758c);
-            background-size: 400% 400%;
-            animation: gradientBG 6s ease infinite;
-            height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            color: white;
-        }
-
-        @keyframes gradientBG {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
-        }
-
-        .coming-soon {
-            background: rgba(255, 255, 255, 0.2);
-            padding: 40px;
-            border-radius: 10px;
-            backdrop-filter: blur(10px);
-            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
-            display: inline-block;
-        }
-
-        h1 {
-            font-size: 36px;
-            margin: 0;
-        }
-
-        p {
-            font-size: 18px;
-            margin-top: 10px;
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Unit 11 – Valley of Flowers | MCQ Test</title>
+<style>
+  body {
+    font-family: "Poppins", sans-serif;
+    background: linear-gradient(135deg, #e3f2fd, #ffffff);
+    padding: 20px;
+    color: #0d47a1;
+  }
+  h1 {
+    text-align: center;
+    color: #1565c0;
+  }
+  .question {
+    background: #ffffff;
+    padding: 15px;
+    margin: 15px 0;
+    border-radius: 12px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  }
+  .question h3 {
+    margin-bottom: 10px;
+  }
+  label {
+    display: block;
+    margin-bottom: 6px;
+    cursor: pointer;
+  }
+  button {
+    display: block;
+    width: 100%;
+    background-color: #1976d2;
+    color: white;
+    padding: 12px;
+    font-size: 16px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-top: 20px;
+  }
+  #result {
+    text-align: center;
+    font-size: 20px;
+    margin-top: 25px;
+    color: #0d47a1;
+    font-weight: bold;
+  }
+</style>
 </head>
 <body>
 
-    <div class="coming-soon">
-        <h1>📢 Coming Soon...</h1>
-        <p>નવું પેજ ટૂંક સમયમાં ઉપલબ્ધ થશે.</p>
-    </div>
+<h1>Unit 11 – Valley of Flowers (MCQ Test)</h1>
+
+<form id="quizForm">
+
+  <div class="question">
+    <h3>1. Where is the Valley of Flowers located?</h3>
+    <label><input type="radio" name="q1" value="a"> Near Mount Everest, Nepal</label>
+    <label><input type="radio" name="q1" value="b"> In Chamoli district, Uttarakhand</label>
+    <label><input type="radio" name="q1" value="c"> In Himachal Pradesh</label>
+    <label><input type="radio" name="q1" value="d"> In Jammu and Kashmir</label>
+  </div>
+
+  <div class="question">
+    <h3>2. Who discovered the Valley of Flowers?</h3>
+    <label><input type="radio" name="q2" value="a"> Local villagers</label>
+    <label><input type="radio" name="q2" value="b"> Three British mountaineers</label>
+    <label><input type="radio" name="q2" value="c"> Indian botanists</label>
+    <label><input type="radio" name="q2" value="d"> Poets and writers</label>
+  </div>
+
+  <div class="question">
+    <h3>3. When was the Valley of Flowers declared as a National Park?</h3>
+    <label><input type="radio" name="q3" value="a"> 1931</label>
+    <label><input type="radio" name="q3" value="b"> 1982</label>
+    <label><input type="radio" name="q3" value="c"> 1992</label>
+    <label><input type="radio" name="q3" value="d"> 2001</label>
+  </div>
+
+  <div class="question">
+    <h3>4. Which flower is famous for medical use and religious offering in the Valley?</h3>
+    <label><input type="radio" name="q4" value="a"> Sunflower</label>
+    <label><input type="radio" name="q4" value="b"> Brahmkamal</label>
+    <label><input type="radio" name="q4" value="c"> Blue Poppy</label>
+    <label><input type="radio" name="q4" value="d"> Bariti</label>
+  </div>
+
+  <div class="question">
+    <h3>5. Which river flows through the Valley of Flowers?</h3>
+    <label><input type="radio" name="q5" value="a"> Alaknanda River</label>
+    <label><input type="radio" name="q5" value="b"> Pushpawati River</label>
+    <label><input type="radio" name="q5" value="c"> Ganga River</label>
+    <label><input type="radio" name="q5" value="d"> Nanda Devi Stream</label>
+  </div>
+
+  <div class="question">
+    <h3>6. What is the area of the Valley of Flowers?</h3>
+    <label><input type="radio" name="q6" value="a"> 50 square kilometres</label>
+    <label><input type="radio" name="q6" value="b"> 87.5 square kilometres</label>
+    <label><input type="radio" name="q6" value="c"> 100 square kilometres</label>
+    <label><input type="radio" name="q6" value="d"> 70 square kilometres</label>
+  </div>
+
+  <div class="question">
+    <h3>7. In which months is the Valley of Flowers in full bloom?</h3>
+    <label><input type="radio" name="q7" value="a"> April to June</label>
+    <label><input type="radio" name="q7" value="b"> July to September</label>
+    <label><input type="radio" name="q7" value="c"> October to December</label>
+    <label><input type="radio" name="q7" value="d"> January to March</label>
+  </div>
+
+  <div class="question">
+    <h3>8. How did the Valley of Flowers get its name?</h3>
+    <label><input type="radio" name="q8" value="a"> From local legends</label>
+    <label><input type="radio" name="q8" value="b"> British mountaineers named it after seeing its beauty</label>
+    <label><input type="radio" name="q8" value="c"> From Indian poets</label>
+    <label><input type="radio" name="q8" value="d"> From the Ramayana</label>
+  </div>
+
+  <div class="question">
+    <h3>9. What is the official name of the Valley of Flowers site?</h3>
+    <label><input type="radio" name="q9" value="a"> Nanda Devi Sanctuary</label>
+    <label><input type="radio" name="q9" value="b"> Nanda Devi and Valley of Flowers National Park</label>
+    <label><input type="radio" name="q9" value="c"> Himalayan Flower Reserve</label>
+    <label><input type="radio" name="q9" value="d"> Uttarakhand Floral Park</label>
+  </div>
+
+  <div class="question">
+    <h3>10. What is the best way to reach the Valley of Flowers?</h3>
+    <label><input type="radio" name="q10" value="a"> Flight to Chamoli</label>
+    <label><input type="radio" name="q10" value="b"> Motor road till Govindghat, then trek</label>
+    <label><input type="radio" name="q10" value="c"> Helicopter service</label>
+    <label><input type="radio" name="q10" value="d"> Metro line from Rishikesh</label>
+  </div>
+
+  <button type="button" onclick="checkAnswers()">Submit Test</button>
+</form>
+
+<div id="result"></div>
+
+<script>
+function checkAnswers() {
+  const answers = {
+    q1: "b",
+    q2: "b",
+    q3: "b",
+    q4: "b",
+    q5: "b",
+    q6: "b",
+    q7: "b",
+    q8: "b",
+    q9: "b",
+    q10: "b"
+  };
+
+  let score = 0;
+  const total = Object.keys(answers).length;
+
+  for (let key in answers) {
+    const userAns = document.querySelector(`input[name="${key}"]:checked`);
+    if (userAns && userAns.value === answers[key]) score++;
+  }
+
+  const result = document.getElementById("result");
+  result.innerHTML = `You scored ${score} out of ${total}.<br>
+  ${score === total ? "🌸 Excellent! You truly know the beauty of the Valley of Flowers!" :
+  score >= 7 ? "🌼 Good job! You have explored the Valley well." :
+  score >= 5 ? "🌻 Fair attempt. Read again for more knowledge." :
+  "🍂 Try again! The Valley has many secrets to learn."}`;
+}
+</script>
 
 </body>
 </html>
