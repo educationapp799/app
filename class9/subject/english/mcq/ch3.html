@@ -1,56 +1,181 @@
-
 <!DOCTYPE html>
-<html lang="gu">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Coming Soon</title>
-    <style>
-        body {
-            font-family: 'Arial', sans-serif;
-            text-align: center;
-            background: linear-gradient(135deg, #ff7eb3, #ff758c, #ff7eb3, #ff758c);
-            background-size: 400% 400%;
-            animation: gradientBG 6s ease infinite;
-            height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            color: white;
-        }
-
-        @keyframes gradientBG {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
-        }
-
-        .coming-soon {
-            background: rgba(255, 255, 255, 0.2);
-            padding: 40px;
-            border-radius: 10px;
-            backdrop-filter: blur(10px);
-            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
-            display: inline-block;
-        }
-
-        h1 {
-            font-size: 36px;
-            margin: 0;
-        }
-
-        p {
-            font-size: 18px;
-            margin-top: 10px;
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MCQ Test - Mohan and His Veena</title>
+<style>
+  body {
+    font-family: "Poppins", sans-serif;
+    background: #f0f7ff;
+    margin: 0;
+    padding: 20px;
+  }
+  .container {
+    max-width: 800px;
+    margin: auto;
+    background: #fff;
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  }
+  h1 {
+    text-align: center;
+    color: #004080;
+  }
+  .question {
+    margin-bottom: 20px;
+  }
+  .question p {
+    font-weight: 600;
+  }
+  label {
+    display: block;
+    margin: 8px 0;
+    cursor: pointer;
+  }
+  button {
+    background-color: #0078D7;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  button:hover {
+    background-color: #005fa3;
+  }
+  #result {
+    margin-top: 25px;
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+    color: #004080;
+  }
+</style>
 </head>
 <body>
 
-    <div class="coming-soon">
-        <h1>📢 Coming Soon...</h1>
-        <p>નવું પેજ ટૂંક સમયમાં ઉપલબ્ધ થશે.</p>
+<div class="container">
+  <h1>Unit 3 – Mohan and His Veena<br>MCQ Test</h1>
+  <form id="quizForm">
+
+    <div class="question">
+      <p>1. What was Mohan’s family background?</p>
+      <label><input type="radio" name="q1" value="a"> A family of doctors</label>
+      <label><input type="radio" name="q1" value="b"> A family of musicians</label>
+      <label><input type="radio" name="q1" value="c"> A family of teachers</label>
+      <label><input type="radio" name="q1" value="d"> A family of artists</label>
     </div>
+
+    <div class="question">
+      <p>2. Which instrument did Mohan first learn?</p>
+      <label><input type="radio" name="q2" value="a"> Guitar</label>
+      <label><input type="radio" name="q2" value="b"> Sitar</label>
+      <label><input type="radio" name="q2" value="c"> Violin</label>
+      <label><input type="radio" name="q2" value="d"> Vocal music</label>
+    </div>
+
+    <div class="question">
+      <p>3. Who introduced the guitar into Mohan’s life?</p>
+      <label><input type="radio" name="q3" value="a"> His brother</label>
+      <label><input type="radio" name="q3" value="b"> His teacher</label>
+      <label><input type="radio" name="q3" value="c"> A German lady</label>
+      <label><input type="radio" name="q3" value="d"> His uncle</label>
+    </div>
+
+    <div class="question">
+      <p>4. What was the reaction of Mohan’s family toward his love for the guitar?</p>
+      <label><input type="radio" name="q4" value="a"> They supported him immediately</label>
+      <label><input type="radio" name="q4" value="b"> They were happy and proud</label>
+      <label><input type="radio" name="q4" value="c"> They criticized him at first</label>
+      <label><input type="radio" name="q4" value="d"> They ignored him</label>
+    </div>
+
+    <div class="question">
+      <p>5. Who supported Mohan in following his passion?</p>
+      <label><input type="radio" name="q5" value="a"> His aunty</label>
+      <label><input type="radio" name="q5" value="b"> His mother</label>
+      <label><input type="radio" name="q5" value="c"> His brother</label>
+      <label><input type="radio" name="q5" value="d"> His friend</label>
+    </div>
+
+    <div class="question">
+      <p>6. What did Mohan decide to do with the guitar?</p>
+      <label><input type="radio" name="q6" value="a"> Stop playing it</label>
+      <label><input type="radio" name="q6" value="b"> Modify it to suit Indian classical music</label>
+      <label><input type="radio" name="q6" value="c"> Play it only for fun</label>
+      <label><input type="radio" name="q6" value="d"> Sell it</label>
+    </div>
+
+    <div class="question">
+      <p>7. What did Mohan invent after his experiments?</p>
+      <label><input type="radio" name="q7" value="a"> Mohan Veena</label>
+      <label><input type="radio" name="q7" value="b"> Indian Sitar</label>
+      <label><input type="radio" name="q7" value="c"> Mohan Guitar</label>
+      <label><input type="radio" name="q7" value="d"> Tabla Veena</label>
+    </div>
+
+    <div class="question">
+      <p>8. What award did Mohan (Vishwa Mohan Bhatt) win?</p>
+      <label><input type="radio" name="q8" value="a"> Oscar</label>
+      <label><input type="radio" name="q8" value="b"> Grammy Award</label>
+      <label><input type="radio" name="q8" value="c"> Nobel Prize</label>
+      <label><input type="radio" name="q8" value="d"> Bharat Ratna</label>
+    </div>
+
+    <div class="question">
+      <p>9. How many hours did Mohan practice daily after the criticism?</p>
+      <label><input type="radio" name="q9" value="a"> 5 hours</label>
+      <label><input type="radio" name="q9" value="b"> 6 hours</label>
+      <label><input type="radio" name="q9" value="c"> 10 hours</label>
+      <label><input type="radio" name="q9" value="d"> 2 hours</label>
+    </div>
+
+    <div class="question">
+      <p>10. What message does Mohan’s story give us?</p>
+      <label><input type="radio" name="q10" value="a"> Follow what others say</label>
+      <label><input type="radio" name="q10" value="b"> Give up easily</label>
+      <label><input type="radio" name="q10" value="c"> Follow your passion and work hard</label>
+      <label><input type="radio" name="q10" value="d"> Change your dreams</label>
+    </div>
+
+    <div style="text-align:center;">
+      <button type="button" onclick="checkAnswers()">Submit Test</button>
+    </div>
+
+    <div id="result"></div>
+  </form>
+</div>
+
+<script>
+function checkAnswers() {
+  const answers = {
+    q1: "b",
+    q2: "d",
+    q3: "c",
+    q4: "c",
+    q5: "b",
+    q6: "b",
+    q7: "a",
+    q8: "b",
+    q9: "c",
+    q10: "c"
+  };
+
+  let score = 0;
+  for (let q in answers) {
+    const selected = document.querySelector(`input[name="${q}"]:checked`);
+    if (selected && selected.value === answers[q]) {
+      score++;
+    }
+  }
+
+  document.getElementById("result").innerHTML =
+    `You scored ${score} out of ${Object.keys(answers).length}!`;
+}
+</script>
 
 </body>
 </html>
