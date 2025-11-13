@@ -1,55 +1,164 @@
 <!DOCTYPE html>
-<html lang="gu">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Coming Soon</title>
-    <style>
-        body {
-            font-family: 'Arial', sans-serif;
-            text-align: center;
-            background: linear-gradient(135deg, #ff7eb3, #ff758c, #ff7eb3, #ff758c);
-            background-size: 400% 400%;
-            animation: gradientBG 6s ease infinite;
-            height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            color: white;
-        }
-
-        @keyframes gradientBG {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
-        }
-
-        .coming-soon {
-            background: rgba(255, 255, 255, 0.2);
-            padding: 40px;
-            border-radius: 10px;
-            backdrop-filter: blur(10px);
-            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
-            display: inline-block;
-        }
-
-        h1 {
-            font-size: 36px;
-            margin: 0;
-        }
-
-        p {
-            font-size: 18px;
-            margin-top: 10px;
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Unit 7 – Adolescents Speak | MCQ Test</title>
+<style>
+  body {
+    font-family: "Poppins", sans-serif;
+    background: #f9f9ff;
+    margin: 0;
+    padding: 0;
+  }
+  .container {
+    max-width: 750px;
+    margin: 40px auto;
+    background: white;
+    border-radius: 15px;
+    padding: 30px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  }
+  h1 {
+    text-align: center;
+    color: #2d2d8a;
+  }
+  .question {
+    margin: 20px 0;
+  }
+  label {
+    display: block;
+    padding: 5px 0;
+    cursor: pointer;
+  }
+  button {
+    background: #2d2d8a;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  button:hover {
+    background: #4545b3;
+  }
+  #result {
+    margin-top: 20px;
+    font-weight: bold;
+    text-align: center;
+    font-size: 18px;
+    color: #0a7a29;
+  }
+</style>
 </head>
 <body>
+<div class="container">
+  <h1>MCQ Test – Unit 7: Adolescents Speak</h1>
 
-    <div class="coming-soon">
-        <h1>📢 Coming Soon...</h1>
-        <p>નવું પેજ ટૂંક સમયમાં ઉપલબ્ધ થશે.</p>
+  <form id="quizForm">
+    <div class="question">
+      <p>1. Who arranged the videoconference in the lesson?</p>
+      <label><input type="radio" name="q1" value="a"> The Youth Club, Ahmedabad</label>
+      <label><input type="radio" name="q1" value="b"> The Health Department</label>
+      <label><input type="radio" name="q1" value="c"> School Principal</label>
+      <label><input type="radio" name="q1" value="d"> The Ministry of Youth</label>
     </div>
 
+    <div class="question">
+      <p>2. What was the subject of the videoconference?</p>
+      <label><input type="radio" name="q2" value="a"> Teenagers’ hobbies</label>
+      <label><input type="radio" name="q2" value="b"> What’s the way out?</label>
+      <label><input type="radio" name="q2" value="c"> Problems of childhood</label>
+      <label><input type="radio" name="q2" value="d"> How to get good marks</label>
+    </div>
+
+    <div class="question">
+      <p>3. What problem did Jignesh face?</p>
+      <label><input type="radio" name="q3" value="a"> He couldn’t study properly</label>
+      <label><input type="radio" name="q3" value="b"> Lack of self-confidence</label>
+      <label><input type="radio" name="q3" value="c"> He had pimples</label>
+      <label><input type="radio" name="q3" value="d"> He used to chew gutkha</label>
+    </div>
+
+    <div class="question">
+      <p>4. What advice did Mr. Bakshi give to Jignesh?</p>
+      <label><input type="radio" name="q4" value="a"> Plan for a month</label>
+      <label><input type="radio" name="q4" value="b"> Don’t plan at all</label>
+      <label><input type="radio" name="q4" value="c"> Plan for one day and follow it</label>
+      <label><input type="radio" name="q4" value="d"> Study more at night</label>
+    </div>
+
+    <div class="question">
+      <p>5. What problem did Dilshad have?</p>
+      <label><input type="radio" name="q5" value="a"> Weak eyesight</label>
+      <label><input type="radio" name="q5" value="b"> Pimples on face</label>
+      <label><input type="radio" name="q5" value="c"> Lack of confidence</label>
+      <label><input type="radio" name="q5" value="d"> Toothache</label>
+    </div>
+
+    <div class="question">
+      <p>6. What did Dr. Shah advise Dilshad?</p>
+      <label><input type="radio" name="q6" value="a"> Use more creams</label>
+      <label><input type="radio" name="q6" value="b"> Don’t worry and consult a skin specialist</label>
+      <label><input type="radio" name="q6" value="c"> Wash face with soap often</label>
+      <label><input type="radio" name="q6" value="d"> Ignore the pimples</label>
+    </div>
+
+    <div class="question">
+      <p>7. What question did Antim ask?</p>
+      <label><input type="radio" name="q7" value="a"> Can a blood donor acquire HIV?</label>
+      <label><input type="radio" name="q7" value="b"> What are the effects of gutkha?</label>
+      <label><input type="radio" name="q7" value="c"> How to remove pimples?</label>
+      <label><input type="radio" name="q7" value="d"> How to boost confidence?</label>
+    </div>
+
+    <div class="question">
+      <p>8. What advice did Mr. Bakshi give to Harish?</p>
+      <label><input type="radio" name="q8" value="a"> Keep chewing gutkha sometimes</label>
+      <label><input type="radio" name="q8" value="b"> Play on tabla and stay busy</label>
+      <label><input type="radio" name="q8" value="c"> Watch TV more</label>
+      <label><input type="radio" name="q8" value="d"> Take medicine</label>
+    </div>
+
+    <div class="question">
+      <p>9. What does the slogan “Know AIDS for No AIDS” mean?</p>
+      <label><input type="radio" name="q9" value="a"> Learn about AIDS to prevent it</label>
+      <label><input type="radio" name="q9" value="b"> Don’t talk about AIDS</label>
+      <label><input type="radio" name="q9" value="c"> Only doctors can stop AIDS</label>
+      <label><input type="radio" name="q9" value="d"> AIDS is not dangerous</label>
+    </div>
+
+    <div class="question">
+      <p>10. What is the main message of the lesson “Adolescents Speak”?</p>
+      <label><input type="radio" name="q10" value="a"> Teenagers should face problems positively and seek help</label>
+      <label><input type="radio" name="q10" value="b"> Teenagers should never ask for help</label>
+      <label><input type="radio" name="q10" value="c"> Always depend on others</label>
+      <label><input type="radio" name="q10" value="d"> Avoid sharing problems</label>
+    </div>
+
+    <div style="text-align:center;">
+      <button type="button" onclick="checkAnswers()">Submit Test</button>
+    </div>
+  </form>
+
+  <div id="result"></div>
+</div>
+
+<script>
+function checkAnswers() {
+  const correct = {
+    q1: "a", q2: "b", q3: "b", q4: "c", q5: "b",
+    q6: "b", q7: "a", q8: "b", q9: "a", q10: "a"
+  };
+  let score = 0;
+  for (let q in correct) {
+    const ans = document.querySelector(`input[name="${q}"]:checked`);
+    if (ans && ans.value === correct[q]) score++;
+  }
+  document.getElementById("result").innerHTML =
+    `✅ You scored <b>${score}</b> out of 10!`;
+}
+</script>
 </body>
 </html>
